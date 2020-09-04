@@ -10,6 +10,7 @@ set tabstop=5
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
 
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
 " =============================================================
 " /  ___| |              | |           | |      
@@ -24,6 +25,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nmap ++ :vsp<CR>
+nnoremap Q q
+nnoremap q <Nop>
+nmap mm :w<CR>
+nmap qq :wq<CR>
 nmap <C-O> :bn<CR>
 nmap <C-I> :bp<CR>
 nmap <C-P> :bd<CR>
@@ -39,10 +44,16 @@ map <Down> <C-E>
 map <Up> <C-Y>
 
 " Add easy nbreakpoint shortcut
-nnoremap <silent> <C-B> :let a='import pdb; pdb.set_trace()'\|put=a<cr>
+nnoremap <silent> <C-B> :let a='import pdb; pdb.set_trace()'\|put=a<CR>
 
 " Add easy jump to definition
 nmap gd :call CocAction('jumpDefinition', 'drop')<CR>
+
+" VIM workspace
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent execute "!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
 
 " =============================================================
@@ -56,10 +67,10 @@ nmap gd :call CocAction('jumpDefinition', 'drop')<CR>
 " =============================================================
 call plug#begin()
 
-Plug 'neoclide/coc.nvim',
-Plug 'arcticicestudio/nord-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'itchyny/lightline.vim'
+Plug 'bluz71/vim-moonfly-statusline'
+Plug 'dylanaraps/wal.vim'
+Plug 'neoclide/coc.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
@@ -75,9 +86,31 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
+Plug 'thaerkh/vim-workspace'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
+" Colorscheme
+let &t_ZH="\e[4m"
+let &t_ZR="\e[33m"
+colorscheme wal
+augroup python_syntax_extra
+  autocmd!
+  autocmd! Syntax python :syn keyword Keyword self
+augroup END
+
+highlight! link User1 DiffText
+highlight! link User2 DiffAdd
+highlight! link User3 Search
+highlight! link User4 IncSearch
+highlight! link User5 StatusLine
+highlight! link User6 StatusLine
+highlight! link User7 StatusLine
+
+set noshowmode
+
+" Nerdtree
 nmap <C-space> :NERDTreeToggle<CR>
 set fillchars=vert:█
 
@@ -151,35 +184,10 @@ let g:gitgutter_sign_added = '█'
 let g:gitgutter_sign_modified = '█'
 let g:gitgutter_sign_removed = '█'
 
-
-" =============================================================
-"   / _ \(_)    | (_)           
-"  / /_\ \_ _ __| |_ _ __   ___ 
-"  |  _  | | '__| | | '_ \ / _ \
-"  | | | | | |  | | | | | |  __/
-"  \_| |_/_|_|  |_|_|_| |_|\___|
-" =============================================================
-let g:airline_powerline_fonts = 1
-
 " Ranger
 map <C-r> :Ranger<CR>
 map <C-t> :RangerNewTab<CR>
 
-" Colorscheme
-let &t_ZH="\e[4m"
-let &t_ZR="\e[33m"
-colorscheme nord
-let g:nord_bold = 1
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
-augroup python_syntax_extra
-  autocmd!
-  autocmd! Syntax python :syn keyword Keyword self
-augroup END
-highlight Keyword ctermfg=5
-highlight Float ctermfg=1
-highlight Number ctermfg=1
-highlight Error cterm=underline ctermfg=1 gui=undercurl ctermbg=None
 
 
 " =============================================================

@@ -6,6 +6,82 @@
 
 <!--lint disable no-duplicate-headings-->
 
+# 0.15.0
+
+![Release Date: 2020-07-06](https://img.shields.io/badge/Release_Date-2020--07--06-88C0D0.svg?style=flat-square) [![Project Board](https://img.shields.io/badge/Project_Board-0.15.0-88C0D0.svg?style=flat-square)](https://github.com/arcticicestudio/nord-vim/projects/21) [![Milestone](https://img.shields.io/badge/Milestone-0.15.0-88C0D0.svg?style=flat-square)](https://github.com/arcticicestudio/nord-vim/milestone/17)
+
+## Features
+
+### Syntax
+
+**Extended support for TypeScript and TSX** — #208 (⊶ 1bd44ade) by [@iamdidev][gh-user-iamdidev]
+↠ Added extended support for [TypeScript][] and [TSX][ts-docs-jsx] through the [yats.vim][herringtonharkholme/yats.vim] plugin.
+This provides, among many other good changes, better highlighting for syntax elements like [decorators][ts-docs-decorators], more granular separation of different language elements within a single code line as well as highlighting for…
+
+<p align="center"><strong>…interfaces with bold font style, typing characters and types.</strong></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/7836623/84699121-43a01d80-af51-11ea-8ca2-7560791e04f5.png" width="20%" /></p>
+
+<p align="center"><strong>…global methods like <code>setTimeout</code> with italic font style.</strong></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/7836623/84700311-3d12a580-af53-11ea-8102-39c86eb54df9.png" width="40%" /></p>
+
+<p align="center"><strong>…regular expressions with <code>nord13</code> instead of the normal color for quoted strings.</strong></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/7836623/84700066-dd1bff00-af52-11ea-8876-22eeec81e8a0.png" width="40%" /></p>
+
+<p align="center"><strong>…global elements like <code>Error</code>, <code>JSON</code> and <code>console</code>.</strong></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/7836623/84698135-94167b80-af4f-11ea-86e6-29df3bf34c61.png" width="40%" /></p>
+
+<p align="center"><strong>…brackets of types as structural elements.</strong></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/7836623/84701261-f2922880-af54-11ea-9779-ba1314480921.png" width="40%" /></p>
+
+<p align="center"><strong>…TSX/JSX and HTML with a consistent appearance.</strong></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/7836623/84701503-66cccc00-af55-11ea-80b7-9793fc894284.png" width="40%" /></p>
+
+### UI
+
+**Support for vim-clap** — #178 (⊶ 7a52f66c) by [@meck][gh-user-meck] and [@ikalnytskyi][gh-user-ikalnytskyi]
+↠ Added basic support for [vim-clap][liuchengxu/vim-clap], a modern and performant generic finder and dispatcher for Vim and NeoVim.
+
+<p align="center"><img src="https://user-images.githubusercontent.com/7836623/86534351-0daee300-bed8-11ea-9685-031d16b5a07b.png" width="666px" /></p>
+
+# 0.14.0
+
+![Release Date: 2020-06-16](https://img.shields.io/badge/Release_Date-2020--06--16-88C0D0.svg?style=flat-square) [![Project Board](https://img.shields.io/badge/Project_Board-0.14.0-88C0D0.svg?style=flat-square)](https://github.com/arcticicestudio/nord-vim/projects/20) [![Milestone](https://img.shields.io/badge/Milestone-0.14.0-88C0D0.svg?style=flat-square)](https://github.com/arcticicestudio/nord-vim/milestone/16)
+
+## Features
+
+### UI
+
+**Basic support for nvim-lsp (Language Server Protocol)** — #198 (⊶ 0ccf70b6) by [@alexanderjeurissen][gh-user-alexanderjeurissen]
+↠ Added basic support for [nvim-lsp][neovim/nvim-lsp], a collection of common configurations for the NVim language server protocol client.
+
+## Improvements
+
+### UI
+
+**Consistent error highlighting between GUI and terminal mode** — #202 (⊶ 974a9190) by [@xulongwu4][gh-user-xulongwu4]
+↠ The highlighting of errors in GUI and _true color_ terminal mode now also uses `nord4` as foreground color of instead of `nord0`.
+
+<p align="center"><strong>Before</strong></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/7836623/84657802-25b4c780-af15-11ea-9c28-a7f2262d4c97.png" /></p>
+<p align="center"><strong>After</strong></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/7836623/84657801-251c3100-af15-11ea-9c8a-84f63bafb866.png" /></p>
+
+**Improved highlighting for “More“ separator** — #202 (⊶ 974a9190) by [@xulongwu4][gh-user-xulongwu4]
+↠ The highlighting of the _More_ separator is now highlighted with the `nord8` accent color.
+
+<p align="center"><strong>Before</strong></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/7836623/84657821-2cdbd580-af15-11ea-9491-2fe5d6f7948f.png" /></p>
+<p align="center"><strong>After</strong></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/7836623/84657816-2c433f00-af15-11ea-9f22-f0d1296ae6e8.png" /></p>
+
+**Transparent line number and cursor line background by default** — #204 (⊶ 6323f662) by [@xulongwu4][gh-user-xulongwu4]
+↠ Before the background color of the `LineNr` and `CursorLineNr` highlighting groups were set to `nord0` which was fine in most cases, but conflicted with plugins like [Yggdroot/LeaderF][] that renders line numbers in a popup windows with a different background color.
+
+<p align="center"><strong>Before</strong></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/7836623/84664806-58fc5400-af1f-11ea-9fc9-c05264cca064.png" /></p>
+<p align="center"><strong>After</strong></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/7836623/84664799-57cb2700-af1f-11ea-9099-75eba70fad36.png" /></p>
+
 # 0.13.0
 
 ![Release Date: 2019-12-17](https://img.shields.io/badge/Release_Date-2019--12--17-88C0D0.svg?style=flat-square) [![Project Board](https://img.shields.io/badge/Project_Board-0.13.0-88C0D0.svg?style=flat-square)](https://github.com/arcticicestudio/nord-vim/projects/19) [![Milestone](https://img.shields.io/badge/Milestone-0.13.0-88C0D0.svg?style=flat-square)](https://github.com/arcticicestudio/nord-vim/milestone/15)
@@ -236,8 +312,6 @@ The README includes information and hints how to change the separator character 
 ⚠ **NOTE**: This change also **deprecates the [comment contrast][readme-config-comment-brightness] configuration** that will be removed in Nord Vim version 1.0.0!
 The default comment color has been adjusted so the configuration is not required anymore for users to increase the brightness on their own.
 To notify users about this change a deprecation warning will be shown when the `g:nord_comment_brightness` configuration variable has been set and initialized through the user's configuration.
-
-## Improvements
 
 **Improved compatibility of airline with tmuxline.vim plugin** — #117 ⇄ #128 (⊶ 3150628f)
 ↠ The [Nord airline.vim][gh-src-airline] UI plugin theme now includes better support for the [tmuxline.vim][gh-tmuxline.vim] plugin. Previously text shown in the main segment of the _tmuxline_, generated via the `:Tmuxline airline` command, caused a `bad colour: NONE` error or has been colorized using `nord0` which resulted in unreadable text due to a `nord3` background.
@@ -775,6 +849,7 @@ Detailed information about features, supported plugins/languages and install ins
 
 [gh-user-aborzunov]: https://github.com/aborzunov
 [gh-user-tobydeh]: https://github.com/tobydeh
+[nord-docs#143]: https://github.com/arcticicestudio/nord-docs/issues/143
 
 <!--v 0.13.0 -->
 
@@ -791,3 +866,20 @@ Detailed information about features, supported plugins/languages and install ins
 [vim/vim-diff#d9b0d83b...017ba07f]: https://github.com/vim/vim/compare/d9b0d83b13d2691e4544709abd87eac004715175...017ba07fa2cdc578245618717229444fd50c470d#diff-80fffb3e9c20e93e5b2328a9a20e19c
 [vim/vim-rel-v8.1.2029]: https://github.com/vim/vim/releases/tag/v8.1.2029
 [vim/vim#4933]: https://github.com/vim/vim/pull/4933
+
+<!--v 0.14.0 -->
+
+[gh-user-alexanderjeurissen]: https://github.com/alexanderjeurissen
+[gh-user-xulongwu4]: https://github.com/xulongwu4
+[neovim/nvim-lsp]: https://github.com/neovim/nvim-lsp
+[yggdroot/leaderf]: https://github.com/Yggdroot/LeaderF
+
+<!--v 0.15.0 -->
+
+[gh-user-iamdidev]: https://github.com/iamdidev
+[gh-user-ikalnytskyi]: https://github.com/ikalnytskyi
+[herringtonharkholme/yats.vim]: https://github.com/HerringtonDarkholme/yats.vim
+[liuchengxu/vim-clap]: https://github.com/liuchengxu/vim-clap
+[ts-docs-decorators]: https://www.typescriptlang.org/docs/handbook/decorators.html
+[ts-docs-jsx]: https://www.typescriptlang.org/docs/handbook/jsx.html
+[typescript]: https://www.typescriptlang.org

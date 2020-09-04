@@ -7,12 +7,22 @@ This is the Changelog for the vim-airline project.
   - Extensions:
     - [poetv](https://github.com/petobens/poet-v) support
     - [vim-lsp](https://github.com/prabirshrestha/vim-lsp) support
+    - [zoomwintab](https://github.com/troydm/zoomwintab.vim) support
+    - [Vaffle](https://github.com/cocopon/vaffle.vim) support
+    - [vim-dirvish](https://github.com/justinmk/vim-dirvish) support
+    - [fzf.vim](https://github.com/junegunn/fzf.vim) support
+    - [OmniSharp](https://github.com/OmniSharp/omnisharp-vim) support
+    - [searchcount](https://vim-jp.org/vimdoc-en/eval.html#searchcount())  support
+    - [fern.vim](https://github.com/lambdalisue/fern.vim) support
+    - [Vim-CMake](https://github.com/cdelledonne/vim-cmake) support
 - Improvements
   - git branch can also be displayed using [gina.vim](https://github.com/lambdalisue/gina.vim)
   - coc extensions can also show additional status messages
+  - [coc-git](https://github.com/neoclide/coc-git) extension integrated into hunks extension
 - Other
   - Introduce Vim script static analysis using [reviewdog](https://github.com/reviewdog/action-vint)
   - Added multiple Vim versions to unit tests using Travis CI
+  - Added option to show short paths in the status line
 
 ## [0.11] - 2019-11-10
 - New features
@@ -133,7 +143,7 @@ This is the Changelog for the vim-airline project.
     - [taboo](https://github.com/gcmt/taboo.vim)
     - [vim-ctrlspace](https://github.com/szw/vim-ctrlspace)
     - [quickfixsigns](https://github.com/tomtom/quickfixsigns_vim)
-    - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+    - [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
     - [po.vim](http://www.vim.org/scripts/script.php?script_id=695)
     - [unicode.vim](https://github.com/chrisbra/unicode.vim)
     - wordcount
