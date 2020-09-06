@@ -1,3 +1,12 @@
+source ~/.cache/wal/colors.sh # pywal scheme - update if needed
+
+# yabai template colours
+CBACK=$(echo $background | sed 's/#//')
+CFORE=$(echo $foreground | sed 's/#//')
+CACTV=$(echo $color3 | sed 's/#//')
+CNORM=$(echo $color1 | sed 's/#//')
+CINSE=$(echo $foreground | sed 's/#//')
+
 yabai -m config window_opacity off
 yabai -m config layout bsp
 yabai -m config window_shadow off
@@ -7,11 +16,12 @@ yabai -m config window_topmost on
 yabai -m config window_border                on
 yabai -m config window_border_placement      inset
 yabai -m config window_border_width          3
-yabai -m config window_border_radius         -1
-yabai -m config active_window_border_color   0xff4c566a
-yabai -m config normal_window_border_color   D9ff3b4252
-yabai -m config insert_window_border_color   0xff4c566a
+yabai -m config window_border_radius         1
 yabai -m config focus_follows_mouse 		on
+yabai -m config window_border                on
+yabai -m config active_window_border_color   0xff$CACTV
+yabai -m config normal_window_border_color   0xff$CNORM
+yabai -m config insert_window_border_color   0xff$CINSE
 
 # general space settings
 yabai -m config layout                       bsp

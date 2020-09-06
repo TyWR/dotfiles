@@ -3,22 +3,22 @@ set number
 set mouse=a
 set splitright
 set tags=tags
+set cursorline
 
 filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=5
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
+set fillchars+=vert:\│
 
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+au BufEnter *.py :RainbowParentheses<CR>
 
-" =============================================================
-" /  ___| |              | |           | |      
-" \ `--.| |__   ___  _ __| |_ ___ _   _| |_ ___ 
-"  `--. \ '_ \ / _ \| '__| __/ __| | | | __/ __|
-" /\__/ / | | | (_) | |  | || (__| |_| | |_\__ \
-" \____/|_| |_|\___/|_|   \__\___|\__,_|\__|___/
-" =============================================================
+let g:python3_host_prog='/Users/tanguy/.miniconda3/bin/python'
+" ----------------------------------------------------------------------------
+"  						    SHORTCUTS
+" ----------------------------------------------------------------------------
 " Change panel shortcuts
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -35,7 +35,6 @@ nmap <C-P> :bd<CR>
 nmap <C-F> :Lines<CR>
 nmap <C-D> :Files<CR>
 nmap <C-S> :Buffers<CR>
-
 nnoremap <A-J> <C-E>
 nnoremap <A-K> <C-Y>
 
@@ -49,25 +48,26 @@ nnoremap <silent> <C-B> :let a='import pdb; pdb.set_trace()'\|put=a<CR>
 " Add easy jump to definition
 nmap gd :call CocAction('jumpDefinition', 'drop')<CR>
 
-" VIM workspace
+" ----------------------------------------------------------------------------
+"  						      CURSOR
+" ----------------------------------------------------------------------------
+" Set cursor variable
+set guicursor+=v-i:ver30-blinkon200-blinkoff150
+set guicursor+=n:block-blinkon200-blinkoff150
+
+" ----------------------------------------------------------------------------
+"  						   VIM WORKSPACE
+"----------------------------------------------------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent execute "!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-
-" =============================================================
-" | ___ \ |           (_)          
-" | |_/ / |_   _  __ _ _ _ __  ___ 
-" |  __/| | | | |/ _` | | '_ \/ __|
-" | |   | | |_| | (_| | | | | \__ \
-" \_|   |_|\__,_|\__, |_|_| |_|___/
-"                 __/ |            
-"                |___/
-" =============================================================
+" ----------------------------------------------------------------------------
+"  						     VIM PLUG	
+"----------------------------------------------------------------------------
 call plug#begin()
 
-" Plug 'itchyny/lightline.vim'
 Plug 'bluz71/vim-moonfly-statusline'
 Plug 'dylanaraps/wal.vim'
 Plug 'neoclide/coc.nvim'
@@ -77,7 +77,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'MathSquared/vim-python-sql'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'francoiscabrol/ranger.vim'
@@ -91,7 +90,9 @@ Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
-" Colorscheme
+" ----------------------------------------------------------------------------
+"  						   COLORSCHEME
+"----------------------------------------------------------------------------
 let &t_ZH="\e[4m"
 let &t_ZR="\e[33m"
 colorscheme wal
@@ -100,7 +101,7 @@ augroup python_syntax_extra
   autocmd! Syntax python :syn keyword Keyword self
 augroup END
 
-highlight! link User1 DiffText
+highlight! link User1 DiffText 
 highlight! link User2 DiffAdd
 highlight! link User3 Search
 highlight! link User4 IncSearch
@@ -108,23 +109,34 @@ highlight! link User5 StatusLine
 highlight! link User6 StatusLine
 highlight! link User7 StatusLine
 
+highlight NonText cterm=none ctermfg=8 ctermbg=none
+
+highlight clear CursorLine
+hi CursorLineNR ctermbg=black ctermfg=7
+
+hi StatusLine cterm=none ctermbg=black ctermfg=none 
+hi StatusLineNC cterm=none ctermbg=none ctermfg=none
+
+hi GitGutterAddLineNr ctermfg=black ctermbg=2 cterm=bold
+hi GitGutterChangeLineNr ctermfg=black ctermbg=grey cterm=bold
+hi GitGutterDeleteLineNr ctermfg=black ctermbg=grey cterm=standout
+hi GitGutterChangeDeleteLineNr ctermfg=black ctermbg=grey cterm=standout
+
+hi Pmenu ctermbg=black ctermfg=white
+
 set noshowmode
 
-" Nerdtree
-nmap <C-space> :NERDTreeToggle<CR>
-set fillchars=vert:█
+" ----------------------------------------------------------------------------
+"  						     GIT-GUTTER 
+"----------------------------------------------------------------------------
+let g:gitgutter_signs = 1
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '~'
+let g:gitgutter_sign_removed = '-'
 
-let g:python3_host_prog='/Users/tanguy/.miniconda3/bin/python'
-
-au BufEnter *.py :RainbowParentheses<CR>
-
-" =============================================================
-" |  ___|___  /|  ___|
-" | |_     / / | |_   
-" |  _|   / /  |  _|  
-" | |   ./ /___| |    
-" \_|   \_____/\_|
-" =============================================================
+" ----------------------------------------------------------------------------
+"  						   FZF
+"----------------------------------------------------------------------------
 let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:7,bg:-1,hl:-1,bg+:-1,hl+:1 --color=info:5,prompt:5,pointer:12,marker:1,spinner:1,header:-1 --layout=reverse  --margin=1,4'
 
 function! CreateCenteredFloatingWindow()
@@ -152,65 +164,14 @@ endfunction
 
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
-" =============================================================
-" | \ | |            | | |                
-" |  \| | ___ _ __ __| | |_ _ __ ___  ___ 
-" | . ` |/ _ \ '__/ _` | __| '__/ _ \/ _ \
-" | |\  |  __/ | | (_| | |_| | |  __/  __/
-" \_| \_/\___|_|  \__,_|\__|_|  \___|\___|
-" =============================================================
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeWinSize=20
-let NERDTreeMinimalUI=1
-let g:NERDTreeDirArrowExpandable='>'
-let g:NERDTreeDirArrowCollapsible='>'
-let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "M",
-    \ "Staged"    : "S",
-    \ "Untracked" : "U",
-    \ "Renamed"   : "R",
-    \ "Unmerged"  : "Unm.",
-    \ "Deleted"   : "Χ",
-    \ "Dirty"     : "D",
-    \ "Clean"     : "C",
-    \ 'Ignored'   : "Ι",
-    \ "Unknown"   : "?"
-    \ }
-
-let NERDTreeStatusline=""
-" Git gutter custom signs
-let g:gitgutter_sign_added = '█'
-let g:gitgutter_sign_modified = '█'
-let g:gitgutter_sign_removed = '█'
-
-" Ranger
+" ----------------------------------------------------------------------------
+"          					 RANGER
+" ----------------------------------------------------------------------------
 map <C-r> :Ranger<CR>
-map <C-t> :RangerNewTab<CR>
 
-
-
-" =============================================================
-" | ___ \                           
-" | |_/ /__ _ _ __   __ _  ___ _ __ 
-" |    // _` | '_ \ / _` |/ _ \ '__|
-" | |\ \ (_| | | | | (_| |  __/ |   
-" \_| \_\__,_|_| |_|\__, |\___|_|   
-"                    __/ |          
-"                   |___/     
-" =============================================================
-" Set cursor variable
-set guicursor+=v-i:ver30-blinkon200-blinkoff150
-set guicursor+=n:block-blinkon200-blinkoff150
-
-
-" =============================================================
-" /  __ \  _  /  __ \            (_)          
-" | /  \/ | | | /  \/  _ ____   ___ _ __ ___  
-" | |   | | | | |     | '_ \ \ / / | '_ ` _ \ 
-" | \__/\ \_/ / \__/\_| | | \ V /| | | | | | |
-"  \____/\___/ \____(_)_| |_|\_/ |_|_| |_| |_|
-" =============================================================
+" ----------------------------------------------------------------------------
+"          					   COC
+" ----------------------------------------------------------------------------
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.

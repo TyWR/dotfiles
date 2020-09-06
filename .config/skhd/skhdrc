@@ -1,25 +1,60 @@
 cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
-# cmd - return : ./Users/tanguy/.config/iterm/launch_iterm.sh
 
 cmd - l: yabai -m window --focus east
 cmd - h: yabai -m window --focus west
 cmd - j: yabai -m window --focus south
 cmd - k: yabai -m window --focus north
+shift + cmd - k : yabai -m window --swap north
+shift + cmd - j : yabai -m window --swap south
+shift + cmd - l : yabai -m window --swap east
+shift + cmd - h : yabai -m window --swap west
 
 cmd + alt - j: yabai -m window --resize left:-20:0 ; yabai -m window --resize right:-20:0
 cmd + alt - k : yabai -m window --resize left:20:0 ; yabai -m window --resize right:20:0
 
+# Map alt + h,j,k,l to arrows
 alt - l: skhd -k "right"
 alt - h: skhd -k "left"
 alt - space: skhd -k "right"
 alt - j: skhd -k "down"
 alt - k: skhd -k "up"
 
+# Map alt & cmd + del to delete
 alt - x: skhd -k "delete"
-0x0A: skhd -k "escape"
+alt - 0x33: skhd -k "delete"
+cmd - 0x33: skhd -k "delete"
 
-#cmd - 0x2F: skhd -k "escape"
+# Map escap to alt & cmd + :
 alt - 0x2F: skhd -k "escape"
 alt - 0x2B: skhd -k "escape"
 cmd - 0x2B: skhd -k "escape"
 cmd - 0x2F: skhd -k "escape"
+
+# Map enter to cmd & alt + , & m 
+cmd - 0x2E: skhd -k "return"
+cmd - 0x29: skhd -k "return"
+alt - 0x2E: skhd -k "return"
+alt - 0x29: skhd -k "return"
+
+# Reset
+alt + shift - r: launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+
+# Map 1, 2, 3 to F1, F2 ...
+ctrl + cmd + alt - 0x12: skhd -k "0x7A" 
+ctrl + cmd + alt - 0x13: skhd -k "0x78" 
+ctrl + cmd + alt - 0x14: skhd -k "0x63"
+ctrl + cmd + alt - 0x15: skhd -k "0x76" 
+ctrl + cmd + alt - 0x17: skhd -k "0x60" 
+
+# Map F5 to ctrl + enter
+ctrl - return: skhd -k "0x60" 
+
+# Add shortcuts for brackets
+alt - i: skhd -k "0x17"
+alt - o: skhd -k "0x1B"
+alt - u: skhd -k "alt - 0x15"
+alt - p: skhd -k "alt - 0x18"
+alt + shift - i: skhd -k "alt - 0x17"
+alt + shift - o: skhd -k "alt - 0x1B"
+alt + shift - u: skhd -k "alt - 0x15"
+alt + shift - p: skhd -k "alt - 0x18"
