@@ -4,18 +4,52 @@ set mouse=a
 set splitright
 set tags=tags
 set cursorline
+set backspace=indent,eol,start
+set autoindent
+set smartindent
+set showmatch
+set noshowmode
+set tabstop=5
+set shiftwidth=4
+set fillchars+=vert:\▐
 
 filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=5
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-set fillchars+=vert:\│
 
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 au BufEnter *.py :RainbowParentheses<CR>
 
 let g:python3_host_prog='/Users/tanguy/.miniconda3/bin/python'
+
+" ----------------------------------------------------------------------------
+"  						   COLORSCHEME
+"----------------------------------------------------------------------------
+let &t_ZH="\e[4m"
+let &t_ZR="\e[33m"
+colorscheme wal
+augroup python_syntax_extra
+  autocmd!
+  autocmd! Syntax python :syn keyword Keyword self
+augroup END
+
+hi Visual cterm=none ctermbg=white ctermfg=black 
+
+highlight NonText cterm=none ctermfg=8 ctermbg=none
+
+highlight clear CursorLine
+hi CursorLineNR ctermbg=black ctermfg=7
+
+hi StatusLine cterm=none ctermbg=black ctermfg=none 
+hi StatusLineNC cterm=none ctermbg=none ctermfg=none
+
+hi GitGutterAddLineNr ctermfg=black ctermbg=2 cterm=bold
+hi GitGutterChangeLineNr ctermfg=black ctermbg=grey cterm=bold
+hi GitGutterDeleteLineNr ctermfg=black ctermbg=grey cterm=standout
+hi GitGutterChangeDeleteLineNr ctermfg=black ctermbg=grey cterm=standout
+
+hi Pmenu ctermbg=black ctermfg=white
+
+hi MatchParen cterm=none ctermbg=white ctermfg=black
+
 " ----------------------------------------------------------------------------
 "  						    SHORTCUTS
 " ----------------------------------------------------------------------------
@@ -59,72 +93,12 @@ set guicursor+=n:block-blinkon200-blinkoff150
 "  						   VIM WORKSPACE
 "----------------------------------------------------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent execute "!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  silent execute '!curl -fLo ~/.vim/autoload/plug.vim
+    \ --create-dirs https://raw.githubusercontent.com/
+    \ junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-" ----------------------------------------------------------------------------
-"  						     VIM PLUG	
-"----------------------------------------------------------------------------
-call plug#begin()
-
-Plug 'bluz71/vim-moonfly-statusline'
-Plug 'dylanaraps/wal.vim'
-Plug 'neoclide/coc.nvim'
-Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdtree'
-Plug 'jiangmiao/auto-pairs'
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-commentary'
-Plug 'sheerun/vim-polyglot'
-Plug 'MathSquared/vim-python-sql'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'francoiscabrol/ranger.vim'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-surround'
-Plug 'thaerkh/vim-workspace'
-Plug 'arcticicestudio/nord-vim'
-
-call plug#end()
-
-" ----------------------------------------------------------------------------
-"  						   COLORSCHEME
-"----------------------------------------------------------------------------
-let &t_ZH="\e[4m"
-let &t_ZR="\e[33m"
-colorscheme wal
-augroup python_syntax_extra
-  autocmd!
-  autocmd! Syntax python :syn keyword Keyword self
-augroup END
-
-highlight! link User1 DiffText 
-highlight! link User2 DiffAdd
-highlight! link User3 Search
-highlight! link User4 IncSearch
-highlight! link User5 StatusLine
-highlight! link User6 StatusLine
-highlight! link User7 StatusLine
-
-highlight NonText cterm=none ctermfg=8 ctermbg=none
-
-highlight clear CursorLine
-hi CursorLineNR ctermbg=black ctermfg=7
-
-hi StatusLine cterm=none ctermbg=black ctermfg=none 
-hi StatusLineNC cterm=none ctermbg=none ctermfg=none
-
-hi GitGutterAddLineNr ctermfg=black ctermbg=2 cterm=bold
-hi GitGutterChangeLineNr ctermfg=black ctermbg=grey cterm=bold
-hi GitGutterDeleteLineNr ctermfg=black ctermbg=grey cterm=standout
-hi GitGutterChangeDeleteLineNr ctermfg=black ctermbg=grey cterm=standout
-
-hi Pmenu ctermbg=black ctermfg=white
-
-set noshowmode
 
 " ----------------------------------------------------------------------------
 "  						     GIT-GUTTER 
@@ -134,17 +108,21 @@ let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '~'
 let g:gitgutter_sign_removed = '-'
 
-" ----------------------------------------------------------------------------
-"  						   FZF
-"----------------------------------------------------------------------------
-let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:7,bg:-1,hl:-1,bg+:-1,hl+:1 --color=info:5,prompt:5,pointer:12,marker:1,spinner:1,header:-1 --layout=reverse  --margin=1,4'
+" ---------------------------------------------------------------------------
+"  						         FZF
+" ---------------------------------------------------------------------------
+let $FZF_DEFAULT_OPTS='
+    \ --color=dark --color=fg:7,bg:-1,hl:-1,bg+:-1,hl+:1
+    \ --color=info:5,prompt:5,pointer:12,marker:1,spinner:1,header:-1
+    \ --layout=reverse  --margin=1,4'
 
 function! CreateCenteredFloatingWindow()
     let width = min([&columns - 4, max([80, &columns - 20])])
     let height = min([&lines - 4, max([20, &lines - 10])])
     let top = ((&lines - height) / 2) - 1
     let left = (&columns - width) / 2
-    let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
+    let opts = {'relative': 'editor', 'row': top, 'col': left,
+			 \ 'width': width, 'height': height, 'style': 'minimal'}
 
     let top = "╭" . repeat("─", width - 2) . "╮"
     let mid = "│" . repeat(" ", width - 2) . "│"
@@ -185,3 +163,30 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" ----------------------------------------------------------------------------
+"  						     VIM PLUG	
+"----------------------------------------------------------------------------
+call plug#begin()
+
+Plug 'bluz71/vim-moonfly-statusline'
+Plug 'dylanaraps/wal.vim'
+Plug 'neoclide/coc.nvim'
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree'
+Plug 'jiangmiao/auto-pairs'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-commentary'
+Plug 'sheerun/vim-polyglot'
+Plug 'MathSquared/vim-python-sql'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
+Plug 'thaerkh/vim-workspace'
+Plug 'arcticicestudio/nord-vim'
+
+call plug#end()
