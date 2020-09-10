@@ -5,13 +5,21 @@ set splitright
 set tags=tags
 set cursorline
 set backspace=indent,eol,start
-set autoindent
-set smartindent
 set showmatch
 set noshowmode
-set tabstop=5
-set shiftwidth=4
 set fillchars+=vert:\▐
+
+" Tab settings
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set autoindent
+set smartindent
+
+" Search settings
+set incsearch
+set hlsearch
 
 filetype plugin indent on
 
@@ -19,9 +27,38 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 au BufEnter *.py :RainbowParentheses<CR>
 
 let g:python3_host_prog='/Users/tanguy/.miniconda3/bin/python'
+let g:sexyscroll_update_display_per_milliseconds=33
 
 " ----------------------------------------------------------------------------
-"  						   COLORSCHEME
+"  						     VIM PLUG	
+" ----------------------------------------------------------------------------
+call plug#begin()
+Plug 'bluz71/vim-moonfly-statusline'
+Plug 'dylanaraps/wal.vim'
+Plug 'neoclide/coc.nvim'
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree'
+Plug 'jiangmiao/auto-pairs'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-commentary'
+Plug 'sheerun/vim-polyglot'
+Plug 'MathSquared/vim-python-sql'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
+Plug 'thaerkh/vim-workspace'
+Plug 'arcticicestudio/nord-vim'
+Plug 'daylilyfield/sexyscroll.vim'
+Plug 'google/maktaba'
+Plug 'google/vim-codefmt'
+call plug#end()
+
+" ----------------------------------------------------------------------------
+"  						      COLORSCHEME
 "----------------------------------------------------------------------------
 let &t_ZH="\e[4m"
 let &t_ZR="\e[33m"
@@ -32,49 +69,52 @@ augroup python_syntax_extra
 augroup END
 
 hi Visual cterm=none ctermbg=white ctermfg=black 
+hi ExtraWhitespace cterm=none ctermbg=grey ctermfg=black
+hi MatchParen cterm=none ctermbg=1 ctermfg=black
 
 highlight NonText cterm=none ctermfg=8 ctermbg=none
 
 highlight clear CursorLine
-hi CursorLineNR ctermbg=black ctermfg=7
+hi CursorLineNR ctermbg=black ctermfg=7 cterm=bold
+hi LineNr ctermbg=black ctermfg=8 cterm=none
 
-hi StatusLine cterm=none ctermbg=black ctermfg=none 
+hi StatusLine cterm=bold ctermbg=black ctermfg=none 
 hi StatusLineNC cterm=none ctermbg=none ctermfg=none
 
 hi GitGutterAddLineNr ctermfg=black ctermbg=2 cterm=bold
 hi GitGutterChangeLineNr ctermfg=black ctermbg=grey cterm=bold
 hi GitGutterDeleteLineNr ctermfg=black ctermbg=grey cterm=standout
-hi GitGutterChangeDeleteLineNr ctermfg=black ctermbg=grey cterm=standout
+hi GitGutterChangeDeleteLineNr ctermfg=black ctermbg=8 cterm=standout
 
-hi Pmenu ctermbg=black ctermfg=white
-
-hi MatchParen cterm=none ctermbg=white ctermfg=black
+hi Pmenu cterm=bold ctermbg=232 ctermfg=white
 
 " ----------------------------------------------------------------------------
 "  						    SHORTCUTS
 " ----------------------------------------------------------------------------
+"  Remove sexy scrolls mappings
+let g:sexyscroll_map_recommended_settings = 0
+
 " Change panel shortcuts
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+nmap <Down> :call SexyScroll('down', &scroll, 500)<CR>
+nmap <Up> :call SexyScroll('up', &scroll, 500)<CR>
+
 nmap ++ :vsp<CR>
 nnoremap Q q
 nnoremap q <Nop>
 nmap mm :w<CR>
 nmap qq :wq<CR>
+
 nmap <C-O> :bn<CR>
 nmap <C-I> :bp<CR>
 nmap <C-P> :bd<CR>
 nmap <C-F> :Lines<CR>
 nmap <C-D> :Files<CR>
 nmap <C-S> :Buffers<CR>
-nnoremap <A-J> <C-E>
-nnoremap <A-K> <C-Y>
-
-" Change scroll shortcuts
-map <Down> <C-E>
-map <Up> <C-Y>
 
 " Add easy nbreakpoint shortcut
 nnoremap <silent> <C-B> :let a='import pdb; pdb.set_trace()'\|put=a<CR>
@@ -83,26 +123,36 @@ nnoremap <silent> <C-B> :let a='import pdb; pdb.set_trace()'\|put=a<CR>
 nmap gd :call CocAction('jumpDefinition', 'drop')<CR>
 
 " ----------------------------------------------------------------------------
-"  						      CURSOR
+"  						             GTAGS
+" ----------------------------------------------------------------------------
+" config project root markers.
+let g:gutentags_project_root = ['.root']
+"
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+
+" ----------------------------------------------------------------------------
+"  						             CURSOR
 " ----------------------------------------------------------------------------
 " Set cursor variable
 set guicursor+=v-i:ver30-blinkon200-blinkoff150
 set guicursor+=n:block-blinkon200-blinkoff150
 
 " ----------------------------------------------------------------------------
-"  						   VIM WORKSPACE
-"----------------------------------------------------------------------------
+"  						          VIM WORKSPACE
+" ----------------------------------------------------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent execute '!curl -fLo ~/.vim/autoload/plug.vim
     \ --create-dirs https://raw.githubusercontent.com/
     \ junegunn/vim-plug/master/plug.vim'
+" Change scroll shortcuts
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 
 " ----------------------------------------------------------------------------
-"  						     GIT-GUTTER 
-"----------------------------------------------------------------------------
+"  						          GIT-GUTTER 
+" ----------------------------------------------------------------------------
 let g:gitgutter_signs = 1
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '~'
@@ -163,30 +213,3 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-" ----------------------------------------------------------------------------
-"  						     VIM PLUG	
-"----------------------------------------------------------------------------
-call plug#begin()
-
-Plug 'bluz71/vim-moonfly-statusline'
-Plug 'dylanaraps/wal.vim'
-Plug 'neoclide/coc.nvim'
-Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdtree'
-Plug 'jiangmiao/auto-pairs'
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-commentary'
-Plug 'sheerun/vim-polyglot'
-Plug 'MathSquared/vim-python-sql'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'francoiscabrol/ranger.vim'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-surround'
-Plug 'thaerkh/vim-workspace'
-Plug 'arcticicestudio/nord-vim'
-
-call plug#end()

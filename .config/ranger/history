@@ -1,50 +1,50 @@
-rename top_query_task.py
-rename top_query_task
-shell touch check.py
-shell parameters.py
-shell touch parameters.py
-wq
-find downlo
-shell touch README.md
-rename app.py
-hi
-hi Error
-highligh error
-shell .config
-shell mkdir sandbox
-shell touch compare_deltas.py
-kk
-k
-shell mkdi
-rename itunes-diff-processing
-find tas
-rename makefileQ
-rename app.env
-q
-open_with nv
-open_with nvimQ
-find rea
-shell touch __init__.py
-find .e
-
-shell touch download_day_task_20200710
-rename download_day_task_20200710.ok
+shell gzip -d 00000.gz
+shell touch test_mongo.py
+rename wal.vim
+rename 20200825
+shell gzip android-20200801-20200831
+find downlaod-estimate
+rename docker-compose.ecs.download-estimates-agg.yml
+rename docker-compose.ecs.download-estimates-agg-android.yml
+rename docker-compose.ecs.download-estimates-agg-android.override.yml
+rename download-estimates-agg-android
+rename download-estimates-agg-ios
+rename ios_source
 shell 
-rename test_global_fields.py
-shell touch iter.py
-shell mkdir sanity_checks
-shell mkdir test_processed_fields
-shell touch fields.py
-shell touch test_processed_fields.py
-rename kitty.nord.conf
-rename kitty.conf
-rename test_all_countries.py_
-rename test_all_countries.py
-shell mkdir clean
-shell mkdir raw
+shell touch safe_sum.py
+find nv
+find mongo_dump
+rename neofetch
+find wa
+find al
+find Proj
+find dot
+rename nvim
+find vim-m
+find Prjl
+open_with j
+search python
 open_with 
-shell unixporn
-shell mkdir unix
-shell desc
-shell touch desc
+open_with Q
+find download-estima
+rename srchaha
+find con
+find download-estimates
+rename ket-00000.gz
+shell gzip -d ket-00000.gz 
+rename top200_android_mintegral.csv
+filter 
+
+find app-u
+find downl
+shell mkdir Sandbox
+shell touch battery.coffee
+shell touch settings.env
+open_with l
 open_with nvim
+deletehh
+rename makefile
+find itunes-d
+rename tywr.widget
+rename status.widget
+find .conf
