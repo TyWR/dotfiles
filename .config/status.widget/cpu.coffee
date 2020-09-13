@@ -12,15 +12,15 @@ render: (output) ->
 
 bar: (output) =>
     return if output > 80
-        "cpu[|||||]"
+        "CPU[|||||]"
     else if output > 60
-        "cpu[||||&nbsp;]"
+        "CPU[||||·]"
     else if output > 40
-        "cpu[|||&nbsp;&nbsp;]"
+        "CPU[|||··]"
     else if output > 20
-        "cpu[||&nbsp;&nbsp;&nbsp;]"
+        "CPU[||···]"
     else
-        "cpu[|&nbsp;&nbsp;&nbsp;&nbsp;]"
+        "CPU[|····]"
 
 update: (output, el) ->
   $(".cpu span", el).html(@bar(output))

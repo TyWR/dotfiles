@@ -12,15 +12,15 @@ render: (output) ->
 
 bar: (output) =>
     return if output > 80
-        "mem[|||||]"
+        "MEM[|||||]"
     else if output > 60
-        "mem[||||&nbsp;]"
+        "MEM[||||·]"
     else if output > 40
-        "mem[|||&nbsp;&nbsp;]"
+        "MEM[|||··]"
     else if output > 20
-        "mem[||&nbsp;&nbsp;&nbsp;]"
+        "MEM[||···]"
     else
-        "mem[|&nbsp;&nbsp;&nbsp;&nbsp;]"
+        "MEM[|····]"
 
 update: (output, el) ->
   $(".mem span", el).html(@bar(output))

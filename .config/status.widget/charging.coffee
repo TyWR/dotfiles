@@ -15,13 +15,13 @@ update: (output, el) ->
 
 icon: (output) =>
   return if output is "AC Power\n"
-    "∙>"
+    "∙"
   else
     ""
 
 style: """
   top: 0px
-  right: 48px
+  right: 54px
   background-color: rgba(0,0,0,0)
 
   .charging 

@@ -20,6 +20,6 @@ style: """
     font-weight: bold
     background-color: rgba(0,0,0,0)
   
-  right: 15px
+  right: 20px
   top: 0px
 """
