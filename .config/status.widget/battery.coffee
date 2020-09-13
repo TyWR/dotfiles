@@ -1,4 +1,4 @@
-command: "pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f1 -d';'"
+command: "pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f1 -d';'| sed 's/%//'"
 
 refreshFrequency: 15000 # ms
 
@@ -10,8 +10,25 @@ render: (output) ->
   </div>
   """
 
+bar: (output) =>
+    return if output > 80
+        ":::| | | | |"
+    else if output > 60
+        ":::· | | | |"
+    else if output > 40
+        ":::· · | | |"
+    else if output > 20
+        ":::· · · | |"
+    else if output > 10
+        ":::· · · · |"
+    else
+        "red:::· · · · |"
+
 update: (output, el) ->
-    $(".battery span:first-child", el).text("#{output}")
+    [col, bar] = @bar(output).split ":::"
+    $(".battery span:first-child", el).html("#{ bar }")
+    if col
+        $(".battery span:first-child", el).css('color', 'red')
 
 style: """
   .battery
