@@ -29,7 +29,7 @@ style: """
   font:17px "Terminus (TTF)"
   font-weight: bold
   top: 0px
-  left: 200px
+  left: 250px
   width: 100%
   text-align: center
 """
