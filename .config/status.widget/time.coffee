@@ -17,7 +17,7 @@ render: (output) ->
 
 update: (output, el) ->
   [time, _, bg, hl] = output.split ":::"
-  $(".time span").text("#{ time }")
+  $(".time span").text("<∙ #{time } ∙>")
   $(".time").css("background-color", "#{ bg }")
   $(".time").css("border-color", "#{ hl }")
 
@@ -27,7 +27,9 @@ style: """
     width: 100%
 
   .time
-      margin: 6px
+      margin-top: -2px
+      margin-left: 6px
+      margin-right: 6px
       font: 17px "Terminus (TTF)"
       font-weight: bold
       z-index: -1

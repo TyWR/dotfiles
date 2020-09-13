@@ -43,9 +43,9 @@ format_active: (elem, active_style) ->
   else
     if elem[0] is "("
       elem = elem[1...-1]
-      elem = """<span class="list active" #{active_style}>∙#{elem}</span>"""
+      elem = """<span class="list active">&nbsp綠&nbsp</span>"""
     else
-      elem = """<span class="list inactive">&nbsp#{elem}</span>"""
+      elem = """<span class="list inactive">&nbsp祿&nbsp</span>"""
     return elem
 
 # NOTE - Most theme resetting is done in theme.coffee
@@ -58,9 +58,9 @@ construct_style: (bg, c1) ->
   """
 
 style: """
-  top: 8px
-  left: 15px
-  font: 17px "Terminus (TTF)"
+  top: 3px
+  left: 10px
+  font: 12px "TerminessTTF Nerd Font"
   font-weight: bold
   background-color: rgba(0,0,0,0)
   z-index: 0

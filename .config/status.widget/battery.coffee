@@ -21,5 +21,5 @@ style: """
     background-color: rgba(0,0,0,0)
   
   right: 15px
-  top: 8px
+  top: 0px
 """

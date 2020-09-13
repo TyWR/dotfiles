@@ -11,7 +11,7 @@ render: (output) ->
   """
 
 update: (output, el) ->
-  $(".charging span:first-child", el).text("   #{@icon(output)}")
+  $(".charging span:first-child", el).text("#{ @icon(output) }")
 
 icon: (output) =>
   return if output is "AC Power\n"
@@ -20,8 +20,8 @@ icon: (output) =>
     ""
 
 style: """
-  top: 9px
-  right: 45px
+  top: 0px
+  right: 48px
   background-color: rgba(0,0,0,0)
 
   .charging 
