@@ -1,4 +1,8 @@
-command: "pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f1 -d';'| sed 's/%//'"
+commands =
+  colors: 'echo "$(~/.config/status.widget/scripts/switcher.sh 2>/dev/null)"'
+  battery: "pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f1 -d';'| sed 's/%//'"
+
+command: "echo " + "$(#{ commands.battery }):::" + "$(#{ commands.colors })"
 
 refreshFrequency: 15000 # ms
 
@@ -10,25 +14,25 @@ render: (output) ->
   </div>
   """
 
-bar: (output) =>
-    return if output > 80
-        ":::| | | | |"
-    else if output > 60
-        ":::· | | | |"
-    else if output > 40
-        ":::· · | | |"
-    else if output > 20
-        ":::· · · | |"
-    else if output > 10
-        ":::· · · · |"
+bar: (output) ->
+    [battery, _, _, hl] = output.split ":::"
+    return if battery > 80
+        "#{ hl }:::| | | | |"
+    else if battery > 60
+        "#{ hl }:::· | | | |"
+    else if battery > 40
+        "#{ hl }:::· · | | |"
+    else if battery > 20
+        "#{ hl }:::· · · | |"
+    else if battery > 10
+        "#{ hl }:::· · · · |"
     else
         "red:::· · · · |"
 
 update: (output, el) ->
     [col, bar] = @bar(output).split ":::"
     $(".battery span:first-child", el).html("#{ bar }")
-    if col
-        $(".battery span:first-child", el).css('color', 'red')
+    $(".battery span:first-child", el).css("color", "#{ col }")
 
 style: """
   .battery
