@@ -24,6 +24,7 @@ set hlsearch
 filetype plugin indent on
 
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+let g:rainbow#blacklist = [9]
 au BufEnter *.py :RainbowParentheses<CR>
 
 let g:python3_host_prog='/Users/tanguy/.miniconda3/bin/python'
@@ -37,7 +38,6 @@ Plug 'bluz71/vim-moonfly-statusline'
 Plug 'dylanaraps/wal.vim'
 Plug 'neoclide/coc.nvim'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
@@ -53,20 +53,22 @@ Plug 'tpope/vim-surround'
 Plug 'thaerkh/vim-workspace'
 Plug 'arcticicestudio/nord-vim'
 Plug 'daylilyfield/sexyscroll.vim'
-Plug 'google/maktaba'
-Plug 'google/vim-codefmt'
+Plug 'mattn/vim-findroot'
+Plug 'bling/vim-bufferline'
 call plug#end()
 
 " ----------------------------------------------------------------------------
-"  						      COLORSCHEME
+"  						      COLOR SCHEME
 "----------------------------------------------------------------------------
 let &t_ZH="\e[4m"
 let &t_ZR="\e[33m"
 colorscheme wal
-augroup python_syntax_extra
-  autocmd!
-  autocmd! Syntax python :syn keyword Keyword self
-augroup END
+augroup python
+    autocmd!
+    autocmd FileType python
+                \   syn keyword PythonSelf self
+                \ | highlight def link PythonSelf Special
+augroup end
 
 hi Visual cterm=none ctermbg=white ctermfg=black 
 hi ExtraWhitespace cterm=none ctermbg=grey ctermfg=black
@@ -78,8 +80,8 @@ highlight clear CursorLine
 hi CursorLineNR ctermbg=black ctermfg=7 cterm=bold
 hi LineNr ctermbg=black ctermfg=8 cterm=none
 
-hi StatusLine cterm=bold ctermbg=black ctermfg=none 
-hi StatusLineNC cterm=none ctermbg=none ctermfg=none
+hi StatusLine cterm=bold ctermbg=black ctermfg=none
+hi StatusLineNC cterm=none ctermbg=none ctermfg=8
 
 hi GitGutterAddLineNr ctermfg=black ctermbg=2 cterm=bold
 hi GitGutterChangeLineNr ctermfg=black ctermbg=grey cterm=bold
@@ -87,6 +89,10 @@ hi GitGutterDeleteLineNr ctermfg=black ctermbg=grey cterm=standout
 hi GitGutterChangeDeleteLineNr ctermfg=black ctermbg=8 cterm=standout
 
 hi Pmenu cterm=bold ctermbg=232 ctermfg=white
+
+hi TabLineSel cterm=bold ctermbg=black ctermfg=7
+hi TabLine cterm=bold ctermbg=black ctermfg=8
+
 
 " ----------------------------------------------------------------------------
 "  						    SHORTCUTS
@@ -122,14 +128,18 @@ nnoremap <silent> <C-B> :let a='import pdb; pdb.set_trace()'\|put=a<CR>
 " Add easy jump to definition
 nmap gd :call CocAction('jumpDefinition', 'drop')<CR>
 
+
 " ----------------------------------------------------------------------------
 "  						             GTAGS
 " ----------------------------------------------------------------------------
 " config project root markers.
 let g:gutentags_project_root = ['.root']
 "
-" generate datebases in my cache directory, prevent gtags files polluting my project
+" generate databases in my cache directory, prevent gtags files polluting my project
 let g:gutentags_cache_dir = expand('~/.cache/tags')
+
+let g:gutentags_ctags_exclude = ["*.min.js", "*.min.css", "build", "vendor",
+                                 \ ".git", "node_modules", "*.vim/bundle/*"]
 
 " ----------------------------------------------------------------------------
 "  						             CURSOR
@@ -149,6 +159,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
+" ----------------------------------------------------------------------------
+"  						          BUFTABLINE
+" ----------------------------------------------------------------------------
 
 " ----------------------------------------------------------------------------
 "  						          GIT-GUTTER 
@@ -193,7 +206,7 @@ endfunction
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
 " ----------------------------------------------------------------------------
-"          					 RANGER
+"          					  RANGER
 " ----------------------------------------------------------------------------
 map <C-r> :Ranger<CR>
 

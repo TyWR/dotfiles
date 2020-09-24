@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/tanguy/.config/zsh'
+let g:netrw_dirhist_3='/Users/tanguy/.config/zsh/plugins'
+let g:netrw_dirhist_2='/Users/tanguy/.config/zsh'
+let g:netrw_dirhist_1='/Users/tanguy/.config'
