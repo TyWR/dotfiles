@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/tanguy/.oh-my-zsh/plugins/docker-machine'
+let g:netrw_dirhist_6='/Users/tanguy/.oh-my-zsh/plugins/docker-compose'
+let g:netrw_dirhist_5='/Users/tanguy/.oh-my-zsh/plugins/docker'
 let g:netrw_dirhist_4='/Users/tanguy/.config/zsh'
 let g:netrw_dirhist_3='/Users/tanguy/.config/zsh/plugins'
 let g:netrw_dirhist_2='/Users/tanguy/.config/zsh'

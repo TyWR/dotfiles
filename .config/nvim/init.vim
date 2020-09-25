@@ -110,14 +110,15 @@ nmap <Down> :call SexyScroll('down', &scroll, 500)<CR>
 nmap <Up> :call SexyScroll('up', &scroll, 500)<CR>
 
 nmap ++ :vsp<CR>
-nnoremap Q q
+nnoremap <C-Q> q
 nnoremap q <Nop>
+nnoremap Q <Nop>
 nmap mm :w<CR>
 nmap qq :wq<CR>
+nmap QQ :bd<CR>
+nmap <Tab> :bn<CR>
+nmap <S-Tab> :bp<CR>
 
-nmap <C-O> :bn<CR>
-nmap <C-I> :bp<CR>
-nmap <C-P> :bd<CR>
 nmap <C-F> :Lines<CR>
 nmap <C-D> :Files<CR>
 nmap <C-S> :Buffers<CR>
