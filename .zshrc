@@ -1,29 +1,28 @@
 export ZSH="$HOME/.oh-my-zsh"
+export CONFIG="$HOME/.config"
 
-# Import oh my zsh
 source $ZSH/oh-my-zsh.sh
 
-plugins=(
-    zsh-autosuggestions
-    vi-mode
-    docker
-)
+# Import Conda
+source $CONFIG/zsh/conda.zsh
 
-autoload -U compinit && compinit
+# Import paths
+source $CONFIG/zsh/path.zsh
 
 # Import aliases
-source $HOME/.config/zsh/aliases.zsh
+source $CONFIG/zsh/aliases.zsh
 
 # Import miscellaneous functions
-source $HOME/.config/zsh/misc.zsh
+source $CONFIG/zsh/misc.zsh
 
 # Import environment variables
-source $HOME/.config/zsh/env.zsh
+source $CONFIG/zsh/env.zsh
 
 # Import custom theme
-source $HOME/.config/zsh/themes/tywr.zsh
+source $CONFIG/zsh/themes/tywr.zsh
 
-# Import syntax highlighting
-source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
+# Import custom plugins
+source $CONFIG/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $CONFIG/zsh/plugins/zsh-vim-mode/zsh-vim-mode.plugin.zsh
+source $CONFIG/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $CONFIG/zsh/plugins/git/git.plugin.zsh
