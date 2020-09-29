@@ -27,14 +27,15 @@ style: """
     width: 100%
 
   .time
-      margin-top: -2px
+      margin-top: -3px
       margin-left: 6px
       margin-right: 6px
+      height: 19px
       font: 17px "Terminus (TTF)"
       font-weight: bold
       z-index: -1
       text-align: center
       border-style: solid
-      border-width: 2px
-      border-radius: 3px
+      border-width: 3px
+      border-radius: 2px
 """

@@ -1,13 +1,16 @@
 cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
-cmd - l: yabai -m window --focus east
-cmd - h: yabai -m window --focus west
-cmd - j: yabai -m window --focus south
-cmd - k: yabai -m window --focus north
-shift + cmd - k : yabai -m window --swap north
-shift + cmd - j : yabai -m window --swap south
-shift + cmd - l : yabai -m window --swap east
-shift + cmd - h : yabai -m window --swap west
+shift + cmd - l: yabai -m window --focus east
+shift + cmd - h: yabai -m window --focus west
+shift + cmd - j: yabai -m window --focus south
+shift + cmd - k: yabai -m window --focus north
+shift + ctrl - k : yabai -m window --swap north
+shift + ctrl - j : yabai -m window --swap south
+shift + ctrl - l : yabai -m window --swap east
+shift + ctrl - h : yabai -m window --swap west
+
+ctrl + cmd + alt - c : yabai -m window --toggle float;\
+                yabai -m window --grid 4:4:1:1:2:2
 
 cmd + alt - j: yabai -m window --resize left:-20:0 ; yabai -m window --resize right:-20:0
 cmd + alt - k : yabai -m window --resize left:20:0 ; yabai -m window --resize right:20:0
@@ -15,9 +18,12 @@ cmd + alt - k : yabai -m window --resize left:20:0 ; yabai -m window --resize ri
 # Map alt + h,j,k,l to arrows
 alt - l: skhd -k "right"
 alt - h: skhd -k "left"
-alt - space: skhd -k "right"
 alt - j: skhd -k "down"
 alt - k: skhd -k "up"
+cmd - l: skhd -k "right"
+cmd - h: skhd -k "left"
+cmd - j: skhd -k "down"
+cmd - k: skhd -k "up"
 
 # Map alt & cmd + del to delete
 alt - x: skhd -k "delete"
@@ -25,10 +31,10 @@ alt - 0x33: skhd -k "delete"
 cmd - 0x33: skhd -k "delete"
 
 # Map escap to alt & cmd + :
-alt - 0x2F: skhd -k "escape"
-alt - 0x2B: skhd -k "escape"
-cmd - 0x2B: skhd -k "escape"
 cmd - 0x2F: skhd -k "escape"
+cmd - 0x2B: skhd -k "escape"
+alt - 0x2B: skhd -k "escape"
+alt - 0x2F: skhd -k "escape"
 
 # Map enter to cmd & alt + , & m 
 cmd - 0x2E: skhd -k "return"

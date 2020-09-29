@@ -26,7 +26,7 @@ update: (output, el) ->
 
   # get monospaced spaces list:
   [_, spaces, _...] = output.split '|'
-  spaces = (@format_active space, new_style for space in (spaces.split ' ')).join(' ')
+  spaces = (@format_active space, new_style for space in (spaces.split ' ')).join('')
   rendered = spaces
   $(".foc span").html("#{rendered}")
 
@@ -43,10 +43,26 @@ format_active: (elem, active_style) ->
   else
     if elem[0] is "("
       elem = elem[1...-1]
-      elem = """<span class="list active">|</span>"""
-    else
-      elem = """<span class="list inactive">·</span>"""
-    return elem
+      if (elem == "1")
+          elem = "|"
+      if (elem == "2")
+          elem = "||"
+      if (elem == "3")
+          elem = "|||"
+      if (elem == "4")
+          elem = "||||"
+      if (elem == "5")
+          elem = "|||||"
+      if (elem == "6")
+          elem = "||||||"
+      if (elem == "7")
+          elem = "|||||||"
+      if (elem == "8")
+          elem = "||||||||"
+      if (elem == "9")
+          elem = "|||||||||"
+      return """<span class="list active">#{ elem }</span>"""
+
 
 # NOTE - Most theme resetting is done in theme.coffee
 # create style attrs for the active space specifically
@@ -58,7 +74,6 @@ construct_style: (bg, c1) ->
   """
 
 style: """
-  top: -0.5px
   left: 20px
   font: 17px "Terminus (TTF)"
   font-weight: bold

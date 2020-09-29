@@ -24,3 +24,4 @@ alias k="kitty --single-instance -d=$PWD"
 alias ts="date +"%Y%m%d""
 
 ctags=/usr/local/bin/ctags
+python=~/.miniconda3/bin/python

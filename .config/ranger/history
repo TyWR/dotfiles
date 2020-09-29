@@ -1,50 +1,50 @@
-shell gzip -d 00000.gz
-shell touch test_mongo.py
-rename wal.vim
-rename 20200825
-shell gzip android-20200801-20200831
-find downlaod-estimate
-rename docker-compose.ecs.download-estimates-agg.yml
-rename docker-compose.ecs.download-estimates-agg-android.yml
-rename docker-compose.ecs.download-estimates-agg-android.override.yml
-rename download-estimates-agg-android
-rename download-estimates-agg-ios
-rename ios_source
-shell 
-shell touch safe_sum.py
-find nv
-find mongo_dump
-rename neofetch
-find wa
-find al
 find Proj
 find dot
 rename nvim
-find vim-m
-find Prjl
-open_with j
-search python
-open_with 
-open_with Q
-find download-estima
-rename srchaha
-find con
-find download-estimates
-rename ket-00000.gz
-shell gzip -d ket-00000.gz 
-rename top200_android_mintegral.csv
+find docker
+shell mkdir 20200920
+shell 
+shell touch aggregate_months.ok
+rename aggregate_month.ok
+shell touch udate_database.ok
+shell touch run_crawler.ok
+rename update_database.ok
+shell download_query.ok
+shell touch download_query.ok
 filter 
-
-find app-u
-find downl
-shell mkdir Sandbox
-shell touch battery.coffee
-shell touch settings.env
-open_with l
-open_with nvim
-deletehh
-rename makefile
-find itunes-d
-rename tywr.widget
-rename status.widget
+shell touch health_check.py
+shell touch arctic
+rename arctic
+shell mkdir minimalist-status-line
+find sa
+rename statusline.vim
+rename status_line.vim
+rename minimalist_status_line.vim
+rename minimalist_statusline.vim
 find .conf
+find 
+find .o
+rename oh-my-zsh
+rename .oh-my-zsh
+rename cowboy
+open_with 
+rename Makefilem
+find st
+shell mkdir scripts
+shell touch tiefighters.sh
+find Dock
+rename spaceship
+rename 20200925
+rename 20200925-new-raw
+shell touch script.sh
+shell touch script.py
+rename script.sh
+shell mkdir 20200926
+shell mkdir 20200927
+shell mkdir 
+rename citypop
+delete
+shell touch app.env
+
+find ind
+find download

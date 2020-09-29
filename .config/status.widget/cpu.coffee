@@ -11,16 +11,27 @@ render: (output) ->
   """
 
 bar: (output) =>
-    return if output > 80
-        "CPU[|||||]"
+    [output, _] = output.split "."
+    return if output > 90
+        "CPU&nbsp;||||||||||#{ output }%"
+    else if output > 80
+        "CPU&nbsp;||||||||&nbsp;#{ output }%"
+    else if output > 70
+        "CPU&nbsp;||||||||&nbsp;&nbsp;#{ output }%"
     else if output > 60
-        "CPU[||||·]"
+        "CPU&nbsp;|||||||&nbsp;&nbsp&nbsp;#{ output }%"
+    else if output > 50
+        "CPU&nbsp;||||||&nbsp;&nbsp;&nbsp;&nbsp;#{ output }%"
     else if output > 40
-        "CPU[|||··]"
+        "CPU&nbsp;|||||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{ output }%"
+    else if output > 30
+        "CPU&nbsp;||||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{ output }%"
     else if output > 20
-        "CPU[||···]"
+        "CPU&nbsp;|||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{ output }%"
+    else if output > 10
+        "CPU&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{ output }%"
     else
-        "CPU[|····]"
+        "&nbsp;CPU&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{ output }%"
 
 update: (output, el) ->
   $(".cpu span", el).html(@bar(output))

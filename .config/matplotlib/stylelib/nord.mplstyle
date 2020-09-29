@@ -1,0 +1,58 @@
+#set the font-size and size of things
+figure.figsize: 5, 3
+axes.labelsize: 14.3
+axes.titlesize: 15.6
+xtick.labelsize: 13
+ytick.labelsize: 13
+legend.fontsize: 13
+
+grid.linewidth: 1.3
+lines.linewidth: 2.275
+patch.linewidth: 0.39
+lines.markersize: 9.1
+lines.markeredgewidth: 0
+
+xtick.major.width: 1.3
+ytick.major.width: 1.3
+xtick.minor.width: 0.65
+ytick.minor.width: 0.65
+
+xtick.major.pad: 9.1
+ytick.major.pad: 9.1
+
+    
+axes.xmargin        : 0
+axes.ymargin        : 0
+
+#setup our colorscheme
+
+patch.facecolor: 2E3440  # blue
+patch.edgecolor: 2E3440
+patch.antialiased: True
+
+font.size: 12.0
+text.color: ECEFF4
+
+axes.facecolor: 2E3440
+axes.edgecolor: 4c566a
+axes.linewidth: 1
+axes.grid: False
+axes.labelcolor: 4c566a
+axes.axisbelow: True       # grid/ticks are below elements (e.g., lines, text)
+
+axes.prop_cycle: cycler('color', ['88c0d0', 'b48ead', 'a3be8c', '5e81ac', 'ebcb8b', 'd08770', 'bf616a'])
+
+xtick.color: 4c566a
+xtick.direction: out
+
+ytick.color: 4c566a
+ytick.direction: out
+
+grid.color: 4c566a
+grid.linestyle: -    # solid line
+
+figure.facecolor: 2E3440
+figure.edgecolor: 0.50
+
+#animation settings
+animation.html : html5

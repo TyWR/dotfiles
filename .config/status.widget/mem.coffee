@@ -11,16 +11,27 @@ render: (output) ->
   """
 
 bar: (output) =>
-    return if output > 80
-        "MEM[|||||]"
+    [output, _] = output.split "."
+    return if output > 90
+        "MEM&nbsp;||||||||||#{ output }%"
+    else if output > 80
+        "MEM&nbsp;||||||||&nbsp;#{ output }%"
+    else if output > 70
+        "MEM&nbsp;||||||||&nbsp;&nbsp;#{ output }%"
     else if output > 60
-        "MEM[||||·]"
+        "MEM&nbsp;|||||||&nbsp;&nbsp&nbsp;#{ output }%"
+    else if output > 50
+        "MEM&nbsp;||||||&nbsp;&nbsp;&nbsp;&nbsp;#{ output }%"
     else if output > 40
-        "MEM[|||··]"
+        "MEM&nbsp;|||||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{ output }%"
+    else if output > 30
+        "MEM&nbsp;||||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{ output }%"
     else if output > 20
-        "MEM[||···]"
+        "MEM&nbsp;|||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{ output }%"
+    else if output > 10
+        "MEM&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{ output }%"
     else
-        "MEM[|····]"
+        "MEM&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{ output }%"
 
 update: (output, el) ->
   $(".mem span", el).html(@bar(output))

@@ -1,10 +1,11 @@
 commands =
   colors: 'echo "$(~/.config/status.widget/scripts/switcher.sh 2>/dev/null)"'
   battery: "pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f1 -d';'| sed 's/%//'"
+  charging: "pmset -g batt | grep 'AC Power' -o;"
 
-command: "echo " + "$(#{ commands.battery }):::" + "$(#{ commands.colors })"
+command: "echo " + "$(#{ commands.battery }):::" + "$(#{ commands.colors }):::" + "$(#{ commands.charging })"
 
-refreshFrequency: 15000 # ms
+refreshFrequency: 3000 # ms
 
 render: (output) ->
   """
@@ -14,20 +15,34 @@ render: (output) ->
   </div>
   """
 
+icon: (output) =>
+  return if output is "AC Power\n"
+    "∙>&nbsp;"
+  else
+    ""
+
 bar: (output) ->
-    [battery, _, _, hl] = output.split ":::"
-    return if battery > 80
-        "#{ hl }:::| | | | |"
+    [battery, _, _, hl, charging] = output.split ":::"
+    return if battery > 90
+        "#{ hl }:::#{ @icon(charging) }||||||||||"
+    else if battery > 80
+        "#{ hl }:::#{ @icon(charging) }||||||||"
+    else if battery > 70
+        "#{ hl }:::#{ @icon(charging) }||||||||"
     else if battery > 60
-        "#{ hl }:::· | | | |"
+        "#{ hl }:::#{ @icon(charging) }|||||||"
+    else if battery > 50
+        "#{ hl }:::#{ @icon(charging) }||||||"
     else if battery > 40
-        "#{ hl }:::· · | | |"
+        "#{ hl }:::#{ @icon(charging) }|||||"
+    else if battery > 30
+        "#{ hl }:::#{ @icon(charging) }||||"
     else if battery > 20
-        "#{ hl }:::· · · | |"
+        "#{ hl }:::#{ @icon(charging) }|||"
     else if battery > 10
-        "#{ hl }:::· · · · |"
+        "#{ hl }:::#{ @icon(charging) }||"
     else
-        "red:::· · · · |"
+        "red:::#{ @icon(charging) }|"
 
 update: (output, el) ->
     [col, bar] = @bar(output).split ":::"

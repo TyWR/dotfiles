@@ -25,16 +25,15 @@ filetype plugin indent on
 
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 let g:rainbow#blacklist = [9]
-au BufEnter *.py :RainbowParentheses<CR>
+au BufEnter * :RainbowParentheses<CR>
 
 let g:python3_host_prog='/Users/tanguy/.miniconda3/bin/python'
 let g:sexyscroll_update_display_per_milliseconds=33
 
 " ----------------------------------------------------------------------------
-"  						     VIM PLUG	
+"  						         VIM PLUG	
 " ----------------------------------------------------------------------------
 call plug#begin()
-Plug 'bluz71/vim-moonfly-statusline'
 Plug 'dylanaraps/wal.vim'
 Plug 'neoclide/coc.nvim'
 Plug 'airblade/vim-gitgutter'
@@ -51,14 +50,13 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'thaerkh/vim-workspace'
-Plug 'arcticicestudio/nord-vim'
 Plug 'daylilyfield/sexyscroll.vim'
 Plug 'mattn/vim-findroot'
-Plug 'bling/vim-bufferline'
+Plug 'tywr/minimalist-status-line'
 call plug#end()
 
 " ----------------------------------------------------------------------------
-"  						      COLOR SCHEME
+"  						        COLOR SCHEME
 "----------------------------------------------------------------------------
 let &t_ZH="\e[4m"
 let &t_ZR="\e[33m"
@@ -95,7 +93,7 @@ hi TabLine cterm=bold ctermbg=black ctermfg=8
 
 
 " ----------------------------------------------------------------------------
-"  						    SHORTCUTS
+"  						          SHORTCUTS
 " ----------------------------------------------------------------------------
 "  Remove sexy scrolls mappings
 let g:sexyscroll_map_recommended_settings = 0
@@ -105,6 +103,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+vmap Y "+y
 
 nmap <Down> :call SexyScroll('down', &scroll, 500)<CR>
 nmap <Up> :call SexyScroll('up', &scroll, 500)<CR>
