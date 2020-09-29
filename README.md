@@ -9,8 +9,12 @@
 - **Status Bar:** Übersicht
 - **Misc.:** Cmatrix, Neofetch, Ranger
 
+## Orbital theme
+![](orbital.png)
+
 ## Arctic theme
 ![](arctic.png)
 
-## Orbital theme
-![](orbital.png)
+## City Pop theme
+![](citypop.png)
+
