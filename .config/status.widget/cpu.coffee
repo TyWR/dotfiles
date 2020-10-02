@@ -37,9 +37,8 @@ update: (output, el) ->
   $(".cpu span", el).html(@bar(output))
 
 style: """
-  font:17px "Terminus (TTF)"
-  font-weight: bold
-  top: 0px
+  font:16px "VCR OSD Mono"
+  top: 12px
   left: 250px
   width: 100%
   text-align: center

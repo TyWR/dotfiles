@@ -17,7 +17,7 @@ render: (output) ->
 
 icon: (output) =>
   return if output is "AC Power\n"
-    "∙>&nbsp;"
+    "CHARGING &nbsp;"
   else
     ""
 
@@ -51,11 +51,9 @@ update: (output, el) ->
 
 style: """
   .battery
-    font-size: 12px
-    font: 17px "Terminus (TTF)"
-    font-weight: bold
+    font: 16px "VCR OSD MONO"
     background-color: rgba(0,0,0,0)
   
   right: 20px
-  top: 0px
+  top: 12px
 """

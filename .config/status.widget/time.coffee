@@ -17,7 +17,7 @@ render: (output) ->
 
 update: (output, el) ->
   [time, _, bg, hl] = output.split ":::"
-  $(".time span").text("<∙ #{time } ∙>")
+  $(".time span").text("#{time }")
   $(".time").css("background-color", "#{ bg }")
   $(".time").css("border-color", "#{ hl }")
 
@@ -27,15 +27,15 @@ style: """
     width: 100%
 
   .time
-      margin-top: -3px
+      margin-top: 6px
+      padding-top: 3px
       margin-left: 6px
       margin-right: 6px
-      height: 19px
-      font: 17px "Terminus (TTF)"
-      font-weight: bold
+      height: 20px
+      font: 16px "VCR OSD Mono"
       z-index: -1
       text-align: center
       border-style: solid
       border-width: 3px
-      border-radius: 2px
+      border-radius: 6px
 """

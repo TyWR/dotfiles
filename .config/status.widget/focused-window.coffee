@@ -75,8 +75,8 @@ construct_style: (bg, c1) ->
 
 style: """
   left: 20px
-  font: 17px "Terminus (TTF)"
-  font-weight: bold
+  top: 12px
+  font: 16px "VCR OSD Mono"
   background-color: rgba(0,0,0,0)
   z-index: 0
 
