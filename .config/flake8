@@ -1,3 +1,0 @@
-[flake8]
-ignore = E221,W503
-exclude = tests/*

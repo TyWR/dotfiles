@@ -1,4 +1,3 @@
-rename oh-my-zsh
 rename .oh-my-zsh
 rename cowboy
 rename Makefilem
@@ -39,7 +38,6 @@ find Proj
 find itunes-d
 shell mkdir src
 rename bson2json
-find .conf
 shell touch openterm.sh
 shell touch alacritty-colors.sh
 rename colors
@@ -48,3 +46,5 @@ shell touch colors.yml
 open_with 
 shell touch main.py
 rename filtered
+find dot
+find .conf

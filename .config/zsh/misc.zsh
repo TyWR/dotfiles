@@ -39,3 +39,17 @@ function fontsize() {
     cp -f $tmp $config
     rm $tmp
 }
+
+function sync-config {
+    dotfiles=~/Sandbox/dotfiles
+    echo "Dotfiles repo location ${dotfiles}"
+    rmtrash ~/Sandbox/dotfiles/.config
+    mkdir ~/Sandbox/dotfiles/.config
+    names=(alacritty coc htop neofetch nvim ranger skhd status.widget themes wal yabai zathura zsh)
+    for name in $names; do
+        echo "Copying $name..."
+        cp -R ~/.config/$name $dotfiles/.config/$name
+    done
+    echo "Copyting .zshrc"
+    cp .zshrc "${dotfiles}.zshrc"
+}
