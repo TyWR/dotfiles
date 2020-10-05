@@ -3,10 +3,11 @@
 ## Used:
 
 - **WM:** Yabai
-- **Terminal:** Kitty
+- **Terminal:** Alacritty
 - **Font:** Terminus (TTF)
 - **Editor:** Neovim 
 - **Status Bar:** Übersicht
+- **Status Bar Font:** VSD OCS Mono
 - **Misc.:** Cmatrix, Neofetch, Ranger
 
 ## Screenshot
