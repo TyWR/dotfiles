@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/tanguy'
+let g:netrw_dirhist_6='/Users/tanguy/.config'
 let g:netrw_dirhist_5='/Users/tanguy/.config/themes'
 let g:netrw_dirhist_4='/Users/tanguy/.config/zsh'
 let g:netrw_dirhist_3='/Users/tanguy/.config/nvim/plugged/vim-bufferline/autoload/bufferline'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_1='/Users/tanguy/.config/themes/arctic'
 let g:netrw_dirhist_0='/Users/tanguy/.config/themes'
 let g:netrw_dirhist_9='/Users/tanguy/.config/themes/arctic'
 let g:netrw_dirhist_8='/Users/tanguy/.config/themes'
-let g:netrw_dirhist_7='/Users/tanguy/.oh-my-zsh/plugins/docker-machine'
-let g:netrw_dirhist_6='/Users/tanguy/.oh-my-zsh/plugins/docker-compose'

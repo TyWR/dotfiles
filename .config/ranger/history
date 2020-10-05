@@ -1,33 +1,6 @@
-find Proj
-find dot
-rename nvim
-find docker
-shell mkdir 20200920
-shell 
-shell touch aggregate_months.ok
-rename aggregate_month.ok
-shell touch udate_database.ok
-shell touch run_crawler.ok
-rename update_database.ok
-shell download_query.ok
-shell touch download_query.ok
-filter 
-shell touch health_check.py
-shell touch arctic
-rename arctic
-shell mkdir minimalist-status-line
-find sa
-rename statusline.vim
-rename status_line.vim
-rename minimalist_status_line.vim
-rename minimalist_statusline.vim
-find .conf
-find 
-find .o
 rename oh-my-zsh
 rename .oh-my-zsh
 rename cowboy
-open_with 
 rename Makefilem
 find st
 shell mkdir scripts
@@ -41,10 +14,37 @@ shell touch script.py
 rename script.sh
 shell mkdir 20200926
 shell mkdir 20200927
-shell mkdir 
 rename citypop
 delete
 shell touch app.env
 
 find ind
 find download
+shell mkdir Misc
+shell mkdir split
+rename split_day_task
+rename ingest_day_task.py
+rename download_day_task.py
+rename split_day_task.py
+rename bulk_insert.py
+shell main.py
+shell mkdir data
+shell mkdir 
+shell 
+shell git clone git@github.com:42matters/bson2json.git
+shell touch bson2json.py
+shell touch __init__.py
+find itunes
+find Proj
+find itunes-d
+shell mkdir src
+rename bson2json
+find .conf
+shell touch openterm.sh
+shell touch alacritty-colors.sh
+rename colors
+open_with nvim
+shell touch colors.yml
+open_with 
+shell touch main.py
+rename filtered

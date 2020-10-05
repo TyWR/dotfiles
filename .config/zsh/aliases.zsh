@@ -22,6 +22,7 @@ alias p="cd ~/Projects/"
 alias clean-docker="docker container rm $(docker container ls -aq)"
 alias k="kitty --single-instance -d=$PWD"
 alias ts="date +"%Y%m%d""
+alias esbulk="go run ~/Misc/esbulk/cmd/esbulk/esbulk.go"
 
 ctags=/usr/local/bin/ctags
 python=~/.miniconda3/bin/python

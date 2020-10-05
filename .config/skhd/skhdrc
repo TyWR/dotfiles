@@ -1,4 +1,5 @@
-cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+cmd - return : open -na /Applications/Alacritty.app
 
 shift + cmd - l: yabai -m window --focus east
 shift + cmd - h: yabai -m window --focus west
@@ -53,7 +54,7 @@ ctrl + cmd + alt - 0x15: skhd -k "0x76"
 ctrl + cmd + alt - 0x17: skhd -k "0x60" 
 
 # Map F5 to ctrl + enter
-ctrl - return: skhd -k "0x60" 
+ctrl - return: skhd -k "0x60"
 
 # Add shortcuts for brackets
 alt - i: skhd -k "0x17"

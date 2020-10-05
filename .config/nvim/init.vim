@@ -55,7 +55,7 @@ Plug 'mattn/vim-findroot'
 Plug 'tywr/minimalist-status-line'
 call plug#end()
 
-" ----------------------------------------------------------------------------
+" ---------------------------------------------------------------------------
 "  						        COLOR SCHEME
 "----------------------------------------------------------------------------
 let &t_ZH="\e[4m"
@@ -73,12 +73,13 @@ hi ExtraWhitespace cterm=none ctermbg=grey ctermfg=black
 hi MatchParen cterm=none ctermbg=1 ctermfg=black
 
 highlight NonText cterm=none ctermfg=8 ctermbg=none
+highlight Comment cterm=italic gui=italic
 
 highlight clear CursorLine
-hi CursorLineNR ctermbg=black ctermfg=7 cterm=bold
-hi LineNr ctermbg=black ctermfg=8 cterm=none
+hi CursorLineNR ctermbg=none ctermfg=7 cterm=bold
+hi LineNr ctermbg=none ctermfg=8 cterm=none
 
-hi StatusLine cterm=bold ctermbg=black ctermfg=none
+hi StatusLine cterm=bold ctermbg=none ctermfg=none
 hi StatusLineNC cterm=none ctermbg=none ctermfg=8
 
 hi GitGutterAddLineNr ctermfg=black ctermbg=2 cterm=bold
@@ -88,8 +89,8 @@ hi GitGutterChangeDeleteLineNr ctermfg=black ctermbg=8 cterm=standout
 
 hi Pmenu cterm=bold ctermbg=232 ctermfg=white
 
-hi TabLineSel cterm=bold ctermbg=black ctermfg=7
-hi TabLine cterm=bold ctermbg=black ctermfg=8
+hi TabLineSel cterm=bold ctermbg=none ctermfg=3
+hi TabLine cterm=bold ctermbg=none ctermfg=8
 
 
 " ----------------------------------------------------------------------------
@@ -130,13 +131,13 @@ nnoremap <silent> <C-B> :let a='import pdb; pdb.set_trace()'\|put=a<CR>
 nmap gd :call CocAction('jumpDefinition', 'drop')<CR>
 
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "  						             GTAGS
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " config project root markers.
 let g:gutentags_project_root = ['.root']
-"
-" generate databases in my cache directory, prevent gtags files polluting my project
+" generate databases in my cache directory, prevent gtags files polluting
+" my project
 let g:gutentags_cache_dir = expand('~/.cache/tags')
 
 let g:gutentags_ctags_exclude = ["*.min.js", "*.min.css", "build", "vendor",
@@ -207,12 +208,12 @@ endfunction
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
 " ----------------------------------------------------------------------------
-"          					  RANGER
+"          					     RANGER
 " ----------------------------------------------------------------------------
 map <C-r> :Ranger<CR>
 
 " ----------------------------------------------------------------------------
-"          					   COC
+"          					       COC
 " ----------------------------------------------------------------------------
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by

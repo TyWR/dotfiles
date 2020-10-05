@@ -53,7 +53,7 @@
         "sysPrefix": "/Users/tanguy/.miniconda3",
         "fileHash": "fe48b7cc594a8cc5c0b2d150f78ba23264bb930dd4407db46e0b1d1af985960fec91da28afaae86b59b0c9b4a26371e05212d2217f17e13c4891c83ed0876ae6"
       },
-      "expiry": 1601469226936
+      "expiry": 1601969598833
     },
     "/Users/tanguy/.miniconda3/bin/python3.v3": {
       "data": {
@@ -78,7 +78,7 @@
         "sysPrefix": "/Users/tanguy/.miniconda3",
         "fileHash": "69f3026e8b370d24bb93831c13495e92e28ab27f2bd871962ff2ec015781085bbf8871093106074a1df396cb86cf53c3c90a226357b7f55bbc754b8d40f38810"
       },
-      "expiry": 1601469226938
+      "expiry": 1601969598835
     },
     "/Users/tanguy/.miniconda3/bin/python.v3": {
       "data": {
@@ -103,7 +103,7 @@
         "sysPrefix": "/Users/tanguy/.miniconda3",
         "fileHash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93"
       },
-      "expiry": 1601469226942
+      "expiry": 1601969598837
     },
     "/usr/bin/python.v3": {
       "data": {
@@ -128,7 +128,7 @@
         "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
         "fileHash": "eac0471206fec8e0c2b021ae1be130351d8b761fc45854675dfb732719e562accf0b4c482a9e9ccb14305a3a4d525a5e3a2696c558a01754c16937d1704465d4"
       },
-      "expiry": 1601469227006
+      "expiry": 1601969598876
     },
     "/usr/bin/python2.v3": {
       "data": {
@@ -153,7 +153,7 @@
         "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
         "fileHash": "32155ca5edb3a60357185ab7b7d3b4191e4c6856fd20c2a65b74845f4a588ed4f9a8dd461fdbe2e0f26b75105be8d430fda6a3b7344172f0733bbb9d1ab175f1"
       },
-      "expiry": 1601469227031
+      "expiry": 1601969598874
     },
     "/usr/local/bin/python3.v3": {
       "data": {
@@ -178,7 +178,7 @@
         "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.5/Frameworks/Python.framework/Versions/3.8",
         "fileHash": "d1839f0cb23a9af56e44a2c703b5d06b130f4d3d52e55c5d52740d65354e17d6ae832a1ecb30bc0900aea1b0ac263c08d4f0b60371fe3c3b3975fdf450149341"
       },
-      "expiry": 1601469227011
+      "expiry": 1601969598875
     },
     "/usr/bin/python2.7.v3": {
       "data": {
@@ -203,7 +203,7 @@
         "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
         "fileHash": "55d1e13184e54da406989a11e499fcb95768d4f943c3e27ffd2cec7611f919412fd07a69d9f6a1f78a65a8db48e16cf9d73ade5743b63178ce9a38c3b446a453"
       },
-      "expiry": 1601469227030
+      "expiry": 1601969598917
     },
     "/usr/local/bin/python3.7.v3": {
       "data": {
@@ -253,7 +253,7 @@
         "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
         "fileHash": "71067ccefa2a546a8b1162ec93a5c4a19a35ad0ec7dc3de673326a901bf3ae4bd8c2d284df32c1ee55f6d166b140c99541347575b209db9e9864d295fc0d43c7"
       },
-      "expiry": 1601456521674
+      "expiry": 1601969598940
     },
     "INTERPRETERS_CACHE_v3_CurrentPathService": [
       {
@@ -447,12 +447,10 @@
           "type": "Conda",
           "envPath": "/Users/tanguy/.miniconda3",
           "envName": "base",
-          "cachedEntry": true,
-          "displayName": "Python 3.7.4 64-bit ('base': conda)",
-          "__store": true
+          "displayName": "Python 3.7.4 64-bit ('base': conda)"
         }
       },
-      "expiry": 1601469227109
+      "expiry": 1601978763767
     },
     "/Users/tanguy/.miniconda3/envs/download-stats-viz/bin/python.v3": {
       "data": {
@@ -477,7 +475,7 @@
         "sysPrefix": "/Users/tanguy/.miniconda3/envs/download-stats-viz",
         "fileHash": "97c4981bf747b145d0292fcb00f523c413f1e59d7bfb7020effef8553a18a9acc4ee5d3b46b1130130cc3a2e859b24997cf1b98097c800b25d82555944a63404"
       },
-      "expiry": 1601469227111
+      "expiry": 1601969598981
     },
     "/usr/bin/python3.v3": {
       "data": {
@@ -502,7 +500,7 @@
         "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.7",
         "fileHash": "c3543f0fed79862fc273bdc704faca01796d28c0f857a85077320a83ff1d11f4c9b886313d23b279dd44aa93479acd278299f8c6d3766e5ad98523f7e8f86c48"
       },
-      "expiry": 1601456521687
+      "expiry": 1601969598915
     },
     "INTERPRETERS_CACHE_v3_KnownPathsService": [
       {
@@ -853,10 +851,10 @@
     ],
     "/Users/tanguy/.miniconda3/bin/python.interpreter.displayName.v7": {
       "data": {
-        "displayName": "Python 3.7.4 64-bit ('.miniconda3': virtualenv)",
-        "hash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93-11ecd3828123c1f9616d4b42bd3c822f"
+        "displayName": "Python 3.7.4 64-bit ('base': conda)",
+        "hash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93-4fa7313fd5c650973bccd22bc5fd0146"
       },
-      "expiry": 1601469227120
+      "expiry": 1601978763757
     },
     "CONDA_ENVIRONMENTS": {
       "data": [
@@ -1010,35 +1008,35 @@
         "displayName": "Python 3.6.10 64-bit ('download-stats-viz': conda)",
         "hash": "97c4981bf747b145d0292fcb00f523c413f1e59d7bfb7020effef8553a18a9acc4ee5d3b46b1130130cc3a2e859b24997cf1b98097c800b25d82555944a63404-0a383794cdd553949002f922a1ccfccb"
       },
-      "expiry": 1601125128627
+      "expiry": 1601978763759
     },
     "/usr/bin/python.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 2.7.16 64-bit",
         "hash": "eac0471206fec8e0c2b021ae1be130351d8b761fc45854675dfb732719e562accf0b4c482a9e9ccb14305a3a4d525a5e3a2696c558a01754c16937d1704465d4-affabcd6e42fa4a070f38c52a7b1b891"
       },
-      "expiry": 1601469227074
+      "expiry": 1601969598950
     },
     "/usr/bin/python3.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 3.7.3 64-bit",
         "hash": "c3543f0fed79862fc273bdc704faca01796d28c0f857a85077320a83ff1d11f4c9b886313d23b279dd44aa93479acd278299f8c6d3766e5ad98523f7e8f86c48-085220d655a090abde66b739a7ab56cb"
       },
-      "expiry": 1601456521737
+      "expiry": 1601969598951
     },
     "/usr/local/bin/python3.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 3.8.5 64-bit",
         "hash": "d1839f0cb23a9af56e44a2c703b5d06b130f4d3d52e55c5d52740d65354e17d6ae832a1ecb30bc0900aea1b0ac263c08d4f0b60371fe3c3b3975fdf450149341-366636227345e9defeb0b4447c35b9b9"
       },
-      "expiry": 1601469227072
+      "expiry": 1601969598948
     },
     "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 2.7.16 64-bit",
         "hash": "71067ccefa2a546a8b1162ec93a5c4a19a35ad0ec7dc3de673326a901bf3ae4bd8c2d284df32c1ee55f6d166b140c99541347575b209db9e9864d295fc0d43c7-36d3a09e75e6a4108c32c67842f3c571"
       },
-      "expiry": 1601456521739
+      "expiry": 1601969599026
     },
     "InterpreterAutoSeletionRule-system": {
       "architecture": 3,
@@ -1095,7 +1093,7 @@
           "displayName": "Python 3.6.10 64-bit ('download-stats-viz': conda)"
         }
       },
-      "expiry": 1601125128641
+      "expiry": 1601978763771
     },
     "/usr/bin/python.interpreter.Details.v7": {
       "data": {
@@ -1125,7 +1123,7 @@
           "displayName": "Python 2.7.16 64-bit"
         }
       },
-      "expiry": 1601469227103
+      "expiry": 1601969598971
     },
     "/usr/bin/python3.interpreter.Details.v7": {
       "data": {
@@ -1155,7 +1153,7 @@
           "displayName": "Python 3.7.3 64-bit"
         }
       },
-      "expiry": 1601456521749
+      "expiry": 1601969598974
     },
     "/usr/local/bin/python3.interpreter.Details.v7": {
       "data": {
@@ -1185,7 +1183,7 @@
           "displayName": "Python 3.8.5 64-bit"
         }
       },
-      "expiry": 1601469227100
+      "expiry": 1601969598967
     },
     "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python.interpreter.Details.v7": {
       "data": {
@@ -1215,7 +1213,7 @@
           "displayName": "Python 2.7.16 64-bit"
         }
       },
-      "expiry": 1601456521754
+      "expiry": 1601969599042
     },
     "InterpreterAutoSeletionRule-cachedInterpreters": {
       "architecture": 3,
@@ -1413,7 +1411,7 @@
         "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.5/Frameworks/Python.framework/Versions/3.8",
         "fileHash": "3484b88eb31c3f9272881fb1f9c9008e26850bb8f7af6a7662a1a032888d749f3a8bbbba267c9bdcd6e88b5953ac020b92d3233d0f25ac5c3d0279b9aeb3e870"
       },
-      "expiry": 1601469227010
+      "expiry": 1601969598873
     }
   },
   "coc-python|/Users/tanguy/Projects": {
@@ -1841,6 +1839,26 @@
     "INTERPRETERS_CACHE_v3_PipEnvService:5030dbde627e6c2219bf93ac2dd89695": [],
     "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:5030dbde627e6c2219bf93ac2dd89695": [],
     "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService:309eb239cea4d1d23375d88d406bb279": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:309eb239cea4d1d23375d88d406bb279": []
+  },
+  "coc-python|/Users/tanguy/Sandbox/bsondump": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:13981f88b13fe3f7bb8eee6cb677a794": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:13981f88b13fe3f7bb8eee6cb677a794": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
     "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/Users/tanguy/Sandbox/bson2json": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:2341840f89a37bc2b2caffed759ea5f7": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:2341840f89a37bc2b2caffed759ea5f7": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService:97e93b60a4fd815e8d139743c4db13ac": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:97e93b60a4fd815e8d139743c4db13ac": []
   }
 }

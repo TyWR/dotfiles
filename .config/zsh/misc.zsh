@@ -24,5 +24,18 @@ function wallpaper() {
 function theme() {
     cp ~/.config/themes/$1/colors-kitty.conf ~/.cache/wal/colors-kitty.conf
 	cp ~/.config/themes/$1/colors.sh ~/.cache/wal/colors.sh
+	cp ~/.config/themes/$1/colors.yml ~/.cache/wal/colors.yml
     wallpaper ~/.config/themes/$1/wp.jpg
+    sh .config/zsh/scripts/alacritty-colors.sh
+    launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+}
+
+function fontsize() {
+    size=$1
+    sed_string="s/size: [0-9][0-9]*/size: ${size}/"
+    config=$HOME/.config/alacritty/alacritty.yml
+    tmp=$HOME/.config/alacritty/tmp.yml
+    cat $config | sed "$sed_string" > $tmp
+    cp -f $tmp $config
+    rm $tmp
 }
