@@ -27,15 +27,12 @@ style: """
     width: 100%
 
   .time
-      margin-top: 6px
+      margin-top: 0px
       padding-top: 3px
-      margin-left: 6px
-      margin-right: 6px
-      height: 20px
+      margin-left: 0px
+      margin-right: 0px
+      height: 21px
       font: 16px "VCR OSD Mono"
       z-index: -1
       text-align: center
-      border-style: solid
-      border-width: 3px
-      border-radius: 6px
 """

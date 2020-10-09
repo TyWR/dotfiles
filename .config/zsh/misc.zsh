@@ -26,7 +26,7 @@ function theme() {
 	cp ~/.config/themes/$1/colors.sh ~/.cache/wal/colors.sh
 	cp ~/.config/themes/$1/colors.yml ~/.cache/wal/colors.yml
     wallpaper ~/.config/themes/$1/wp.jpg
-    sh .config/zsh/scripts/alacritty-colors.sh
+    sh ~/.config/zsh/scripts/alacritty-colors.sh
     launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 }
 
@@ -50,6 +50,6 @@ function sync-config {
         echo "Copying $name..."
         cp -R ~/.config/$name $dotfiles/.config/$name
     done
-    echo "Copyting .zshrc"
-    cp .zshrc "${dotfiles}.zshrc"
+    echo "Copying .zshrc"
+    cp ~/.zshrc "${dotfiles}.zshrc"
 }

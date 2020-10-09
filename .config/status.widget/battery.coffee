@@ -55,5 +55,5 @@ style: """
     background-color: rgba(0,0,0,0)
   
   right: 20px
-  top: 12px
+  top: 3px
 """

@@ -38,7 +38,7 @@ update: (output, el) ->
 
 style: """
   font:16px "VCR OSD Mono"
-  top: 12px
+  top: 3px
   left: 250px
   width: 100%
   text-align: center

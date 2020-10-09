@@ -126,7 +126,8 @@ nmap <C-S> :Buffers<CR>
 
 " Add easy nbreakpoint shortcut
 nnoremap <silent> <C-B> :let a='import pdb; pdb.set_trace()'\|put=a<CR>
-
+nnoremap <silent> -- :let a='# --------------------------------------------
+    \---------------------------------'\|put=a<CR>
 " Add easy jump to definition
 nmap gd :call CocAction('jumpDefinition', 'drop')<CR>
 

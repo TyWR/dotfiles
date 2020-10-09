@@ -75,7 +75,7 @@ construct_style: (bg, c1) ->
 
 style: """
   left: 20px
-  top: 12px
+  top: 3px
   font: 16px "VCR OSD Mono"
   background-color: rgba(0,0,0,0)
   z-index: 0

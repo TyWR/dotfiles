@@ -28,7 +28,7 @@ cmd - k: skhd -k "up"
 
 # Map alt & cmd + del to delete
 alt - x: skhd -k "delete"
-alt - 0x33: skhd -k "delete"
+cmd - x: skhd -k "delete"
 cmd - 0x33: skhd -k "delete"
 
 # Map escap to alt & cmd + :
@@ -38,9 +38,7 @@ alt - 0x2B: skhd -k "escape"
 alt - 0x2F: skhd -k "escape"
 
 # Map enter to cmd & alt + , & m 
-cmd - 0x2E: skhd -k "return"
 cmd - 0x29: skhd -k "return"
-alt - 0x2E: skhd -k "return"
 alt - 0x29: skhd -k "return"
 
 # Reset
@@ -57,19 +55,15 @@ ctrl + cmd + alt - 0x17: skhd -k "0x60"
 ctrl - return: skhd -k "0x60"
 
 # Add shortcuts for brackets
-alt - i: skhd -k "0x17"
-alt - o: skhd -k "0x1B"
-alt - u: skhd -k "alt - 0x15"
-alt - p: skhd -k "alt - 0x18"
-alt + shift - i: skhd -k "alt - 0x17"
-alt + shift - o: skhd -k "alt - 0x1B"
-alt + shift - u: skhd -k "alt - 0x15"
-alt + shift - p: skhd -k "alt - 0x18"
 cmd - i: skhd -k "0x17"
 cmd - o: skhd -k "0x1B"
 cmd - u: skhd -k "alt - 0x15"
 cmd - p: skhd -k "alt - 0x18"
 cmd + shift - i: skhd -k "alt - 0x17"
 cmd + shift - o: skhd -k "alt - 0x1B"
-cmd + shift - u: skhd -k "alt - 0x15"
-cmd + shift - p: skhd -k "alt - 0x18"
+cmd + shift - u: skhd -k "0x32"
+cmd + shift - p: skhd -k "shift - 0x32"
+
+# Custom shortcuts
+cmd - n: skhd -k "alt - 0x13" && skhd -k "space"
+cmd - 0x27: skhd -k "alt - 0x1A" && skhd -k "space"

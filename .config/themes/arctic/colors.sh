@@ -1,3 +1,3 @@
-background="rgba(12,13,16,0.9)"
-color1="#5e81ac"
-color2="#1F2B39"
+background="rgba(16,18,23,0.95)"
+color1="#88c0d0"
+color2="0xf081B22"

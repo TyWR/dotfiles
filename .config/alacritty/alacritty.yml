@@ -72,7 +72,7 @@ window:
     # General application class
     #general: Alacritty
 
-  # GTK theme variant (Linux/BSD only)
+   # GTK theme variant (Linux/BSD only)
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
   # Set this to `None` to use the default theme variant.
@@ -427,34 +427,34 @@ mouse:
 # be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
 # a no-op if you do not wish to receive input characters for that binding.
 key_bindings:
-  - { key: Minus, mods: Command,                 action: IncreaseFontSize}
-  - { key: Key0,    mods: Command,               action: DecreaseFontSize}
+  - { key: Equals,   mods: Control,               action: IncreaseFontSize}
+  - { key: Key0,    mods: Control,               action: DecreaseFontSize}
 
 # BEGIN ACE
-background_opacity: 0.85
+background_opacity: 0.95
 colors:
   primary:
-    background: '0x000000'
-    foreground: '0xe4e4e4'
+    background: '0x101217'
+    foreground: '0xeceff4'
   cursor:
-    text:       '0x000000'
-    cursor:     '0xe4e4e4'
+    text:       '0x0C0D10'
+    cursor:     '0xeceff4'
   normal:
-    black:      '0x000000'
-    red:        '0xed73a6'
-    green:      '0x69E4E1'
-    yellow:     '0x82E4E2'
-    blue:       '0x9AE4E2'
-    magenta:    '0xB3E4E3'
-    cyan:       '0xCBE4E3'
-    white:      '0xe4e4e4'
+    black:      '0x101217'
+    red:        '0x88c0d0'
+    green:      '0x6991B5'
+    yellow:     '0x5e81ac'
+    blue:       '0x7A97BA'
+    magenta:    '0x97ADC9'
+    cyan:       '0xB3C3D7'
+    white:      '0xeceff4'
   bright:
-    black:      '0x5f5f5f'
-    red:        '0xed73a6'
-    green:      '0x69E4E1'
-    yellow:     '0x82E4E2'
-    blue:       '0x9AE4E2'
-    magenta:    '0xB3E4E3'
-    cyan:       '0xCBE4E3'
-    white:      '0xe4e4e4'
+    black:      '0x4c566a'
+    red:        '0x88c0d0'
+    green:      '0x6991B5'
+    yellow:     '0x5e81ac'
+    blue:       '0x7A97BA'
+    magenta:    '0x97ADC9'
+    cyan:       '0xB3C3D7'
+    white:      '0xeceff4'
 # END ACE
