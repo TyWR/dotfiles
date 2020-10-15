@@ -53,6 +53,8 @@ Plug 'thaerkh/vim-workspace'
 Plug 'daylilyfield/sexyscroll.vim'
 Plug 'mattn/vim-findroot'
 Plug 'tywr/minimalist-status-line'
+Plug 'psf/black'
+Plug 'kkoomen/vim-doge', { 'tag': 'v2.8.0' }
 call plug#end()
 
 " ---------------------------------------------------------------------------
@@ -122,7 +124,7 @@ nmap <S-Tab> :bp<CR>
 
 nmap <C-F> :Lines<CR>
 nmap <C-D> :Files<CR>
-nmap <C-S> :Buffers<CR>
+nmap <C-S> :Black<CR>
 
 " Add easy nbreakpoint shortcut
 nnoremap <silent> <C-B> :let a='import pdb; pdb.set_trace()'\|put=a<CR>
@@ -229,3 +231,10 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" ----------------------------------------------------------------------------
+"          					       DOGE
+" ----------------------------------------------------------------------------
+let g:doge_doc_standard_python = 'numpy'
+let g:doge_mapping = '<C-d>'
+let g:doge_parsers = ['bash', 'python']

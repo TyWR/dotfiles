@@ -1,23 +1,8 @@
-rename split_day_task
-rename ingest_day_task.py
-rename download_day_task.py
-rename split_day_task.py
-rename bulk_insert.py
-shell main.py
-shell mkdir data
-shell git clone git@github.com:42matters/bson2json.git
-shell touch bson2json.py
-shell touch __init__.py
-find itunes
-find Proj
-find itunes-d
-rename bson2json
 find .conf
 shell touch openterm.sh
 shell touch alacritty-colors.sh
 rename colors
 shell touch colors.yml
-open_with 
 shell touch main.py
 rename filtered
 rename filter_day_task
@@ -35,7 +20,6 @@ find
 shell mkdir ranks-indexer-gplay
 shell mkdir history
 shell touch README.md
-shell 
 shell src
 shell mkdir src
 rename indexer
@@ -46,5 +30,21 @@ rename compress_ids.py
 rename compress_ids_task.py
 rename compress_ids_day_task.py
 rename compress_ids_day_task
-shell touch .dockerignore
+open_with 
+shell 
+shell mkdir cleaner
+shell mkdir clean_day_task
+shell touch clean_day_task.py
+shell touch ingest.ok
+shell touch delete_old_data.py
+rename ranks-indexer-gplay-daily
+rename ranks-indexer-itunes-daily
+rename docker-compose.ecs.ranks-indexer-itunes-dailiy.override.yml
+rename docker-compose.ecs.ranks-indexer-itunes-daily.yml
+shell mkdir tests
+shell touch __init__.py
+shell touch test_workflow.py
+shell gzip *
+shell gzip -d *
 open_with nvim
+shell bzip2 *
