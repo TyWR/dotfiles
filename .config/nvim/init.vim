@@ -44,7 +44,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'MathSquared/vim-python-sql'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'francoiscabrol/ranger.vim'
-Plug 'rbgrouleff/bclose.vim'
+Plug 'rbgrouleff/bclose.vim' 
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -70,7 +70,15 @@ augroup python
                 \ | highlight def link PythonSelf Special
 augroup end
 
-hi Visual cterm=none ctermbg=white ctermfg=black 
+augroup CursorLine
+    au!
+    au VimEnter * setlocal cursorline
+    au WinEnter * setlocal cursorline
+    au BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END
+
+hi Visual cterm=none ctermbg=7 ctermfg=0 
 hi ExtraWhitespace cterm=none ctermbg=grey ctermfg=black
 hi MatchParen cterm=none ctermbg=1 ctermfg=black
 
@@ -78,6 +86,7 @@ highlight NonText cterm=none ctermfg=8 ctermbg=none
 highlight Comment cterm=italic gui=italic
 
 highlight clear CursorLine
+hi CursorLine ctermbg=15
 hi CursorLineNR ctermbg=none ctermfg=7 cterm=bold
 hi LineNr ctermbg=none ctermfg=8 cterm=none
 
@@ -89,7 +98,7 @@ hi GitGutterChangeLineNr ctermfg=black ctermbg=grey cterm=bold
 hi GitGutterDeleteLineNr ctermfg=black ctermbg=grey cterm=standout
 hi GitGutterChangeDeleteLineNr ctermfg=black ctermbg=8 cterm=standout
 
-hi Pmenu cterm=bold ctermbg=232 ctermfg=white
+hi Pmenu cterm=bold ctermbg=15 ctermfg=7
 
 hi TabLineSel cterm=bold ctermbg=none ctermfg=3
 hi TabLine cterm=bold ctermbg=none ctermfg=8
