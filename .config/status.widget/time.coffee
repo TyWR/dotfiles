@@ -28,11 +28,12 @@ style: """
 
   .time
       margin-top: 0px
-      padding-top: 3px
+      padding-top: 2px
+      padding-bottom: 2px
       margin-left: 0px
       margin-right: 0px
-      height: 21px
-      font: 16px "VCR OSD Mono"
+      height: 20px
+      font: 20px "IBM 3270"
       z-index: -1
       text-align: center
 """

@@ -51,9 +51,9 @@ update: (output, el) ->
 
 style: """
   .battery
-    font: 16px "VCR OSD MONO"
+    font: 20px "IBM 3270"
     background-color: rgba(0,0,0,0)
   
-  right: 20px
-  top: 3px
+  right: 10px
+  top: 1px
 """

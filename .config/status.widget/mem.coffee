@@ -37,8 +37,8 @@ update: (output, el) ->
   $(".mem span", el).html(@bar(output))
 
 style: """
-  font:16px "VCR OSD Mono"
-  top: 3px
+  font: 20px "IBM 3270"
+  top: 1px
   right: 250px
   width: 100%
   text-align: center

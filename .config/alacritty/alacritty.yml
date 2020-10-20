@@ -20,6 +20,18 @@ font:
     family: TerminessTTF Nerd Font
     style: Bold Italic
   # normal:
+  #   family: Hermit
+  #   style: Regular
+  # bold:
+  #   family: Hermit
+  #   style: Bold
+  # italic:
+  #   family: Hermit
+  #   style: RegularItalic
+  # bold_italic:
+  #   family: Hermit
+  #   style: BoldItalic
+  # normal:
   #   family: VecTerminus16
   #   style: Medium
   # bold:
@@ -34,11 +46,11 @@ font:
 
   offset:
     x: -1
-    y: -2
+    y: 0
 
-  #glyph_offset:
-  #  x: 0
-  #  y: 
+  glyph_offset:
+    x: 0
+    y: 0
 
 bell:
   animation: EaseOutExpo
