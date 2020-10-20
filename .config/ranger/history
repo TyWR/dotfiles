@@ -1,7 +1,3 @@
-shell touch openterm.sh
-shell touch alacritty-colors.sh
-rename colors
-shell touch colors.yml
 shell touch main.py
 rename filtered
 rename filter_day_task
@@ -43,8 +39,12 @@ shell touch __init__.py
 shell touch test_workflow.py
 shell gzip *
 shell gzip -d *
-open_with nvim
 shell bzip2 *
 find .conf
-shell touch ingest.ok
+open_with nvim
 find ranks
+rename makefile
+rename README.md
+shell touch ingest.ok
+shell touch check_days.py
+shell touch 42matters-dashboard.env

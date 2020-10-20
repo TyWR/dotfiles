@@ -22,9 +22,8 @@ set incsearch
 set hlsearch
 
 filetype plugin indent on
-
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-let g:rainbow#blacklist = [9]
+let g:rainbow#blacklist = [9, 15]
 au BufEnter * :RainbowParentheses<CR>
 
 let g:python3_host_prog='/Users/tanguy/.miniconda3/bin/python'
