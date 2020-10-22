@@ -20,29 +20,17 @@ font:
     family: TerminessTTF Nerd Font
     style: Bold Italic
   # normal:
-  #   family: Hermit
+  #   family: UbuntuMono Nerd Font
   #   style: Regular
   # bold:
-  #   family: Hermit
+  #   family: UbuntuMono Nerd Font
   #   style: Bold
   # italic:
-  #   family: Hermit
-  #   style: RegularItalic
+  #   family: UbuntuMono Nerd Font
+  #   style: Italic
   # bold_italic:
-  #   family: Hermit
-  #   style: BoldItalic
-  # normal:
-  #   family: VecTerminus16
-  #   style: Medium
-  # bold:
-  #   family: VecTerminus16
-  #   style: Bold
-  # italic:
-  #   family: VecTerminus16
-  #   style: Medium
-  # bold_italic:
-  #   family: VecTerminus16
-  #   style: Bold
+  #   family: UbuntuMono Nerd Font
+  #   style: Bold Italic
 
   offset:
     x: -1
@@ -76,27 +64,27 @@ key_bindings:
 background_opacity: 0.95
 colors:
   primary:
-    background: '0x000000'
-    foreground: '0xffffff'
+    background: '0x101217'
+    foreground: '0xeceff4'
   cursor:
-    text:       '0x000000'
-    cursor:     '0xffffff'
+    text:       '0x0C0D10'
+    cursor:     '0xeceff4'
   normal:
-    black:      '0x000000'
-    red:        '0x9A2E2E'
-    green:      '0xD75F00'
-    yellow:     '0xE48720'
-    blue:       '0xF2AF3F'
-    magenta:    '0xFFD75F'
-    cyan:       '0xFFE494'
-    white:      '0xffffff'
+    black:      '0x101217'
+    red:        '0x88c0d0'
+    green:      '0x6991B5'
+    yellow:     '0x5e81ac'
+    blue:       '0x7A97BA'
+    magenta:    '0x97ADC9'
+    cyan:       '0xB3C3D7'
+    white:      '0xeceff4'
   bright:
-    black:      '0x513939'
-    red:        '0x9A2E2E'
-    green:      '0xD75F00'
-    yellow:     '0xE48720'
-    blue:       '0xF2AF3F'
-    magenta:    '0xFFD75F'
-    cyan:       '0xFFE494'
-    white:      '0x1D0000' 
+    black:      '0x4c566a'
+    red:        '0x88c0d0'
+    green:      '0x6991B5'
+    yellow:     '0x5e81ac'
+    blue:       '0x7A97BA'
+    magenta:    '0x97ADC9'
+    cyan:       '0xB3C3D7'
+    white:      '0x282B30'
 # END ACE

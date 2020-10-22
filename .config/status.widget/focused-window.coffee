@@ -1,10 +1,10 @@
 commands =
-  space: 'echo "$(~/.config/status.widget/scripts/spaces.sh)"'
-  focus: 'echo "$(~/.config/status.widget/scripts/switcher.sh 2>/dev/null)"'
+  focused: 'echo "$(~/.config/status.widget/scripts/spaces.sh)"'
+  switcher: 'echo "$(~/.config/status.widget/scripts/switcher.sh 2>/dev/null)"'
 
 command: "echo " +
-  "$(#{ commands.space }):::" +
-  "$(#{ commands.focus })"
+  "$(#{ commands.focused }):::" +
+  "$(#{ commands.switcher })"
 
 # original (singular) command:
 #command: 'echo "$(./amar-bar.widget/scripts/spaces.sh)"'
@@ -21,14 +21,12 @@ render: ( ) ->
 # construct entire top-left: mode, list of spaces, focused window name
 update: (output, el) ->
   # get the updated colors on space switch
-  [output, _, bg, c1] = output.split ':::'
+  [active, _, bg, c1] = output.split ':::'
   new_style = @construct_style bg, c1
 
   # get monospaced spaces list:
-  [_, spaces, _...] = output.split '|'
-  spaces = (@format_active space, new_style for space in (spaces.split ' ')).join('')
-  rendered = spaces
-  $(".foc span").html("#{rendered}")
+  active = @format_active active
+  $(".foc span").html("#{active}")
 
 # truncates focused window title if too long
 trunc_focused: (str, limit) ->
@@ -36,13 +34,10 @@ trunc_focused: (str, limit) ->
 
 # checks if this number is the active space (will be surrounded by parens)
 # adds class 'active' or 'inactive' and returns HTML
-format_active: (elem, active_style) ->
-  # elem.replace /^\s+|\s+$/g, ""
+format_active: (elem) ->
   if elem is ""
-    return """ """
+    return """"""
   else
-    if elem[0] is "("
-      elem = elem[1...-1]
       if (elem == "1")
           elem = "|"
       if (elem == "2")
