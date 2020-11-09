@@ -27,7 +27,6 @@ let g:rainbow#blacklist = [9, 15]
 au BufEnter * :RainbowParentheses<CR>
 
 let g:python3_host_prog='/Users/tanguy/.miniconda3/bin/python'
-let g:sexyscroll_update_display_per_milliseconds=33
 
 " ----------------------------------------------------------------------------
 "  						         VIM PLUG	
@@ -49,11 +48,12 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'thaerkh/vim-workspace'
-Plug 'daylilyfield/sexyscroll.vim'
 Plug 'mattn/vim-findroot'
 Plug 'tywr/minimalist-status-line'
 Plug 'psf/black'
 Plug 'kkoomen/vim-doge', { 'tag': 'v2.8.0' }
+Plug 'psliwka/vim-smoothie'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " ---------------------------------------------------------------------------
@@ -89,7 +89,7 @@ hi CursorLine ctermbg=15
 hi CursorLineNR ctermbg=none ctermfg=7 cterm=bold
 hi LineNr ctermbg=none ctermfg=8 cterm=none
 
-hi StatusLine cterm=bold ctermbg=none ctermfg=none
+hi StatusLine cterm=bold ctermbg=15 ctermfg=none
 hi StatusLineNC cterm=none ctermbg=none ctermfg=8
 
 hi GitGutterAddLineNr ctermfg=black ctermbg=2 cterm=bold
@@ -99,15 +99,15 @@ hi GitGutterChangeDeleteLineNr ctermfg=black ctermbg=8 cterm=standout
 
 hi Pmenu cterm=bold ctermbg=15 ctermfg=7
 
-hi TabLineSel cterm=bold ctermbg=none ctermfg=3
-hi TabLine cterm=bold ctermbg=none ctermfg=8
+hi TabLineSel cterm=bold ctermbg=3 ctermfg=0
+hi TabLine cterm=bold ctermbg=15 ctermfg=8
 
 
 " ----------------------------------------------------------------------------
 "  						          SHORTCUTS
 " ----------------------------------------------------------------------------
 "  Remove sexy scrolls mappings
-let g:sexyscroll_map_recommended_settings = 0
+" let g:smoothie_no_default_mappings=True
 
 " Change panel shortcuts
 nnoremap <C-J> <C-W><C-J>
@@ -117,8 +117,8 @@ nnoremap <C-H> <C-W><C-H>
 
 vmap Y "+y
 
-nmap <Down> :call SexyScroll('down', &scroll, 500)<CR>
-nmap <Up> :call SexyScroll('up', &scroll, 500)<CR>
+nmap <Down> :call  smoothie#downwards()<CR>
+nmap <Up> :call  smoothie#upwards()<CR>
 
 nmap ++ :vsp<CR>
 nnoremap <C-Q> q
@@ -171,10 +171,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 " Change scroll shortcuts
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
-
-" ----------------------------------------------------------------------------
-"  						          BUFTABLINE
-" ----------------------------------------------------------------------------
 
 " ----------------------------------------------------------------------------
 "  						          GIT-GUTTER 
@@ -246,3 +242,48 @@ endfunction
 let g:doge_doc_standard_python = 'numpy'
 let g:doge_mapping = '<C-d>'
 let g:doge_parsers = ['bash', 'python']
+
+
+" ----------------------------------------------------------------------------
+"          					     Startify
+" ----------------------------------------------------------------------------
+let g:startify_lists = [
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'files',     'header': ['   MRU ~/Projects']            },
+          \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ ]
+          " \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+let g:startify_session_before_save = [
+        \ 'echo "Cleaning up before saving.."',
+        \ 'silent! NERDTreeTabsClose'
+        \ ]
+let g:startify_files_number = 3
+let g:webdevicons_enable_startify = 1
+" let g:startify_session_autoload = 1
+let g:startify_change_to_dir = 1
+" let g:workspace_session_directory = $HOME . '/.cache/sessions/'
+
+let g:startify_custom_footer = 'startify#pad(startify#fortune#cowsay())'
+let g:startify_custom_footer = ['']
+let g:startify_custom_header = 'startify#center(startify#fortune#cowsay())'
+let g:startify_custom_header = [
+            \ '         ▄              ▄    ',
+            \ '       ▌▒█           ▄▀▒▌    ',
+            \ '        ▌▒▒█        ▄▀▒▒▒▐   ',
+            \ '       ▐▄█▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐   ',
+            \ '     ▄▄▀▒▒▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐   ',
+            \ '   ▄▀▒▒▒░░░▒▒▒░░░▒▒▒▀██▀▒▌   ',
+            \ '  ▐▒▒▒▄▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀▄▒▌  ',
+            \ '  ▌░░▌█▀▒▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐  ',
+            \ ' ▐░░░▒▒▒▒▒▒▒▒▌██▀▒▒░░░▒▒▒▀▄▌ ',
+            \ ' ▌░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▌ ',
+            \ ' ▒▒▒▄██▄▒▒▒▒▒▒▒▒░░░░░░░░▒▒▒▐ ',
+            \ ' ▒▒▐▄█▄█▌▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▒▒▌',
+            \ ' ▒▒▐▀▐▀▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▐ ',
+            \ ' ▌▒▒▀▄▄▄▄▄▄▀▒▒▒▒▒▒▒░▒░▒░▒▒▒▌ ',
+            \ ' ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒▒▄▒▒▐  ',
+            \ '  ▀▄▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒▄▒▒▒▒▌  ',
+            \ '    ▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀   ',
+            \ '      ▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀     ',
+            \ ]

@@ -37,7 +37,7 @@ update: (output, el) ->
   $(".mem span", el).html(@bar(output))
 
 style: """
-  font: 20px "IBM 3270"
+  font: 20px "Braciola MS"
   top: 1px
   right: 250px
   width: 100%

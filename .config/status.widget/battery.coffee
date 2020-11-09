@@ -51,7 +51,7 @@ update: (output, el) ->
 
 style: """
   .battery
-    font: 20px "IBM 3270"
+    font: 20px "Braciola MS"
     background-color: rgba(0,0,0,0)
   
   right: 10px

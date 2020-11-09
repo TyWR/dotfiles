@@ -71,7 +71,7 @@ construct_style: (bg, c1) ->
 style: """
   left: 10px
   top: 1px
-  font: 20px "IBM 3270"
+  font: 20px "Braciola MS"
   background-color: rgba(0,0,0,0)
   z-index: 0
 

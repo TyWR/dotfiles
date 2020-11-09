@@ -41,6 +41,9 @@ alt - 0x2F: skhd -k "escape"
 cmd - 0x29: skhd -k "return"
 alt - 0x29: skhd -k "return"
 
+# Avoid weird character with alt + space
+alt - space: skhd -k "space"
+
 # Reset
 alt + shift - r: launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 

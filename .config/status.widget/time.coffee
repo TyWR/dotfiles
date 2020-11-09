@@ -29,11 +29,11 @@ style: """
   .time
       margin-top: 0px
       padding-top: 2px
-      padding-bottom: 2px
+      padding-bottom: 3px
       margin-left: 0px
       margin-right: 0px
       height: 20px
-      font: 20px "IBM 3270"
+      font: 20px "Braciola MS"
       z-index: -1
       text-align: center
 """

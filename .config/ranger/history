@@ -1,50 +1,50 @@
-rename process.py
-rename process_day_task.py
-rename compress_ids.py
-rename compress_ids_task.py
-rename compress_ids_day_task.py
-rename compress_ids_day_task
+hhj
+shell touch app.env
+rename 42crawler-tencerdocker-compose.yml
+rename 42crawler-tencent.env
+shell touch 42crawler-tencent.env
+rename env.py
+rename config.py
+find d
+shell mkdir 20201101
+find SDKs
+shell bzcat itunes_sdks_added.bz2
+rename itunes_sdks_regex.bz2
+shell bzip2 -d itunes_sdks_regex.bz2
+rename test_itunes_sdks_regex.py
+shell bzip2 -d itunes_sdks_added.bz2
+shell bzip2 itunes_sdks_added
+shell touch README.md
+rename sdks-20200109_old.bz2
+shell comparing
+shell mkdir comparing
+shell mkdir 20200919
+find SDKsj:
+rename sdks-20200919_old.bz2
 open_with 
-shell mkdir cleaner
-shell mkdir clean_day_task
-shell touch clean_day_task.py
-shell touch delete_old_data.py
-rename ranks-indexer-gplay-daily
-rename ranks-indexer-itunes-daily
-rename docker-compose.ecs.ranks-indexer-itunes-dailiy.override.yml
-rename docker-compose.ecs.ranks-indexer-itunes-daily.yml
-shell mkdir tests
-shell touch __init__.py
-shell touch test_workflow.py
-shell gzip *
-shell gzip -d *
-shell bzip2 *
-find .conf
-rename makefile
-rename README.md
-shell touch ingest.ok
-shell touch check_days.py
-shell touch 42matters-dashboard.env
-shell touch wave
-shell mkdir wave
-rename wp.jpg
 open_with nvim
-h
+open_with h
+rename temp.bz2
+rename sdks-20201029-new.bz2
+rename 42servicesngelog
+rename 42services
+rename compute-sdks-changelog
+rename docker-compose.ecs.sdks-changelog-itunes.yml
+rename sdks-changelog-itunes
+shell mong
+find mongo
+find cha
+shell mkdir sdks
+shell touch sdks-20200101.bz2
 find 42s
-find downlo
-shell touch delete.py
-find clean
-rename clean.py
-find downl
-shell mkdir download-estimates-clean-itunes
-shell mkdir download-estimtes-clean-gplay
-find download
-rename docker-compose.ecs.download-estimates-clean-itunes.yml
-rename download-estimates-clean-gplay
-rename docker-compose.ecs.download-estimates-clean-gplay.yml
+find itunes-c
+shell gzip aa167ea4081606962701f2cd44693a21.csv.gz 
+shell gzip -d aa167ea4081606962701f2cd44693a21.csv.gz 
+shell gzip aa167ea4081606962701f2cd44693a21.csv 
 shell 
-find ranks
-shell touch tasks.py
-rename luigi_tasks
-shell touch workflow
-shell mkdir workflow
+rename roku.csv.gz
+shell gzip -d roku.csv.gz 
+rename roku--v1.0.json
+rename roku--v1.0
+find ct
+rename compute_itunes_sdksQ.sh
