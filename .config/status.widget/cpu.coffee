@@ -37,8 +37,8 @@ update: (output, el) ->
   $(".cpu span", el).html(@bar(output))
 
 style: """
-  font: 20px "Braciola MS"
-  top: 1px
+  font: 20px "CornerStone"
+  top: 0px
   left: 250px
   width: 100%
   text-align: center

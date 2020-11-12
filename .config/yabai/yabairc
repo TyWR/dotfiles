@@ -37,5 +37,9 @@ yabai -m rule --add app="^Finder" manage=off
 yabai -m rule --add app="^Preview" manage=off
 yabai -m rule --add app="^FaceTime" manage=off
 yabai -m rule --add app="^System Preferences" manage=off
+yabai -m rule --add app="^OpenVPN Connect" manage=off
+yabai -m rule --add app="^ProtonVPN" manage=off
+yabai -m rule --add app="^Docker Desktop" manage=off
+yabai -m rule --add app="^Docker" manage=off
 
 echo "yabai configuration loaded."

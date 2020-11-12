@@ -90,7 +90,7 @@ hi CursorLineNR ctermbg=none ctermfg=7 cterm=bold
 hi LineNr ctermbg=none ctermfg=8 cterm=none
 
 hi StatusLine cterm=bold ctermbg=15 ctermfg=none
-hi StatusLineNC cterm=none ctermbg=none ctermfg=8
+hi StatusLineNC cterm=none ctermbg=15 ctermfg=8
 
 hi GitGutterAddLineNr ctermfg=black ctermbg=2 cterm=bold
 hi GitGutterChangeLineNr ctermfg=black ctermbg=grey cterm=bold
@@ -121,6 +121,7 @@ nmap <Down> :call  smoothie#downwards()<CR>
 nmap <Up> :call  smoothie#upwards()<CR>
 
 nmap ++ :vsp<CR>
+nmap °° :sp<CR>
 nnoremap <C-Q> q
 nnoremap q <Nop>
 nnoremap Q <Nop>

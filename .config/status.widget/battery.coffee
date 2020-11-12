@@ -51,9 +51,9 @@ update: (output, el) ->
 
 style: """
   .battery
-    font: 20px "Braciola MS"
+    font: 20px "CornerStone"
     background-color: rgba(0,0,0,0)
   
   right: 10px
-  top: 1px
+  top: 0px
 """

@@ -33,7 +33,7 @@ style: """
       margin-left: 0px
       margin-right: 0px
       height: 20px
-      font: 20px "Braciola MS"
+      font: 20px "CornerStone"
       z-index: -1
       text-align: center
 """

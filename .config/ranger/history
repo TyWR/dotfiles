@@ -1,28 +1,3 @@
-hhj
-shell touch app.env
-rename 42crawler-tencerdocker-compose.yml
-rename 42crawler-tencent.env
-shell touch 42crawler-tencent.env
-rename env.py
-rename config.py
-find d
-shell mkdir 20201101
-find SDKs
-shell bzcat itunes_sdks_added.bz2
-rename itunes_sdks_regex.bz2
-shell bzip2 -d itunes_sdks_regex.bz2
-rename test_itunes_sdks_regex.py
-shell bzip2 -d itunes_sdks_added.bz2
-shell bzip2 itunes_sdks_added
-shell touch README.md
-rename sdks-20200109_old.bz2
-shell comparing
-shell mkdir comparing
-shell mkdir 20200919
-find SDKsj:
-rename sdks-20200919_old.bz2
-open_with 
-open_with nvim
 open_with h
 rename temp.bz2
 rename sdks-20201029-new.bz2
@@ -41,10 +16,35 @@ find itunes-c
 shell gzip aa167ea4081606962701f2cd44693a21.csv.gz 
 shell gzip -d aa167ea4081606962701f2cd44693a21.csv.gz 
 shell gzip aa167ea4081606962701f2cd44693a21.csv 
-shell 
 rename roku.csv.gz
 shell gzip -d roku.csv.gz 
 rename roku--v1.0.json
 rename roku--v1.0
 find ct
 rename compute_itunes_sdksQ.sh
+shell touch pipeline.py
+rename snow_
+rename snow
+shell cp /Users/tanguy/Pictures/33114590156_b4cc036898_o.jpg wp.jpg
+shell bzcat gplay_slim.bz2
+shell mkdir forest
+shell cp /Users/tanguy/Pictures/nagrand-wp.jpg wp.jpg
+open
+rename Q
+rename slip_dump_task.py
+rename slim_dump_task.py
+find itunes
+rename crawler-ios-web-fargate
+rename docker-compose.ecs.itunes-web-crawler-fargate.override.yml
+rename docker-compose.ecs.itunes-web-crawler-fargate.yml
+rename itunes-web-crawler-fargate
+rename forest
+shell mk
+rename taiga
+shell cp /Users/tanguy/Downloads/30106.jpg wp.jpg
+shell cp /Users/tanguy/Pictures/477617.jpg wp.jpg
+
+open_with open
+shell cp /Users/tanguy/Pictures/641344.jpg wp.jpg
+shell 
+rename fjord

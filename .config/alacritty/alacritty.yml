@@ -20,20 +20,20 @@ font:
     family: TerminessTTF Nerd Font
     style: Bold Italic
   # normal:
-  #   family: EffectsEighty
-  #   style: Medium
+  #   family: Inter V
+  #   style: Regular
   # bold:
-  #   family: EffectsEighty
+  #   family: Inter V
   #   style: Bold
   # italic:
-  #   family: EffectsEighty
-  #   style: Italic
+  #   family: Inter V
+  #   style: Regular
   # bold_italic:
-  #   family: EffectsEighty
-  #   style: Bold Italic
+  #   family: Inter V
+  #   style: Bold
 
   offset:
-    x: -1
+    x: 0
     y: 0
 
   glyph_offset:
@@ -71,7 +71,7 @@ colors:
     cursor:     '0xeceff4'
   normal:
     black:      '0x101217'
-    red:        '0x88c0d0'
+    red:        '0xb48ead'
     green:      '0x6991B5'
     yellow:     '0x5e81ac'
     blue:       '0x7A97BA'
@@ -80,7 +80,7 @@ colors:
     white:      '0xeceff4'
   bright:
     black:      '0x4c566a'
-    red:        '0x88c0d0'
+    red:        '0xb48ead'
     green:      '0x6991B5'
     yellow:     '0x5e81ac'
     blue:       '0x7A97BA'
