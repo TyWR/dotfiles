@@ -54,6 +54,8 @@ Plug 'psf/black'
 Plug 'kkoomen/vim-doge', { 'tag': 'v2.8.0' }
 Plug 'psliwka/vim-smoothie'
 Plug 'mhinz/vim-startify'
+Plug 'airblade/vim-rooter'
+Plug 'ap/vim-buftabline'
 call plug#end()
 
 " ---------------------------------------------------------------------------
@@ -99,8 +101,12 @@ hi GitGutterChangeDeleteLineNr ctermfg=black ctermbg=8 cterm=standout
 
 hi Pmenu cterm=bold ctermbg=15 ctermfg=7
 
-hi TabLineSel cterm=bold ctermbg=3 ctermfg=0
+hi VertSplit ctermbg=none ctermfg=15
+
+hi TabLineSel cterm=bold ctermbg=2 ctermfg=0
 hi TabLine cterm=bold ctermbg=15 ctermfg=8
+hi PmenuSel cterm=bold ctermbg=15 ctermfg=8
+hi TabLineFill cterm=bold ctermbg=15 ctermfg=8
 
 
 " ----------------------------------------------------------------------------
@@ -132,7 +138,8 @@ nmap <Tab> :bn<CR>
 nmap <S-Tab> :bp<CR>
 
 nmap <C-F> :Lines<CR>
-nmap <C-D> :Files<CR>
+nmap <C-O> :Files<CR>
+nmap <C-P> :Buffers<CR>
 nmap <C-S> :Black<CR>
 
 " Add easy nbreakpoint shortcut

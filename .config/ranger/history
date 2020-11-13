@@ -1,6 +1,3 @@
-open_with h
-rename temp.bz2
-rename sdks-20201029-new.bz2
 rename 42servicesngelog
 rename 42services
 rename compute-sdks-changelog
@@ -48,3 +45,6 @@ open_with open
 shell cp /Users/tanguy/Pictures/641344.jpg wp.jpg
 shell 
 rename fjord
+find cra
+shell mkdir autoload
+shell mkdir plugin
