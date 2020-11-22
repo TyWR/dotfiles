@@ -20,17 +20,17 @@ font:
     family: TerminessTTF Nerd Font
     style: Bold Italic
   # normal:
-  #   family: Inter V
+  #   family: Fantasque Sans Mono
   #   style: Regular
   # bold:
-  #   family: Inter V
+  #   family: Fantasque Sans Mono
   #   style: Bold
   # italic:
-  #   family: Inter V
-  #   style: Regular
+  #   family: Fantasque Sans Mono
+  #   style: Italic
   # bold_italic:
-  #   family: Inter V
-  #   style: Bold
+  #   family: Fantasque Sans Mono
+  #   style: Bold Italic
 
   offset:
     x: 0
@@ -38,7 +38,6 @@ font:
 
   glyph_offset:
     x: 0
-    y: 0
 
 bell:
   animation: EaseOutExpo
@@ -57,8 +56,8 @@ mouse:
     launcher: firefox
 
 key_bindings:
-  - { key: Equals,   mods: Control,               action: IncreaseFontSize}
-  - { key: Key0,    mods: Control,               action: DecreaseFontSize}
+  - { key: Equals,   mods: Control,   action: IncreaseFontSize}
+  - { key: Key0,    mods: Control,    action: DecreaseFontSize}
 
 # BEGIN ACE
 background_opacity: 0.95

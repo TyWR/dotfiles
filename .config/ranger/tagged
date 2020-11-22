@@ -9,3 +9,4 @@
 /Users/tanguy/.config/themes/arctic/colors.sh
 /Users/tanguy/.config/themes/neon/colors.sh
 /Users/tanguy/Projects/mongo-dumps/secondary/pipeline/base_task.py
+/Users/tanguy/Projects/mongo-dumps/primary/pipeline/upload_dump_task.py

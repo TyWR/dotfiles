@@ -1,50 +1,50 @@
-rename 42servicesngelog
-rename 42services
-rename compute-sdks-changelog
-rename docker-compose.ecs.sdks-changelog-itunes.yml
-rename sdks-changelog-itunes
-shell mong
-find mongo
-find cha
-shell mkdir sdks
-shell touch sdks-20200101.bz2
-find 42s
-find itunes-c
-shell gzip aa167ea4081606962701f2cd44693a21.csv.gz 
-shell gzip -d aa167ea4081606962701f2cd44693a21.csv.gz 
-shell gzip aa167ea4081606962701f2cd44693a21.csv 
-rename roku.csv.gz
-shell gzip -d roku.csv.gz 
-rename roku--v1.0.json
-rename roku--v1.0
-find ct
-rename compute_itunes_sdksQ.sh
-shell touch pipeline.py
-rename snow_
-rename snow
-shell cp /Users/tanguy/Pictures/33114590156_b4cc036898_o.jpg wp.jpg
-shell bzcat gplay_slim.bz2
-shell mkdir forest
-shell cp /Users/tanguy/Pictures/nagrand-wp.jpg wp.jpg
-open
-rename Q
-rename slip_dump_task.py
-rename slim_dump_task.py
-find itunes
-rename crawler-ios-web-fargate
-rename docker-compose.ecs.itunes-web-crawler-fargate.override.yml
-rename docker-compose.ecs.itunes-web-crawler-fargate.yml
-rename itunes-web-crawler-fargate
-rename forest
-shell mk
-rename taiga
-shell cp /Users/tanguy/Downloads/30106.jpg wp.jpg
-shell cp /Users/tanguy/Pictures/477617.jpg wp.jpg
-
-open_with open
-shell cp /Users/tanguy/Pictures/641344.jpg wp.jpg
-shell 
-rename fjord
-find cra
 shell mkdir autoload
 shell mkdir plugin
+rename itunes-web-crawler-fargate-gf
+rename docker-compose.ecs.itunes-web-crawler-fargate-gf.override.yml
+rename docker-compose.ecs.itunes-web-crawler-fargate-gf.yml
+open_with open
+shell touch main.py
+rename slim_dump_android.sh
+rename slim_dump_itunes.sh
+rename slim_dump_playstore.sh
+shell tou
+shell mkdir tests
+shell touch u0000
+shell touch __init__.py
+shell test.py
+shell touch test.py
+shell touch README.md
+find itunes
+shell R
+shell mongoimpor
+s ecs-cli local create --task-def-remote itunes-web-crawler-fargate-gf:1 --output docker-compose.ecs.itunes-web-crawler-fargate-gf.yml
+s 
+shell ecs-cli local create --task-def-remote itunes-web-crawler-fargate-gf:1 --output docker-compose.ecs.itunes-web-crawler-fargate-gf.yml
+shell 
+find 
+find .conf
+shell Q
+open_with h
+open_with Q
+shell touch ecs-params.yml
+rename itunes-web-crawler-fargate.yml
+rename itunes-web-crawler-fargate-gf.yml
+rename README.md
+rename conf
+find crawler-i
+shell mkdir 20201115
+shell aws s3 cp s3://download-estimates-aggregation.42matters.com/ios/results/20201114/20201115_031504_00042_9bbk9_bucket-00000.gz .
+rename 20201115
+find itunes-d
+find jl
+shell gzcat 20201115_041110_00030_5nkvc_bucket-00000.gz | head -5000 >> sub
+shell gzcat 20201115_041110_00030_5nkvc_bucket-00000.gz | head -100000 >> sub
+filter gzip
+shell gzip sub
+shell touch download_query.ok
+shell bzip2 sub 
+shell bzip2 -d sub.bz2 
+open_with 
+rename Bismarck.epub
+open_with nvim

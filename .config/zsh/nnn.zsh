@@ -1,0 +1,1 @@
+export NNN_COLORS="2136"

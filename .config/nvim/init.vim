@@ -7,7 +7,7 @@ set cursorline
 set backspace=indent,eol,start
 set showmatch
 set noshowmode
-set fillchars+=vert:\▐
+set fillchars+=vert:\█
 
 " Tab settings
 set expandtab
@@ -56,6 +56,8 @@ Plug 'psliwka/vim-smoothie'
 Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-rooter'
 Plug 'ap/vim-buftabline'
+Plug 'dahu/vim-fanfingtastic'
+Plug 'RRethy/vim-illuminate' 
 call plug#end()
 
 " ---------------------------------------------------------------------------
@@ -103,10 +105,10 @@ hi Pmenu cterm=bold ctermbg=15 ctermfg=7
 
 hi VertSplit ctermbg=none ctermfg=15
 
-hi TabLineSel cterm=bold ctermbg=2 ctermfg=0
-hi TabLine cterm=bold ctermbg=15 ctermfg=8
+hi TabLineSel cterm=bold ctermbg=2 ctermfg=15
+hi TabLine cterm=bold ctermbg=15 ctermfg=2
+hi TabLineFill cterm=bold ctermbg=15 ctermfg=15
 hi PmenuSel cterm=bold ctermbg=15 ctermfg=8
-hi TabLineFill cterm=bold ctermbg=15 ctermfg=8
 
 
 " ----------------------------------------------------------------------------
@@ -128,7 +130,8 @@ nmap <Up> :call  smoothie#upwards()<CR>
 
 nmap ++ :vsp<CR>
 nmap °° :sp<CR>
-nnoremap <C-Q> q
+nnoremap M q
+nnoremap à @a
 nnoremap q <Nop>
 nnoremap Q <Nop>
 nmap mm :w<CR>
@@ -136,7 +139,6 @@ nmap qq :wq<CR>
 nmap QQ :bd<CR>
 nmap <Tab> :bn<CR>
 nmap <S-Tab> :bp<CR>
-
 nmap <C-F> :Lines<CR>
 nmap <C-O> :Files<CR>
 nmap <C-P> :Buffers<CR>

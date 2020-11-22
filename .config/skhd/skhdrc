@@ -70,3 +70,10 @@ cmd + shift - p: skhd -k "shift - 0x32"
 # Custom shortcuts
 cmd - n: skhd -k "alt - 0x13" && skhd -k "space"
 cmd - 0x27: skhd -k "alt - 0x1A" && skhd -k "space"
+
+# Custom shortcuts for german
+cmd - b: skhd -k "alt - 0x0B"
+alt - o: skhd -k "shift - 0x21" && skhd -k "o"
+alt - u: skhd -k "shift - 0x21" && skhd -k "u"
+alt - e: skhd -k "shift - 0x21" && skhd -k "e"
+alt - a: skhd -k "shift - 0x21" && skhd -k "a"
