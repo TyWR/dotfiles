@@ -1,135 +1,65 @@
 {
-  "coc-python|/Users/tanguy/Projects/download-iab-stats": {
+  "coc-python|/Users/tanguy/Projects/download-estimates-sdks": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:5f5de0112785e001aa6dd89fb47ec3b8": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:5f5de0112785e001aa6dd89fb47ec3b8": [],
     "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:07f37a0da8ff0bb2b3e3afe93f73ef9f": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:07f37a0da8ff0bb2b3e3afe93f73ef9f": [],
-    "autoSelectedWorkspacePythonInterpreter-/Users/tanguy/Projects/download-iab-stats": {
-      "architecture": 3,
-      "path": "/Users/tanguy/.miniconda3/bin/python",
-      "version": {
-        "options": {
-          "loose": false,
-          "includePrerelease": false
-        },
-        "loose": false,
-        "raw": "3.7.4-final",
-        "major": 3,
-        "minor": 7,
-        "patch": 4,
-        "prerelease": [
-          "final"
-        ],
-        "build": [],
-        "version": "3.7.4-final"
-      },
-      "sysPrefix": "/Users/tanguy/.miniconda3",
-      "fileHash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93",
-      "type": "Unknown"
-    }
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
   },
   "coc-python|global": {
+    "INTERPRETERS_CACHE_v3_CondaEnvService": [],
     "INTERPRETERS_CACHE_v3_VirtualEnvService": [],
-    "/Users/tanguy/.miniconda3/bin/python3.7.v3": {
+    "/usr/local/bin/python3.9.v3": {
       "data": {
         "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/bin/python3.7",
+        "path": "/usr/local/bin/python3.9",
         "version": {
           "options": {
             "loose": false,
             "includePrerelease": false
           },
           "loose": false,
-          "raw": "3.7.4-final",
+          "raw": "3.9.1-final",
           "major": 3,
-          "minor": 7,
-          "patch": 4,
+          "minor": 9,
+          "patch": 1,
           "prerelease": [
             "final"
           ],
           "build": [],
-          "version": "3.7.4-final"
+          "version": "3.9.1-final"
         },
-        "sysPrefix": "/Users/tanguy/.miniconda3",
-        "fileHash": "fe48b7cc594a8cc5c0b2d150f78ba23264bb930dd4407db46e0b1d1af985960fec91da28afaae86b59b0c9b4a26371e05212d2217f17e13c4891c83ed0876ae6"
+        "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "d6cf1432848ca3e33b96543d1c452773e1e358e9c97a9591b89edcb03c033fc3dbe7c8ccd9850ab783327b77c6a796455d2942c6eb3e4fb3b768d5d84c0fd5b9"
       },
-      "expiry": 1605968659559
+      "expiry": 1614675325329
     },
-    "/Users/tanguy/.miniconda3/bin/python3.v3": {
+    "/usr/local/bin/python3.v3": {
       "data": {
         "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/bin/python3",
+        "path": "/usr/local/bin/python3",
         "version": {
           "options": {
             "loose": false,
             "includePrerelease": false
           },
           "loose": false,
-          "raw": "3.7.4-final",
+          "raw": "3.9.1-final",
           "major": 3,
-          "minor": 7,
-          "patch": 4,
+          "minor": 9,
+          "patch": 1,
           "prerelease": [
             "final"
           ],
           "build": [],
-          "version": "3.7.4-final"
+          "version": "3.9.1-final"
         },
-        "sysPrefix": "/Users/tanguy/.miniconda3",
-        "fileHash": "69f3026e8b370d24bb93831c13495e92e28ab27f2bd871962ff2ec015781085bbf8871093106074a1df396cb86cf53c3c90a226357b7f55bbc754b8d40f38810"
+        "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "ce3765e58dad545f423617dd2d8381cc570833342623333bfb82accc8a6082b21dd1e1db4d1607e9b39debe0edd3ee472046cd47b96b1e6361038c5a7cb25cf0"
       },
-      "expiry": 1605968659560
+      "expiry": 1614675325296
     },
-    "/Users/tanguy/.miniconda3/bin/python.v3": {
-      "data": {
-        "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/bin/python",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.4-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 4,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.4-final"
-        },
-        "sysPrefix": "/Users/tanguy/.miniconda3",
-        "fileHash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93"
-      },
-      "expiry": 1605984721130
-    },
-    "/usr/bin/python.v3": {
-      "data": {
-        "architecture": 3,
-        "path": "/usr/bin/python",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "2.7.16-final",
-          "major": 2,
-          "minor": 7,
-          "patch": 16,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "2.7.16-final"
-        },
-        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
-        "fileHash": "eac0471206fec8e0c2b021ae1be130351d8b761fc45854675dfb732719e562accf0b4c482a9e9ccb14305a3a4d525a5e3a2696c558a01754c16937d1704465d4"
-      },
-      "expiry": 1605968659613
-    },
+    "CONDA_ENVIRONMENTS": {},
+    "INTERPRETERS_CACHE_v3_CondaEnvFileService": [],
     "/usr/bin/python2.v3": {
       "data": {
         "architecture": 3,
@@ -151,34 +81,9 @@
           "version": "2.7.16-final"
         },
         "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
-        "fileHash": "32155ca5edb3a60357185ab7b7d3b4191e4c6856fd20c2a65b74845f4a588ed4f9a8dd461fdbe2e0f26b75105be8d430fda6a3b7344172f0733bbb9d1ab175f1"
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2"
       },
-      "expiry": 1605968659625
-    },
-    "/usr/local/bin/python3.v3": {
-      "data": {
-        "architecture": 3,
-        "path": "/usr/local/bin/python3",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.8.5-final",
-          "major": 3,
-          "minor": 8,
-          "patch": 5,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.8.5-final"
-        },
-        "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.5/Frameworks/Python.framework/Versions/3.8",
-        "fileHash": "d1839f0cb23a9af56e44a2c703b5d06b130f4d3d52e55c5d52740d65354e17d6ae832a1ecb30bc0900aea1b0ac263c08d4f0b60371fe3c3b3975fdf450149341"
-      },
-      "expiry": 1605968659566
+      "expiry": 1614675325294
     },
     "/usr/bin/python2.7.v3": {
       "data": {
@@ -201,35 +106,338 @@
           "version": "2.7.16-final"
         },
         "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
-        "fileHash": "55d1e13184e54da406989a11e499fcb95768d4f943c3e27ffd2cec7611f919412fd07a69d9f6a1f78a65a8db48e16cf9d73ade5743b63178ce9a38c3b446a453"
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2"
       },
-      "expiry": 1605968659624
+      "expiry": 1614675325294
     },
-    "/usr/local/bin/python3.7.v3": {
+    "/usr/bin/python.v3": {
       "data": {
         "architecture": 3,
-        "path": "/usr/local/bin/python3.7",
+        "path": "/usr/bin/python",
         "version": {
           "options": {
             "loose": false,
             "includePrerelease": false
           },
           "loose": false,
-          "raw": "3.7.7-final",
-          "major": 3,
+          "raw": "2.7.16-final",
+          "major": 2,
           "minor": 7,
-          "patch": 7,
+          "patch": 16,
           "prerelease": [
             "final"
           ],
           "build": [],
-          "version": "3.7.7-final"
+          "version": "2.7.16-final"
         },
-        "sysPrefix": "/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7",
-        "fileHash": "0dece57729fc1023fc9ceeb34d761a58f01d81a19617938219a16768a825419701ef6d4baf3364241e06ebb802e8e6901ffa8780c705ab489358f24a8959b44b"
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2"
       },
-      "expiry": 1601287335004
+      "expiry": 1614675325297
     },
+    "/usr/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.2-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 2,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.2-final"
+        },
+        "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2"
+      },
+      "expiry": 1614675325328
+    },
+    "INTERPRETERS_CACHE_v3_KnownPathsService": [
+      {
+        "architecture": 3,
+        "path": "/usr/local/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.1-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 1,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.1-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "ce3765e58dad545f423617dd2d8381cc570833342623333bfb82accc8a6082b21dd1e1db4d1607e9b39debe0edd3ee472046cd47b96b1e6361038c5a7cb25cf0",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/bin/python3.9",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.1-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 1,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.1-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "d6cf1432848ca3e33b96543d1c452773e1e358e9c97a9591b89edcb03c033fc3dbe7c8ccd9850ab783327b77c6a796455d2942c6eb3e4fb3b768d5d84c0fd5b9",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.16-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 16,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.16-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python2",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.16-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 16,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.16-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python2.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.16-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 16,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.16-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.2-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 2,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.2-final"
+        },
+        "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.1-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 1,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.1-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "ce3765e58dad545f423617dd2d8381cc570833342623333bfb82accc8a6082b21dd1e1db4d1607e9b39debe0edd3ee472046cd47b96b1e6361038c5a7cb25cf0",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/local/bin/python3.9",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.1-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 1,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.1-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "d6cf1432848ca3e33b96543d1c452773e1e358e9c97a9591b89edcb03c033fc3dbe7c8ccd9850ab783327b77c6a796455d2942c6eb3e4fb3b768d5d84c0fd5b9",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.16-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 16,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.16-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python2",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.16-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 16,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.16-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python2.7",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "2.7.16-final",
+          "major": 2,
+          "minor": 7,
+          "patch": 16,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "2.7.16-final"
+        },
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/usr/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.2-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 2,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.2-final"
+        },
+        "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
+        "type": "Unknown"
+      }
+    ],
     "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python.v3": {
       "data": {
         "architecture": 3,
@@ -251,55 +459,57 @@
           "version": "2.7.16-final"
         },
         "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
-        "fileHash": "71067ccefa2a546a8b1162ec93a5c4a19a35ad0ec7dc3de673326a901bf3ae4bd8c2d284df32c1ee55f6d166b140c99541347575b209db9e9864d295fc0d43c7"
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2"
       },
-      "expiry": 1605968659703
+      "expiry": 1614675325348
+    },
+    "/usr/local/opt/python@3.9/bin/python3.9.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/usr/local/opt/python@3.9/bin/python3.9",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.9.1-final",
+          "major": 3,
+          "minor": 9,
+          "patch": 1,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.9.1-final"
+        },
+        "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "d1bb5a21a5778a1d500f1e657a060164034876d5d412cd57e4be9d3270c306b09781513d54d4806a9ec2c7f3cfef8484b24d552175a1cef56d1c20996611f5c6"
+      },
+      "expiry": 1614675325349
     },
     "INTERPRETERS_CACHE_v3_CurrentPathService": [
       {
         "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/bin/python3.7",
+        "path": "/usr/local/opt/python@3.9/bin/python3.9",
         "version": {
           "options": {
             "loose": false,
             "includePrerelease": false
           },
           "loose": false,
-          "raw": "3.7.4-final",
+          "raw": "3.9.1-final",
           "major": 3,
-          "minor": 7,
-          "patch": 4,
+          "minor": 9,
+          "patch": 1,
           "prerelease": [
             "final"
           ],
           "build": [],
-          "version": "3.7.4-final"
+          "version": "3.9.1-final"
         },
-        "sysPrefix": "/Users/tanguy/.miniconda3",
-        "fileHash": "fe48b7cc594a8cc5c0b2d150f78ba23264bb930dd4407db46e0b1d1af985960fec91da28afaae86b59b0c9b4a26371e05212d2217f17e13c4891c83ed0876ae6",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/bin/python3",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.4-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 4,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.4-final"
-        },
-        "sysPrefix": "/Users/tanguy/.miniconda3",
-        "fileHash": "69f3026e8b370d24bb93831c13495e92e28ab27f2bd871962ff2ec015781085bbf8871093106074a1df396cb86cf53c3c90a226357b7f55bbc754b8d40f38810",
+        "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "d1bb5a21a5778a1d500f1e657a060164034876d5d412cd57e4be9d3270c306b09781513d54d4806a9ec2c7f3cfef8484b24d552175a1cef56d1c20996611f5c6",
         "type": "Unknown"
       },
       {
@@ -322,782 +532,195 @@
           "version": "2.7.16-final"
         },
         "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
-        "fileHash": "71067ccefa2a546a8b1162ec93a5c4a19a35ad0ec7dc3de673326a901bf3ae4bd8c2d284df32c1ee55f6d166b140c99541347575b209db9e9864d295fc0d43c7",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
         "type": "Unknown"
       },
       {
         "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/bin/python",
+        "path": "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python",
         "version": {
           "options": {
             "loose": false,
             "includePrerelease": false
           },
           "loose": false,
-          "raw": "3.7.4-final",
-          "major": 3,
+          "raw": "2.7.16-final",
+          "major": 2,
           "minor": 7,
-          "patch": 4,
+          "patch": 16,
           "prerelease": [
             "final"
           ],
           "build": [],
-          "version": "3.7.4-final"
+          "version": "2.7.16-final"
         },
-        "sysPrefix": "/Users/tanguy/.miniconda3",
-        "fileHash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93",
+        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
         "type": "Unknown"
       },
       {
         "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/bin/python",
+        "path": "/usr/local/opt/python@3.9/bin/python3.9",
         "version": {
           "options": {
             "loose": false,
             "includePrerelease": false
           },
           "loose": false,
-          "raw": "3.7.4-final",
+          "raw": "3.9.1-final",
           "major": 3,
-          "minor": 7,
-          "patch": 4,
+          "minor": 9,
+          "patch": 1,
           "prerelease": [
             "final"
           ],
           "build": [],
-          "version": "3.7.4-final"
+          "version": "3.9.1-final"
         },
-        "sysPrefix": "/Users/tanguy/.miniconda3",
-        "fileHash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93",
+        "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+        "fileHash": "d1bb5a21a5778a1d500f1e657a060164034876d5d412cd57e4be9d3270c306b09781513d54d4806a9ec2c7f3cfef8484b24d552175a1cef56d1c20996611f5c6",
         "type": "Unknown"
       }
     ],
     "InterpreterAutoSeletionRule-currentPath": {
       "architecture": 3,
-      "path": "/Users/tanguy/.miniconda3/bin/python",
+      "path": "/usr/local/opt/python@3.9/bin/python3.9",
       "version": {
         "options": {
           "loose": false,
           "includePrerelease": false
         },
         "loose": false,
-        "raw": "3.7.4-final",
+        "raw": "3.9.1-final",
         "major": 3,
-        "minor": 7,
-        "patch": 4,
+        "minor": 9,
+        "patch": 1,
         "prerelease": [
           "final"
         ],
         "build": [],
-        "version": "3.7.4-final"
+        "version": "3.9.1-final"
       },
-      "sysPrefix": "/Users/tanguy/.miniconda3",
-      "fileHash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93",
+      "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "d1bb5a21a5778a1d500f1e657a060164034876d5d412cd57e4be9d3270c306b09781513d54d4806a9ec2c7f3cfef8484b24d552175a1cef56d1c20996611f5c6",
       "type": "Unknown"
     },
+    "PipEnvInformation": [],
     "preferredGlobalPyInterpreter": {
       "architecture": 3,
-      "path": "/usr/local/opt/python@3.8/bin/python3.8",
+      "path": "/usr/local/opt/python@3.9/bin/python3.9",
       "version": {
         "options": {
           "loose": false,
           "includePrerelease": false
         },
         "loose": false,
-        "raw": "3.8.6-final",
+        "raw": "3.9.1-final",
         "major": 3,
-        "minor": 8,
-        "patch": 6,
+        "minor": 9,
+        "patch": 1,
         "prerelease": [
           "final"
         ],
         "build": [],
-        "version": "3.8.6-final"
+        "version": "3.9.1-final"
       },
-      "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.6/Frameworks/Python.framework/Versions/3.8",
-      "fileHash": "e54488029611443daf50d94596c1381544110639707cd0b4cfc1aa6376d6ae73d40bf0a04ac2d162bd2afa79de06bc8fd8c9368e52c0c0037fefcbd0a00fd892",
-      "type": "Unknown",
-      "displayName": "Python 3.8.6 64-bit"
+      "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "d1bb5a21a5778a1d500f1e657a060164034876d5d412cd57e4be9d3270c306b09781513d54d4806a9ec2c7f3cfef8484b24d552175a1cef56d1c20996611f5c6",
+      "type": "Unknown"
     },
-    "/Users/tanguy/.miniconda3/bin/python.interpreter.Details.v7": {
+    "/usr/local/bin/python3.interpreter.displayName.v7": {
       "data": {
-        "fileHash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93",
-        "info": {
-          "architecture": 3,
-          "path": "/Users/tanguy/.miniconda3/bin/python",
-          "version": {
-            "options": {
-              "loose": false,
-              "includePrerelease": false
-            },
-            "loose": false,
-            "raw": "3.7.4-final",
-            "major": 3,
-            "minor": 7,
-            "patch": 4,
-            "prerelease": [
-              "final"
-            ],
-            "build": [],
-            "version": "3.7.4-final"
-          },
-          "sysPrefix": "/Users/tanguy/.miniconda3",
-          "fileHash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93",
-          "companyDisplayName": "Anaconda, Inc.",
-          "type": "Conda",
-          "envPath": "/Users/tanguy/.miniconda3",
-          "envName": "base",
-          "displayName": "Python 3.7.4 64-bit ('base': conda)"
-        }
+        "displayName": "Python 3.9.1 64-bit",
+        "hash": "ce3765e58dad545f423617dd2d8381cc570833342623333bfb82accc8a6082b21dd1e1db4d1607e9b39debe0edd3ee472046cd47b96b1e6361038c5a7cb25cf0-2a36ef05a2f24623795e64df6ee302a3"
       },
-      "expiry": 1605970127451
-    },
-    "/Users/tanguy/.miniconda3/envs/download-stats-viz/bin/python.v3": {
-      "data": {
-        "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/envs/download-stats-viz/bin/python",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.6.10-final",
-          "major": 3,
-          "minor": 6,
-          "patch": 10,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.6.10-final"
-        },
-        "sysPrefix": "/Users/tanguy/.miniconda3/envs/download-stats-viz",
-        "fileHash": "97c4981bf747b145d0292fcb00f523c413f1e59d7bfb7020effef8553a18a9acc4ee5d3b46b1130130cc3a2e859b24997cf1b98097c800b25d82555944a63404"
-      },
-      "expiry": 1605968659710
-    },
-    "/usr/bin/python3.v3": {
-      "data": {
-        "architecture": 3,
-        "path": "/usr/bin/python3",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.3-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 3,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.3-final"
-        },
-        "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.7",
-        "fileHash": "c3543f0fed79862fc273bdc704faca01796d28c0f857a85077320a83ff1d11f4c9b886313d23b279dd44aa93479acd278299f8c6d3766e5ad98523f7e8f86c48"
-      },
-      "expiry": 1605968659679
-    },
-    "INTERPRETERS_CACHE_v3_KnownPathsService": [
-      {
-        "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/bin/python",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.4-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 4,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.4-final"
-        },
-        "sysPrefix": "/Users/tanguy/.miniconda3",
-        "fileHash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/bin/python3",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.4-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 4,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.4-final"
-        },
-        "sysPrefix": "/Users/tanguy/.miniconda3",
-        "fileHash": "69f3026e8b370d24bb93831c13495e92e28ab27f2bd871962ff2ec015781085bbf8871093106074a1df396cb86cf53c3c90a226357b7f55bbc754b8d40f38810",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/bin/python3.7",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.4-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 4,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.4-final"
-        },
-        "sysPrefix": "/Users/tanguy/.miniconda3",
-        "fileHash": "fe48b7cc594a8cc5c0b2d150f78ba23264bb930dd4407db46e0b1d1af985960fec91da28afaae86b59b0c9b4a26371e05212d2217f17e13c4891c83ed0876ae6",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/local/bin/python3",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.8.5-final",
-          "major": 3,
-          "minor": 8,
-          "patch": 5,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.8.5-final"
-        },
-        "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.5/Frameworks/Python.framework/Versions/3.8",
-        "fileHash": "d1839f0cb23a9af56e44a2c703b5d06b130f4d3d52e55c5d52740d65354e17d6ae832a1ecb30bc0900aea1b0ac263c08d4f0b60371fe3c3b3975fdf450149341",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/local/bin/python3.8",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.8.5-final",
-          "major": 3,
-          "minor": 8,
-          "patch": 5,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.8.5-final"
-        },
-        "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.5/Frameworks/Python.framework/Versions/3.8",
-        "fileHash": "3484b88eb31c3f9272881fb1f9c9008e26850bb8f7af6a7662a1a032888d749f3a8bbbba267c9bdcd6e88b5953ac020b92d3233d0f25ac5c3d0279b9aeb3e870",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/bin/python",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "2.7.16-final",
-          "major": 2,
-          "minor": 7,
-          "patch": 16,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "2.7.16-final"
-        },
-        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
-        "fileHash": "eac0471206fec8e0c2b021ae1be130351d8b761fc45854675dfb732719e562accf0b4c482a9e9ccb14305a3a4d525a5e3a2696c558a01754c16937d1704465d4",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/bin/python2",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "2.7.16-final",
-          "major": 2,
-          "minor": 7,
-          "patch": 16,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "2.7.16-final"
-        },
-        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
-        "fileHash": "32155ca5edb3a60357185ab7b7d3b4191e4c6856fd20c2a65b74845f4a588ed4f9a8dd461fdbe2e0f26b75105be8d430fda6a3b7344172f0733bbb9d1ab175f1",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/bin/python2.7",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "2.7.16-final",
-          "major": 2,
-          "minor": 7,
-          "patch": 16,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "2.7.16-final"
-        },
-        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
-        "fileHash": "55d1e13184e54da406989a11e499fcb95768d4f943c3e27ffd2cec7611f919412fd07a69d9f6a1f78a65a8db48e16cf9d73ade5743b63178ce9a38c3b446a453",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/bin/python3",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.3-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 3,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.3-final"
-        },
-        "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.7",
-        "fileHash": "c3543f0fed79862fc273bdc704faca01796d28c0f857a85077320a83ff1d11f4c9b886313d23b279dd44aa93479acd278299f8c6d3766e5ad98523f7e8f86c48",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/local/bin/python3",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.8.5-final",
-          "major": 3,
-          "minor": 8,
-          "patch": 5,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.8.5-final"
-        },
-        "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.5/Frameworks/Python.framework/Versions/3.8",
-        "fileHash": "d1839f0cb23a9af56e44a2c703b5d06b130f4d3d52e55c5d52740d65354e17d6ae832a1ecb30bc0900aea1b0ac263c08d4f0b60371fe3c3b3975fdf450149341",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/local/bin/python3.8",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.8.5-final",
-          "major": 3,
-          "minor": 8,
-          "patch": 5,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.8.5-final"
-        },
-        "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.5/Frameworks/Python.framework/Versions/3.8",
-        "fileHash": "3484b88eb31c3f9272881fb1f9c9008e26850bb8f7af6a7662a1a032888d749f3a8bbbba267c9bdcd6e88b5953ac020b92d3233d0f25ac5c3d0279b9aeb3e870",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/bin/python",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "2.7.16-final",
-          "major": 2,
-          "minor": 7,
-          "patch": 16,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "2.7.16-final"
-        },
-        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
-        "fileHash": "eac0471206fec8e0c2b021ae1be130351d8b761fc45854675dfb732719e562accf0b4c482a9e9ccb14305a3a4d525a5e3a2696c558a01754c16937d1704465d4",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/bin/python2",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "2.7.16-final",
-          "major": 2,
-          "minor": 7,
-          "patch": 16,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "2.7.16-final"
-        },
-        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
-        "fileHash": "32155ca5edb3a60357185ab7b7d3b4191e4c6856fd20c2a65b74845f4a588ed4f9a8dd461fdbe2e0f26b75105be8d430fda6a3b7344172f0733bbb9d1ab175f1",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/bin/python2.7",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "2.7.16-final",
-          "major": 2,
-          "minor": 7,
-          "patch": 16,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "2.7.16-final"
-        },
-        "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
-        "fileHash": "55d1e13184e54da406989a11e499fcb95768d4f943c3e27ffd2cec7611f919412fd07a69d9f6a1f78a65a8db48e16cf9d73ade5743b63178ce9a38c3b446a453",
-        "type": "Unknown"
-      },
-      {
-        "architecture": 3,
-        "path": "/usr/bin/python3",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.3-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 3,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.3-final"
-        },
-        "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.7",
-        "fileHash": "c3543f0fed79862fc273bdc704faca01796d28c0f857a85077320a83ff1d11f4c9b886313d23b279dd44aa93479acd278299f8c6d3766e5ad98523f7e8f86c48",
-        "type": "Unknown"
-      }
-    ],
-    "/Users/tanguy/.miniconda3/bin/python.interpreter.displayName.v7": {
-      "data": {
-        "displayName": "Python 3.7.4 64-bit ('base': conda)",
-        "hash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93-4fa7313fd5c650973bccd22bc5fd0146"
-      },
-      "expiry": 1605970127438
-    },
-    "CONDA_ENVIRONMENTS": {
-      "data": [
-        {
-          "name": "base",
-          "path": "/Users/tanguy/.miniconda3"
-        },
-        {
-          "name": "download-stats-viz",
-          "path": "/Users/tanguy/.miniconda3/envs/download-stats-viz"
-        }
-      ]
-    },
-    "INTERPRETERS_CACHE_v3_CondaEnvFileService": [
-      {
-        "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/bin/python",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.4-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 4,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.4-final"
-        },
-        "sysPrefix": "/Users/tanguy/.miniconda3",
-        "fileHash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93",
-        "companyDisplayName": "Anaconda, Inc.",
-        "type": "Conda",
-        "envPath": "/Users/tanguy/.miniconda3",
-        "envName": "base"
-      },
-      {
-        "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/envs/download-stats-viz/bin/python",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.6.10-final",
-          "major": 3,
-          "minor": 6,
-          "patch": 10,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.6.10-final"
-        },
-        "sysPrefix": "/Users/tanguy/.miniconda3/envs/download-stats-viz",
-        "fileHash": "97c4981bf747b145d0292fcb00f523c413f1e59d7bfb7020effef8553a18a9acc4ee5d3b46b1130130cc3a2e859b24997cf1b98097c800b25d82555944a63404",
-        "companyDisplayName": "Anaconda, Inc.",
-        "type": "Conda",
-        "envPath": "/Users/tanguy/.miniconda3/envs/download-stats-viz",
-        "envName": "download-stats-viz"
-      }
-    ],
-    "INTERPRETERS_CACHE_v3_CondaEnvService": [
-      {
-        "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/bin/python",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.4-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 4,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.4-final"
-        },
-        "sysPrefix": "/Users/tanguy/.miniconda3",
-        "fileHash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93",
-        "companyDisplayName": "Anaconda, Inc.",
-        "type": "Conda",
-        "envPath": "/Users/tanguy/.miniconda3",
-        "envName": "base"
-      },
-      {
-        "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/envs/download-stats-viz/bin/python",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.6.10-final",
-          "major": 3,
-          "minor": 6,
-          "patch": 10,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.6.10-final"
-        },
-        "sysPrefix": "/Users/tanguy/.miniconda3/envs/download-stats-viz",
-        "fileHash": "97c4981bf747b145d0292fcb00f523c413f1e59d7bfb7020effef8553a18a9acc4ee5d3b46b1130130cc3a2e859b24997cf1b98097c800b25d82555944a63404",
-        "companyDisplayName": "Anaconda, Inc.",
-        "type": "Conda",
-        "envPath": "/Users/tanguy/.miniconda3/envs/download-stats-viz",
-        "envName": "download-stats-viz"
-      },
-      {
-        "architecture": 3,
-        "path": "/Users/tanguy/.miniconda3/bin/python",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.4-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 4,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.4-final"
-        },
-        "sysPrefix": "/Users/tanguy/.miniconda3",
-        "fileHash": "a424cffa97296ef44f93a41073b72cdeeb334dbf9c03f5bf273adce4cdb02b759f6f1cc5f2d7f6c8eb1e062960c0904e7266149de73bff5cebb5a4edaa6aad93",
-        "companyDisplayName": "Anaconda, Inc.",
-        "type": "Conda",
-        "envPath": "/Users/tanguy/.miniconda3",
-        "envName": "base"
-      }
-    ],
-    "PipEnvInformation": [],
-    "/Users/tanguy/.miniconda3/envs/download-stats-viz/bin/python.interpreter.displayName.v7": {
-      "data": {
-        "displayName": "Python 3.6.10 64-bit ('download-stats-viz': conda)",
-        "hash": "97c4981bf747b145d0292fcb00f523c413f1e59d7bfb7020effef8553a18a9acc4ee5d3b46b1130130cc3a2e859b24997cf1b98097c800b25d82555944a63404-0a383794cdd553949002f922a1ccfccb"
-      },
-      "expiry": 1605970127439
+      "expiry": 1614690202524
     },
     "/usr/bin/python.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 2.7.16 64-bit",
-        "hash": "eac0471206fec8e0c2b021ae1be130351d8b761fc45854675dfb732719e562accf0b4c482a9e9ccb14305a3a4d525a5e3a2696c558a01754c16937d1704465d4-affabcd6e42fa4a070f38c52a7b1b891"
+        "hash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2-f5b651b9c4b75532b11ae83303c43d14"
       },
-      "expiry": 1605968659751
+      "expiry": 1614675325354
     },
     "/usr/bin/python3.interpreter.displayName.v7": {
       "data": {
-        "displayName": "Python 3.7.3 64-bit",
-        "hash": "c3543f0fed79862fc273bdc704faca01796d28c0f857a85077320a83ff1d11f4c9b886313d23b279dd44aa93479acd278299f8c6d3766e5ad98523f7e8f86c48-085220d655a090abde66b739a7ab56cb"
+        "displayName": "Python 3.8.2 64-bit",
+        "hash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2-4bc3c9f5346452a4fe404c621ebcd443"
       },
-      "expiry": 1605968659753
+      "expiry": 1614675325355
     },
-    "/usr/local/bin/python3.interpreter.displayName.v7": {
+    "/usr/local/opt/python@3.9/bin/python3.9.interpreter.displayName.v7": {
       "data": {
-        "displayName": "Python 3.8.5 64-bit",
-        "hash": "d1839f0cb23a9af56e44a2c703b5d06b130f4d3d52e55c5d52740d65354e17d6ae832a1ecb30bc0900aea1b0ac263c08d4f0b60371fe3c3b3975fdf450149341-366636227345e9defeb0b4447c35b9b9"
+        "displayName": "Python 3.9.1 64-bit",
+        "hash": "d1bb5a21a5778a1d500f1e657a060164034876d5d412cd57e4be9d3270c306b09781513d54d4806a9ec2c7f3cfef8484b24d552175a1cef56d1c20996611f5c6-d41f7b2940777c479872bdd7831c5f39"
       },
-      "expiry": 1605968659749
+      "expiry": 1614675325413
     },
     "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 2.7.16 64-bit",
-        "hash": "71067ccefa2a546a8b1162ec93a5c4a19a35ad0ec7dc3de673326a901bf3ae4bd8c2d284df32c1ee55f6d166b140c99541347575b209db9e9864d295fc0d43c7-36d3a09e75e6a4108c32c67842f3c571"
+        "hash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2-a9fb100b1ab04c53a774363838d4885e"
       },
-      "expiry": 1605968659754
+      "expiry": 1614675325412
     },
     "InterpreterAutoSeletionRule-system": {
       "architecture": 3,
-      "path": "/usr/local/bin/python3",
+      "path": "/usr/local/opt/python@3.9/bin/python3.9",
       "version": {
         "options": {
           "loose": false,
           "includePrerelease": false
         },
         "loose": false,
-        "raw": "3.8.5-final",
+        "raw": "3.9.1-final",
         "major": 3,
-        "minor": 8,
-        "patch": 5,
+        "minor": 9,
+        "patch": 1,
         "prerelease": [
           "final"
         ],
         "build": [],
-        "version": "3.8.5-final"
+        "version": "3.9.1-final"
       },
-      "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.5/Frameworks/Python.framework/Versions/3.8",
-      "fileHash": "d1839f0cb23a9af56e44a2c703b5d06b130f4d3d52e55c5d52740d65354e17d6ae832a1ecb30bc0900aea1b0ac263c08d4f0b60371fe3c3b3975fdf450149341",
+      "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "d1bb5a21a5778a1d500f1e657a060164034876d5d412cd57e4be9d3270c306b09781513d54d4806a9ec2c7f3cfef8484b24d552175a1cef56d1c20996611f5c6",
       "type": "Unknown",
-      "displayName": "Python 3.8.5 64-bit"
+      "displayName": "Python 3.9.1 64-bit"
     },
-    "/Users/tanguy/.miniconda3/envs/download-stats-viz/bin/python.interpreter.Details.v7": {
+    "/usr/local/bin/python3.interpreter.Details.v7": {
       "data": {
-        "fileHash": "97c4981bf747b145d0292fcb00f523c413f1e59d7bfb7020effef8553a18a9acc4ee5d3b46b1130130cc3a2e859b24997cf1b98097c800b25d82555944a63404",
+        "fileHash": "ce3765e58dad545f423617dd2d8381cc570833342623333bfb82accc8a6082b21dd1e1db4d1607e9b39debe0edd3ee472046cd47b96b1e6361038c5a7cb25cf0",
         "info": {
           "architecture": 3,
-          "path": "/Users/tanguy/.miniconda3/envs/download-stats-viz/bin/python",
+          "path": "/usr/local/bin/python3",
           "version": {
             "options": {
               "loose": false,
               "includePrerelease": false
             },
             "loose": false,
-            "raw": "3.6.10-final",
+            "raw": "3.9.1-final",
             "major": 3,
-            "minor": 6,
-            "patch": 10,
+            "minor": 9,
+            "patch": 1,
             "prerelease": [
               "final"
             ],
             "build": [],
-            "version": "3.6.10-final"
+            "version": "3.9.1-final"
           },
-          "sysPrefix": "/Users/tanguy/.miniconda3/envs/download-stats-viz",
-          "fileHash": "97c4981bf747b145d0292fcb00f523c413f1e59d7bfb7020effef8553a18a9acc4ee5d3b46b1130130cc3a2e859b24997cf1b98097c800b25d82555944a63404",
-          "companyDisplayName": "Anaconda, Inc.",
-          "type": "Conda",
-          "envPath": "/Users/tanguy/.miniconda3/envs/download-stats-viz",
-          "envName": "download-stats-viz",
-          "displayName": "Python 3.6.10 64-bit ('download-stats-viz': conda)"
+          "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+          "fileHash": "ce3765e58dad545f423617dd2d8381cc570833342623333bfb82accc8a6082b21dd1e1db4d1607e9b39debe0edd3ee472046cd47b96b1e6361038c5a7cb25cf0",
+          "type": "Unknown",
+          "displayName": "Python 3.9.1 64-bit"
         }
       },
-      "expiry": 1605970127455
+      "expiry": 1614690202536
     },
     "/usr/bin/python.interpreter.Details.v7": {
       "data": {
-        "fileHash": "eac0471206fec8e0c2b021ae1be130351d8b761fc45854675dfb732719e562accf0b4c482a9e9ccb14305a3a4d525a5e3a2696c558a01754c16937d1704465d4",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
         "info": {
           "architecture": 3,
           "path": "/usr/bin/python",
@@ -1118,16 +741,16 @@
             "version": "2.7.16-final"
           },
           "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
-          "fileHash": "eac0471206fec8e0c2b021ae1be130351d8b761fc45854675dfb732719e562accf0b4c482a9e9ccb14305a3a4d525a5e3a2696c558a01754c16937d1704465d4",
+          "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
           "type": "Unknown",
           "displayName": "Python 2.7.16 64-bit"
         }
       },
-      "expiry": 1605968659774
+      "expiry": 1614675325370
     },
     "/usr/bin/python3.interpreter.Details.v7": {
       "data": {
-        "fileHash": "c3543f0fed79862fc273bdc704faca01796d28c0f857a85077320a83ff1d11f4c9b886313d23b279dd44aa93479acd278299f8c6d3766e5ad98523f7e8f86c48",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
         "info": {
           "architecture": 3,
           "path": "/usr/bin/python3",
@@ -1137,57 +760,57 @@
               "includePrerelease": false
             },
             "loose": false,
-            "raw": "3.7.3-final",
+            "raw": "3.8.2-final",
             "major": 3,
-            "minor": 7,
-            "patch": 3,
+            "minor": 8,
+            "patch": 2,
             "prerelease": [
               "final"
             ],
             "build": [],
-            "version": "3.7.3-final"
+            "version": "3.8.2-final"
           },
-          "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.7",
-          "fileHash": "c3543f0fed79862fc273bdc704faca01796d28c0f857a85077320a83ff1d11f4c9b886313d23b279dd44aa93479acd278299f8c6d3766e5ad98523f7e8f86c48",
+          "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8",
+          "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
           "type": "Unknown",
-          "displayName": "Python 3.7.3 64-bit"
+          "displayName": "Python 3.8.2 64-bit"
         }
       },
-      "expiry": 1605968659777
+      "expiry": 1614675325372
     },
-    "/usr/local/bin/python3.interpreter.Details.v7": {
+    "/usr/local/opt/python@3.9/bin/python3.9.interpreter.Details.v7": {
       "data": {
-        "fileHash": "d1839f0cb23a9af56e44a2c703b5d06b130f4d3d52e55c5d52740d65354e17d6ae832a1ecb30bc0900aea1b0ac263c08d4f0b60371fe3c3b3975fdf450149341",
+        "fileHash": "d1bb5a21a5778a1d500f1e657a060164034876d5d412cd57e4be9d3270c306b09781513d54d4806a9ec2c7f3cfef8484b24d552175a1cef56d1c20996611f5c6",
         "info": {
           "architecture": 3,
-          "path": "/usr/local/bin/python3",
+          "path": "/usr/local/opt/python@3.9/bin/python3.9",
           "version": {
             "options": {
               "loose": false,
               "includePrerelease": false
             },
             "loose": false,
-            "raw": "3.8.5-final",
+            "raw": "3.9.1-final",
             "major": 3,
-            "minor": 8,
-            "patch": 5,
+            "minor": 9,
+            "patch": 1,
             "prerelease": [
               "final"
             ],
             "build": [],
-            "version": "3.8.5-final"
+            "version": "3.9.1-final"
           },
-          "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.5/Frameworks/Python.framework/Versions/3.8",
-          "fileHash": "d1839f0cb23a9af56e44a2c703b5d06b130f4d3d52e55c5d52740d65354e17d6ae832a1ecb30bc0900aea1b0ac263c08d4f0b60371fe3c3b3975fdf450149341",
+          "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+          "fileHash": "d1bb5a21a5778a1d500f1e657a060164034876d5d412cd57e4be9d3270c306b09781513d54d4806a9ec2c7f3cfef8484b24d552175a1cef56d1c20996611f5c6",
           "type": "Unknown",
-          "displayName": "Python 3.8.5 64-bit"
+          "displayName": "Python 3.9.1 64-bit"
         }
       },
-      "expiry": 1605968659770
+      "expiry": 1614675325438
     },
     "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python.interpreter.Details.v7": {
       "data": {
-        "fileHash": "71067ccefa2a546a8b1162ec93a5c4a19a35ad0ec7dc3de673326a901bf3ae4bd8c2d284df32c1ee55f6d166b140c99541347575b209db9e9864d295fc0d43c7",
+        "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
         "info": {
           "architecture": 3,
           "path": "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python",
@@ -1208,496 +831,62 @@
             "version": "2.7.16-final"
           },
           "sysPrefix": "/System/Library/Frameworks/Python.framework/Versions/2.7",
-          "fileHash": "71067ccefa2a546a8b1162ec93a5c4a19a35ad0ec7dc3de673326a901bf3ae4bd8c2d284df32c1ee55f6d166b140c99541347575b209db9e9864d295fc0d43c7",
+          "fileHash": "fe779c276a2cbfead74d365db0ac2cbfcea62106a4f0a4f6c9ded35d45b630e271af9461b8083f72f5c25478015c8409ecfa63d05b8eac8c5d1442777dd260d2",
           "type": "Unknown",
           "displayName": "Python 2.7.16 64-bit"
         }
       },
-      "expiry": 1605968659782
+      "expiry": 1614675325437
     },
     "InterpreterAutoSeletionRule-cachedInterpreters": {
       "architecture": 3,
-      "path": "/usr/local/bin/python3",
+      "path": "/usr/local/opt/python@3.9/bin/python3.9",
       "version": {
         "options": {
           "loose": false,
           "includePrerelease": false
         },
         "loose": false,
-        "raw": "3.8.5-final",
+        "raw": "3.9.1-final",
         "major": 3,
-        "minor": 8,
-        "patch": 5,
+        "minor": 9,
+        "patch": 1,
         "prerelease": [
           "final"
         ],
         "build": [],
-        "version": "3.8.5-final"
+        "version": "3.9.1-final"
       },
-      "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.5/Frameworks/Python.framework/Versions/3.8",
-      "fileHash": "d1839f0cb23a9af56e44a2c703b5d06b130f4d3d52e55c5d52740d65354e17d6ae832a1ecb30bc0900aea1b0ac263c08d4f0b60371fe3c3b3975fdf450149341",
+      "sysPrefix": "/usr/local/Cellar/python@3.9/3.9.1/Frameworks/Python.framework/Versions/3.9",
+      "fileHash": "d1bb5a21a5778a1d500f1e657a060164034876d5d412cd57e4be9d3270c306b09781513d54d4806a9ec2c7f3cfef8484b24d552175a1cef56d1c20996611f5c6",
       "type": "Unknown",
-      "displayName": "Python 3.8.5 64-bit"
+      "displayName": "Python 3.9.1 64-bit"
     },
-    "ProposeLSBanner": false,
-    "pylint_DisableLinterInstallPrompt": true,
-    "InterpreterAutoSeletionRule-environment": {
-      "architecture": 3,
-      "path": "/Users/tanguy/.miniconda3/bin/python3",
-      "version": {
-        "options": {
-          "loose": false,
-          "includePrerelease": false
-        },
-        "loose": false,
-        "raw": "3.7.4-final",
-        "major": 3,
-        "minor": 7,
-        "patch": 4,
-        "prerelease": [
-          "final"
-        ],
-        "build": [],
-        "version": "3.7.4-final"
-      },
-      "sysPrefix": "/Users/tanguy/.miniconda3",
-      "fileHash": "69f3026e8b370d24bb93831c13495e92e28ab27f2bd871962ff2ec015781085bbf8871093106074a1df396cb86cf53c3c90a226357b7f55bbc754b8d40f38810",
-      "type": "VirtualEnv"
-    },
-    "/usr/local/opt/python/bin/python3.7.v3": {
-      "data": {
-        "architecture": 3,
-        "path": "/usr/local/opt/python/bin/python3.7",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.7-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 7,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.7-final"
-        },
-        "sysPrefix": "/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7",
-        "fileHash": "93b382451fabbe877403caac8d2e7c045b24a6fcc058e83087e274f4361df2b556f867977e64621ca31db767721ee72a7fece89fd1ae6f8795ae14ad6f242238"
-      },
-      "expiry": 1600429177954
-    },
-    "/Library/Developer/CommandLineTools/usr/bin/python3.v3": {
-      "data": {
-        "architecture": 3,
-        "path": "/Library/Developer/CommandLineTools/usr/bin/python3",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.7.3-final",
-          "major": 3,
-          "minor": 7,
-          "patch": 3,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.7.3-final"
-        },
-        "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.7",
-        "fileHash": "ac8b03e522f1b233105a110092d88169de6ddd772dcac9b58e09d334c38f3e0382d641d439b6c9d6e8565339b9d5fdb6a5a03bb42ca1a700f9ea28b644358345"
-      },
-      "expiry": 1600429177957
-    },
-    "/usr/local/opt/python/bin/python3.7.interpreter.displayName.v7": {
-      "data": {
-        "displayName": "Python 3.7.7 64-bit",
-        "hash": "93b382451fabbe877403caac8d2e7c045b24a6fcc058e83087e274f4361df2b556f867977e64621ca31db767721ee72a7fece89fd1ae6f8795ae14ad6f242238-197d51bd367be3674d46728275198fd8"
-      },
-      "expiry": 1600429177989
-    },
-    "/Library/Developer/CommandLineTools/usr/bin/python3.interpreter.displayName.v7": {
-      "data": {
-        "displayName": "Python 3.7.3 64-bit",
-        "hash": "ac8b03e522f1b233105a110092d88169de6ddd772dcac9b58e09d334c38f3e0382d641d439b6c9d6e8565339b9d5fdb6a5a03bb42ca1a700f9ea28b644358345-c1f85fd567b8b270ab650eed42dd81d8"
-      },
-      "expiry": 1600429177991
-    },
-    "/usr/local/opt/python/bin/python3.7.interpreter.Details.v7": {
-      "data": {
-        "fileHash": "93b382451fabbe877403caac8d2e7c045b24a6fcc058e83087e274f4361df2b556f867977e64621ca31db767721ee72a7fece89fd1ae6f8795ae14ad6f242238",
-        "info": {
-          "architecture": 3,
-          "path": "/usr/local/opt/python/bin/python3.7",
-          "version": {
-            "options": {
-              "loose": false,
-              "includePrerelease": false
-            },
-            "loose": false,
-            "raw": "3.7.7-final",
-            "major": 3,
-            "minor": 7,
-            "patch": 7,
-            "prerelease": [
-              "final"
-            ],
-            "build": [],
-            "version": "3.7.7-final"
-          },
-          "sysPrefix": "/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7",
-          "fileHash": "93b382451fabbe877403caac8d2e7c045b24a6fcc058e83087e274f4361df2b556f867977e64621ca31db767721ee72a7fece89fd1ae6f8795ae14ad6f242238",
-          "type": "Unknown",
-          "displayName": "Python 3.7.7 64-bit"
-        }
-      },
-      "expiry": 1600429178005
-    },
-    "/Library/Developer/CommandLineTools/usr/bin/python3.interpreter.Details.v7": {
-      "data": {
-        "fileHash": "ac8b03e522f1b233105a110092d88169de6ddd772dcac9b58e09d334c38f3e0382d641d439b6c9d6e8565339b9d5fdb6a5a03bb42ca1a700f9ea28b644358345",
-        "info": {
-          "architecture": 3,
-          "path": "/Library/Developer/CommandLineTools/usr/bin/python3",
-          "version": {
-            "options": {
-              "loose": false,
-              "includePrerelease": false
-            },
-            "loose": false,
-            "raw": "3.7.3-final",
-            "major": 3,
-            "minor": 7,
-            "patch": 3,
-            "prerelease": [
-              "final"
-            ],
-            "build": [],
-            "version": "3.7.3-final"
-          },
-          "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.7",
-          "fileHash": "ac8b03e522f1b233105a110092d88169de6ddd772dcac9b58e09d334c38f3e0382d641d439b6c9d6e8565339b9d5fdb6a5a03bb42ca1a700f9ea28b644358345",
-          "type": "Unknown",
-          "displayName": "Python 3.7.3 64-bit"
-        }
-      },
-      "expiry": 1600429178008
-    },
-    "/usr/local/bin/python3.8.v3": {
-      "data": {
-        "architecture": 3,
-        "path": "/usr/local/bin/python3.8",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.8.5-final",
-          "major": 3,
-          "minor": 8,
-          "patch": 5,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.8.5-final"
-        },
-        "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.5/Frameworks/Python.framework/Versions/3.8",
-        "fileHash": "3484b88eb31c3f9272881fb1f9c9008e26850bb8f7af6a7662a1a032888d749f3a8bbbba267c9bdcd6e88b5953ac020b92d3233d0f25ac5c3d0279b9aeb3e870"
-      },
-      "expiry": 1605968659581
-    },
-    "/usr/local/opt/python@3.8/bin/python3.8.v3": {
-      "data": {
-        "architecture": 3,
-        "path": "/usr/local/opt/python@3.8/bin/python3.8",
-        "version": {
-          "options": {
-            "loose": false,
-            "includePrerelease": false
-          },
-          "loose": false,
-          "raw": "3.8.6-final",
-          "major": 3,
-          "minor": 8,
-          "patch": 6,
-          "prerelease": [
-            "final"
-          ],
-          "build": [],
-          "version": "3.8.6-final"
-        },
-        "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.6/Frameworks/Python.framework/Versions/3.8",
-        "fileHash": "e54488029611443daf50d94596c1381544110639707cd0b4cfc1aa6376d6ae73d40bf0a04ac2d162bd2afa79de06bc8fd8c9368e52c0c0037fefcbd0a00fd892"
-      },
-      "expiry": 1602852299575
-    },
-    "/usr/local/opt/python@3.8/bin/python3.8.interpreter.displayName.v7": {
-      "data": {
-        "displayName": "Python 3.8.6 64-bit",
-        "hash": "e54488029611443daf50d94596c1381544110639707cd0b4cfc1aa6376d6ae73d40bf0a04ac2d162bd2afa79de06bc8fd8c9368e52c0c0037fefcbd0a00fd892-c070f1804fa2eb81b6c0e0f438b02a90"
-      },
-      "expiry": 1602852299723
-    },
-    "/usr/local/opt/python@3.8/bin/python3.8.interpreter.Details.v7": {
-      "data": {
-        "fileHash": "e54488029611443daf50d94596c1381544110639707cd0b4cfc1aa6376d6ae73d40bf0a04ac2d162bd2afa79de06bc8fd8c9368e52c0c0037fefcbd0a00fd892",
-        "info": {
-          "architecture": 3,
-          "path": "/usr/local/opt/python@3.8/bin/python3.8",
-          "version": {
-            "options": {
-              "loose": false,
-              "includePrerelease": false
-            },
-            "loose": false,
-            "raw": "3.8.6-final",
-            "major": 3,
-            "minor": 8,
-            "patch": 6,
-            "prerelease": [
-              "final"
-            ],
-            "build": [],
-            "version": "3.8.6-final"
-          },
-          "sysPrefix": "/usr/local/Cellar/python@3.8/3.8.6/Frameworks/Python.framework/Versions/3.8",
-          "fileHash": "e54488029611443daf50d94596c1381544110639707cd0b4cfc1aa6376d6ae73d40bf0a04ac2d162bd2afa79de06bc8fd8c9368e52c0c0037fefcbd0a00fd892",
-          "type": "Unknown",
-          "displayName": "Python 3.8.6 64-bit"
-        }
-      },
-      "expiry": 1602852299785
-    }
+    "ProposeLSBanner": false
   },
-  "coc-python|/Users/tanguy/Projects": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:2999a80ba663b6c9d35935540404ec10": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:2999a80ba663b6c9d35935540404ec10": [],
-    "autoSelectedWorkspacePythonInterpreter-/Users/tanguy/Projects": {
-      "architecture": 3,
-      "path": "/usr/local/bin/python3",
-      "version": {
-        "options": {
-          "loose": false,
-          "includePrerelease": false
-        },
-        "loose": false,
-        "raw": "3.7.7-final",
-        "major": 3,
-        "minor": 7,
-        "patch": 7,
-        "prerelease": [
-          "final"
-        ],
-        "build": [],
-        "version": "3.7.7-final"
-      },
-      "sysPrefix": "/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7",
-      "fileHash": "5a6993bf08d5c5c76bff38906df82bb0963fbe29d1f273fcadb39b139881c33d9a84b88d02e216ae626c4fda1d18370ceb1c8ffe7a933a61b2c255d9adbeea76",
-      "type": "Unknown",
-      "displayName": "Python 3.7.7 64-bit"
-    },
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "SelectedPythonPath": "/Users/tanguy/.miniconda3/bin/python"
-  },
-  "coc-python|/Users/tanguy/Projects/itunes-raw-data-processing": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:c0ec89523b005cac8b4c76fb753facec": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:c0ec89523b005cac8b4c76fb753facec": [],
-    "autoSelectedWorkspacePythonInterpreter-/Users/tanguy/Projects/itunes-raw-data-processing": {
-      "architecture": 3,
-      "path": "/usr/local/bin/python3",
-      "version": {
-        "options": {
-          "loose": false,
-          "includePrerelease": false
-        },
-        "loose": false,
-        "raw": "3.7.7-final",
-        "major": 3,
-        "minor": 7,
-        "patch": 7,
-        "prerelease": [
-          "final"
-        ],
-        "build": [],
-        "version": "3.7.7-final"
-      },
-      "sysPrefix": "/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7",
-      "fileHash": "5a6993bf08d5c5c76bff38906df82bb0963fbe29d1f273fcadb39b139881c33d9a84b88d02e216ae626c4fda1d18370ceb1c8ffe7a933a61b2c255d9adbeea76",
-      "type": "Unknown",
-      "displayName": "Python 3.7.7 64-bit"
-    },
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "SelectedPythonPath": "/Users/tanguy/.miniconda3/bin/python",
-    "INTERPRETERS_CACHE_v3_PipEnvService:2999a80ba663b6c9d35935540404ec10": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:2999a80ba663b6c9d35935540404ec10": []
-  },
-  "coc-python|/Users/tanguy/Projects/itunes-web-data-processing": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:4d7fd83495dc29c451007143c28eff8e": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:4d7fd83495dc29c451007143c28eff8e": [],
-    "autoSelectedWorkspacePythonInterpreter-/Users/tanguy/Projects/itunes-web-data-processing": {
-      "architecture": 3,
-      "path": "/usr/local/bin/python3",
-      "version": {
-        "options": {
-          "loose": false,
-          "includePrerelease": false
-        },
-        "loose": false,
-        "raw": "3.7.7-final",
-        "major": 3,
-        "minor": 7,
-        "patch": 7,
-        "prerelease": [
-          "final"
-        ],
-        "build": [],
-        "version": "3.7.7-final"
-      },
-      "sysPrefix": "/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7",
-      "fileHash": "5a6993bf08d5c5c76bff38906df82bb0963fbe29d1f273fcadb39b139881c33d9a84b88d02e216ae626c4fda1d18370ceb1c8ffe7a933a61b2c255d9adbeea76",
-      "type": "Unknown",
-      "displayName": "Python 3.7.7 64-bit"
-    },
+  "coc-python|/Users/tanguy/Projects/itunes-crawler-web": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:0b24a1baf4d4fa46530ad27b5d0fe7c4": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:0b24a1baf4d4fa46530ad27b5d0fe7c4": [],
     "INTERPRETERS_CACHE_v3_PipEnvService": [],
     "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
   },
   "coc-python|/Users/tanguy/Projects/itunes-diff-processing": {
     "INTERPRETERS_CACHE_v3_PipEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
     "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "autoSelectedWorkspacePythonInterpreter-/Users/tanguy/Projects/itunes-diff-processing": {
-      "architecture": 3,
-      "path": "/usr/local/bin/python3",
-      "version": {
-        "options": {
-          "loose": false,
-          "includePrerelease": false
-        },
-        "loose": false,
-        "raw": "3.7.7-final",
-        "major": 3,
-        "minor": 7,
-        "patch": 7,
-        "prerelease": [
-          "final"
-        ],
-        "build": [],
-        "version": "3.7.7-final"
-      },
-      "sysPrefix": "/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7",
-      "fileHash": "5a6993bf08d5c5c76bff38906df82bb0963fbe29d1f273fcadb39b139881c33d9a84b88d02e216ae626c4fda1d18370ceb1c8ffe7a933a61b2c255d9adbeea76",
-      "type": "Unknown",
-      "displayName": "Python 3.7.7 64-bit"
-    },
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:4d7fd83495dc29c451007143c28eff8e": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:4d7fd83495dc29c451007143c28eff8e": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:0b24a1baf4d4fa46530ad27b5d0fe7c4": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:0b24a1baf4d4fa46530ad27b5d0fe7c4": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:07f37a0da8ff0bb2b3e3afe93f73ef9f": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:07f37a0da8ff0bb2b3e3afe93f73ef9f": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:f0cd6ead059e599bc34c64cb4556fa08": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:f0cd6ead059e599bc34c64cb4556fa08": []
-  },
-  "coc-python|/Users/tanguy/Projects/ctv-stats": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:309eb239cea4d1d23375d88d406bb279": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:309eb239cea4d1d23375d88d406bb279": [],
-    "autoSelectedWorkspacePythonInterpreter-/Users/tanguy/Projects/ctv-stats": {
-      "architecture": 3,
-      "path": "/usr/local/bin/python3",
-      "version": {
-        "options": {
-          "loose": false,
-          "includePrerelease": false
-        },
-        "loose": false,
-        "raw": "3.7.7-final",
-        "major": 3,
-        "minor": 7,
-        "patch": 7,
-        "prerelease": [
-          "final"
-        ],
-        "build": [],
-        "version": "3.7.7-final"
-      },
-      "sysPrefix": "/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7",
-      "fileHash": "5a6993bf08d5c5c76bff38906df82bb0963fbe29d1f273fcadb39b139881c33d9a84b88d02e216ae626c4fda1d18370ceb1c8ffe7a933a61b2c255d9adbeea76",
-      "type": "Unknown",
-      "displayName": "Python 3.7.7 64-bit"
-    },
     "INTERPRETERS_CACHE_v3_PipEnvService": [],
     "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
   },
-  "coc-python|/Users/tanguy/Projects/itunes-crawler-web": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:0b24a1baf4d4fa46530ad27b5d0fe7c4": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:0b24a1baf4d4fa46530ad27b5d0fe7c4": [],
-    "autoSelectedWorkspacePythonInterpreter-/Users/tanguy/Projects/itunes-crawler-web": {
-      "architecture": 3,
-      "path": "/usr/local/bin/python3",
-      "version": {
-        "options": {
-          "loose": false,
-          "includePrerelease": false
-        },
-        "loose": false,
-        "raw": "3.7.7-final",
-        "major": 3,
-        "minor": 7,
-        "patch": 7,
-        "prerelease": [
-          "final"
-        ],
-        "build": [],
-        "version": "3.7.7-final"
-      },
-      "sysPrefix": "/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7",
-      "fileHash": "5a6993bf08d5c5c76bff38906df82bb0963fbe29d1f273fcadb39b139881c33d9a84b88d02e216ae626c4fda1d18370ceb1c8ffe7a933a61b2c255d9adbeea76",
-      "type": "Unknown",
-      "displayName": "Python 3.7.7 64-bit"
-    },
+  "coc-python|/Users/tanguy/Projects/download-estimates-interpolation": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:63c92a9a70f5c6d87711f84eacb83f1f": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:63c92a9a70f5c6d87711f84eacb83f1f": [],
     "INTERPRETERS_CACHE_v3_PipEnvService": [],
     "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "SelectedPythonPath": "/Users/tanguy/.miniconda3/bin/python",
-    "INTERPRETERS_CACHE_v3_PipEnvService:07f37a0da8ff0bb2b3e3afe93f73ef9f": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:07f37a0da8ff0bb2b3e3afe93f73ef9f": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:97e93b60a4fd815e8d139743c4db13ac": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:97e93b60a4fd815e8d139743c4db13ac": []
+    "INTERPRETERS_CACHE_v3_PipEnvService:5f5de0112785e001aa6dd89fb47ec3b8": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:5f5de0112785e001aa6dd89fb47ec3b8": []
   },
-  "coc-python|/Users/tanguy/Projects/iTunesCrawler": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:5df9a4d332ccf790bf7015349b3b1955": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:5df9a4d332ccf790bf7015349b3b1955": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/download-stats": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:f8f90f021b4e92dd2ecbc72d0d17ebe4": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:f8f90f021b4e92dd2ecbc72d0d17ebe4": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/content-rating-stats": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:b1da3ebee07a163d7984d62f04aff48b": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:b1da3ebee07a163d7984d62f04aff48b": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": []
-  },
-  "coc-python|/Users/tanguy/Projects/estimate-downloads-agg": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:e5fc8c28aed415382564fe6bebe0628a": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:e5fc8c28aed415382564fe6bebe0628a": [],
+  "coc-python|/Users/tanguy/Projects/SDK-Mapping": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:f8abf7a45f682f94db361301bef36f29": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:f8abf7a45f682f94db361301bef36f29": [],
     "INTERPRETERS_CACHE_v3_PipEnvService": [],
     "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
   },
@@ -1706,285 +895,7 @@
     "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:f0cd6ead059e599bc34c64cb4556fa08": [],
     "INTERPRETERS_CACHE_v3_PipEnvService": [],
     "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:5d67e335cead8fa79d4d7c9a2bb393be": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:5d67e335cead8fa79d4d7c9a2bb393be": []
-  },
-  "coc-python|/Users/tanguy/Projects/cc-compare-stats": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:85f27c4d0f24d90f99fc2bb317f9f301": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:85f27c4d0f24d90f99fc2bb317f9f301": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/SDK-Mapping": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:f8abf7a45f682f94db361301bef36f29": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:f8abf7a45f682f94db361301bef36f29": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/.miniconda3/bin": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:b15fad7c8d161c38c21ec09029d5e39c": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:b15fad7c8d161c38c21ec09029d5e39c": [],
-    "SelectedPythonPath": "/Users/tanguy/.miniconda3/bin/python3",
-    "autoSelectedWorkspacePythonInterpreter-/Users/tanguy/.miniconda3/bin": {
-      "architecture": 3,
-      "path": "/Users/tanguy/.miniconda3/bin/python3",
-      "version": {
-        "options": {
-          "loose": false,
-          "includePrerelease": false
-        },
-        "loose": false,
-        "raw": "3.7.4-final",
-        "major": 3,
-        "minor": 7,
-        "patch": 4,
-        "prerelease": [
-          "final"
-        ],
-        "build": [],
-        "version": "3.7.4-final"
-      },
-      "sysPrefix": "/Users/tanguy/.miniconda3",
-      "fileHash": "69f3026e8b370d24bb93831c13495e92e28ab27f2bd871962ff2ec015781085bbf8871093106074a1df396cb86cf53c3c90a226357b7f55bbc754b8d40f38810",
-      "type": "VirtualEnv"
-    },
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/sdk-crawler": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:d4feca888831cd2615ad46b8439e38f3": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:d4feca888831cd2615ad46b8439e38f3": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/app-store-stats": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:6a347fb6f07e5758484ce15116e86125": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:6a347fb6f07e5758484ce15116e86125": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/download-stats-data-update": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:5aec572c8d4ef811c3327facf01db00f": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:5aec572c8d4ef811c3327facf01db00f": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/mintegral-download-estimates": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:31549ed81f31d0788b536805387d788f": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:31549ed81f31d0788b536805387d788f": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/app-update-frequency-stats": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:bb5e6b70afa48232864f19f813cae6b9": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:bb5e6b70afa48232864f19f813cae6b9": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/test_roku_api": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:ff8016ae4db8df0dc930550a0239586a": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:ff8016ae4db8df0dc930550a0239586a": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Downloads": {
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": []
-  },
-  "coc-python|/Users/tanguy": {
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": []
-  },
-  "coc-python|/usr/local": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:ecb11dda71a57ccdbf63675d24260fe6": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:ecb11dda71a57ccdbf63675d24260fe6": [],
-    "SelectedPythonPath": "/usr/local/bin/python3",
-    "autoSelectedWorkspacePythonInterpreter-/usr/local": {
-      "architecture": 3,
-      "path": "/usr/local/bin/python3",
-      "version": {
-        "options": {
-          "loose": false,
-          "includePrerelease": false
-        },
-        "loose": false,
-        "raw": "3.7.7-final",
-        "major": 3,
-        "minor": 7,
-        "patch": 7,
-        "prerelease": [
-          "final"
-        ],
-        "build": [],
-        "version": "3.7.7-final"
-      },
-      "sysPrefix": "/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7",
-      "fileHash": "5a6993bf08d5c5c76bff38906df82bb0963fbe29d1f273fcadb39b139881c33d9a84b88d02e216ae626c4fda1d18370ceb1c8ffe7a933a61b2c255d9adbeea76",
-      "type": "VirtualEnv"
-    },
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/app-ads-stats": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:4ad1b33bb08c8cac5ce8f9c3404f26e6": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:4ad1b33bb08c8cac5ce8f9c3404f26e6": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/.config/newtab": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:181fdc08d80e7948722e8ef425050298": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:181fdc08d80e7948722e8ef425050298": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/42crawler-tencent": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:7fc2a17e0ca8281c89013fe2c427758e": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:7fc2a17e0ca8281c89013fe2c427758e": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:5030dbde627e6c2219bf93ac2dd89695": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:5030dbde627e6c2219bf93ac2dd89695": []
-  },
-  "coc-python|/Users/tanguy/Projects/crawler-tencent-new-apps": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:97e93b60a4fd815e8d139743c4db13ac": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:97e93b60a4fd815e8d139743c4db13ac": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": []
-  },
-  "coc-python|/Users/tanguy/Projects/top-charts-extradata": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:e7782788f3e7f28dc7090f3da65ec2a1": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:e7782788f3e7f28dc7090f3da65ec2a1": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:f0cd6ead059e599bc34c64cb4556fa08": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:f0cd6ead059e599bc34c64cb4556fa08": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:309eb239cea4d1d23375d88d406bb279": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:309eb239cea4d1d23375d88d406bb279": []
-  },
-  "coc-python|/Users/tanguy/Projects/sandbox": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:c30233d0f0131d453078e87f128f25c6": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:c30233d0f0131d453078e87f128f25c6": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:0b24a1baf4d4fa46530ad27b5d0fe7c4": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:0b24a1baf4d4fa46530ad27b5d0fe7c4": []
-  },
-  "coc-python|/Users/tanguy/Projects/sandbox/crawler-tencent-new-apps": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:2f9d393fc9dd2bac74ce1414e6901ceb": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:2f9d393fc9dd2bac74ce1414e6901ceb": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/crawler-tencent-new-apps-new": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:1c281327e32670ee4cce95b8b6ed177a": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:1c281327e32670ee4cce95b8b6ed177a": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:97e93b60a4fd815e8d139743c4db13ac": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:97e93b60a4fd815e8d139743c4db13ac": []
-  },
-  "coc-python|/Users/tanguy/Projects/sandbox/appads": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:f5d81ca7a5248f2ca3420c1e4d9d0f95": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:f5d81ca7a5248f2ca3420c1e4d9d0f95": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Sandbox": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:3917a5023a03eb9220f7772ca3f06469": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:3917a5023a03eb9220f7772ca3f06469": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/ranks-indexer": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:5030dbde627e6c2219bf93ac2dd89695": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:5030dbde627e6c2219bf93ac2dd89695": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:309eb239cea4d1d23375d88d406bb279": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:309eb239cea4d1d23375d88d406bb279": []
-  },
-  "coc-python|/Users/tanguy/Sandbox/bsondump": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:13981f88b13fe3f7bb8eee6cb677a794": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:13981f88b13fe3f7bb8eee6cb677a794": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Sandbox/bson2json": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:2341840f89a37bc2b2caffed759ea5f7": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:2341840f89a37bc2b2caffed759ea5f7": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:97e93b60a4fd815e8d139743c4db13ac": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:97e93b60a4fd815e8d139743c4db13ac": []
-  },
-  "coc-python|/Users/tanguy/.config/nvim/plugged/black": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:aacaec4e48a388b9bb5291329778914a": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:aacaec4e48a388b9bb5291329778914a": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/42matters-dashboard": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:a2eca02b9ac1884efd2184d1bc4ca55a": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:a2eca02b9ac1884efd2184d1bc4ca55a": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/download-estimates-indexer": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:6166d56e2188d8d456e49903aabe37f2": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:6166d56e2188d8d456e49903aabe37f2": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:5030dbde627e6c2219bf93ac2dd89695": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:5030dbde627e6c2219bf93ac2dd89695": []
-  },
-  "coc-python|/Users/tanguy/Projects/reviews-indexer": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:7070c2ba4cc13e997cebfd2838856e66": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:7070c2ba4cc13e997cebfd2838856e66": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/bson2json": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:98b8d85b274c59352288adceaef364a3": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:98b8d85b274c59352288adceaef364a3": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Projects/mongo-dumps": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:5d67e335cead8fa79d4d7c9a2bb393be": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:5d67e335cead8fa79d4d7c9a2bb393be": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:5030dbde627e6c2219bf93ac2dd89695": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:5030dbde627e6c2219bf93ac2dd89695": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:f0cd6ead059e599bc34c64cb4556fa08": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:f0cd6ead059e599bc34c64cb4556fa08": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:0b24a1baf4d4fa46530ad27b5d0fe7c4": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:0b24a1baf4d4fa46530ad27b5d0fe7c4": []
-  },
-  "coc-python|/Users/tanguy/Projects/historical-changelog": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:77ecdaeb73d844c44421440cd83ef44a": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:77ecdaeb73d844c44421440cd83ef44a": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
-  },
-  "coc-python|/Users/tanguy/Sandbox/youtube-playlist-dl": {
-    "INTERPRETERS_CACHE_v3_PipEnvService:a66dca0ca979214ed18dfcadcb8e0ea5": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:a66dca0ca979214ed18dfcadcb8e0ea5": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:8a7f7dfdb8f4fabde2562904c9baf6aa": []
+    "INTERPRETERS_CACHE_v3_PipEnvService:5f5de0112785e001aa6dd89fb47ec3b8": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:5f5de0112785e001aa6dd89fb47ec3b8": []
   }
 }

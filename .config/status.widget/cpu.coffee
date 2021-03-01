@@ -37,7 +37,7 @@ update: (output, el) ->
   $(".cpu span", el).html(@bar(output))
 
 style: """
-  font: 20px "CornerStone"
+  font: 20px "Terminus (TTF)"
   top: 0px
   left: 250px
   width: 100%

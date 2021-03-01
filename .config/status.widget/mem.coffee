@@ -37,7 +37,7 @@ update: (output, el) ->
   $(".mem span", el).html(@bar(output))
 
 style: """
-  font: 20px "CornerStone"
+  font: 20px "Terminus (TTF)"
   top: 0px
   right: 250px
   width: 100%

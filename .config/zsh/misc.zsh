@@ -53,3 +53,14 @@ function sync-config {
     echo "Copying .zshrc"
     cp ~/.zshrc "${dotfiles}.zshrc"
 }
+
+
+function topdf {
+    pandoc \
+            $1 \
+            -f gfm \
+            -o $1.pdf \
+            -V geometry:margin=2cm \
+            -V mainfont="Futura" \
+            --pdf-engine=xelatex
+    }

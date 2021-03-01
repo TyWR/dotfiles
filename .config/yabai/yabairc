@@ -1,6 +1,10 @@
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
 source ~/.cache/wal/colors.sh # pywal scheme - update if needed
 
 # yabai template colours
+
 CBACK=$(echo $background | sed 's/#//')
 CFORE=$(echo $foreground | sed 's/#//')
 CACTV=$(echo $color1 | sed 's/#//')
@@ -8,7 +12,6 @@ CNORM=$(echo $color2 | sed 's/#//')
 CINSE=$(echo $foreground | sed 's/#//')
 
 yabai -m config window_shadow off
-
 yabai -m config mouse_modifier               shift
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
@@ -16,8 +19,10 @@ yabai -m config mouse_action2                resize
 yabai -m config active_window_border_topmost on
 yabai -m config window_topmost on
 yabai -m config window_border_placement      inset
-yabai -m config window_border_width          4
-yabai -m config window_border_radius         0
+# yabai -m config window_border_width          4
+# yabai -m config window_border_radius         0
+yabai -m config window_border_width          7
+yabai -m config window_border_radius         5
 yabai -m config focus_follows_mouse 		 on
 yabai -m config window_border                on
 yabai -m config active_window_border_color   0xff$CACTV
@@ -27,7 +32,7 @@ yabai -m config insert_window_border_color   0xff$CINSE
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  36
+yabai -m config top_padding                  34
 yabai -m config bottom_padding               10
 yabai -m config left_padding                 10
 yabai -m config right_padding                10
@@ -41,5 +46,7 @@ yabai -m rule --add app="^OpenVPN Connect" manage=off
 yabai -m rule --add app="^ProtonVPN" manage=off
 yabai -m rule --add app="^Docker Desktop" manage=off
 yabai -m rule --add app="^Docker" manage=off
+yabai -m rule --add label=emacs app="Emacs" manage=on
+yabai -m rule --add app=Terminal manage=on
 
 echo "yabai configuration loaded."

@@ -8,6 +8,7 @@ set backspace=indent,eol,start
 set showmatch
 set noshowmode
 set fillchars+=vert:\█
+set shell=zsh
 
 " Tab settings
 set expandtab
@@ -26,7 +27,7 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 let g:rainbow#blacklist = [9, 15]
 au BufEnter * :RainbowParentheses<CR>
 
-let g:python3_host_prog='/Users/tanguy/.miniconda3/bin/python'
+let g:python3_host_prog='/usr/local/bin/python3'
 
 " ----------------------------------------------------------------------------
 "  						         VIM PLUG	
@@ -53,18 +54,22 @@ Plug 'tywr/minimalist-status-line'
 Plug 'psf/black'
 Plug 'kkoomen/vim-doge', { 'tag': 'v2.8.0' }
 Plug 'psliwka/vim-smoothie'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-rooter'
-Plug 'ap/vim-buftabline'
 Plug 'dahu/vim-fanfingtastic'
 Plug 'RRethy/vim-illuminate' 
+Plug 'ap/vim-buftabline'
+Plug 'sedm0784/vim-you-autocorrect'
 call plug#end()
 
 " ---------------------------------------------------------------------------
 "  						        COLOR SCHEME
 "----------------------------------------------------------------------------
+set t_u7=
+set t_RV=
 let &t_ZH="\e[4m"
 let &t_ZR="\e[33m"
+
 colorscheme wal
 augroup python
     autocmd!
@@ -106,10 +111,15 @@ hi Pmenu cterm=bold ctermbg=15 ctermfg=7
 hi VertSplit ctermbg=none ctermfg=15
 
 hi TabLineSel cterm=bold ctermbg=2 ctermfg=15
-hi TabLine cterm=bold ctermbg=15 ctermfg=2
-hi TabLineFill cterm=bold ctermbg=15 ctermfg=15
+hi TabLine cterm=bold ctermbg=15 ctermfg=8
+hi TabLineFill cterm=bold ctermbg=15 ctermfg=2
 hi PmenuSel cterm=bold ctermbg=15 ctermfg=8
 
+autocmd FileType markdown highlight htmlH1 cterm=bold ctermfg=1
+autocmd FileType markdown highlight htmlH2 cterm=bold ctermfg=2
+autocmd FileType markdown highlight htmlH3 cterm=bold ctermfg=3
+autocmd FileType markdown highlight htmlH4 cterm=bold ctermfg=4
+autocmd FileType markdown highlight htmlH5 cterm=bold ctermfg=5
 
 " ----------------------------------------------------------------------------
 "  						          SHORTCUTS
@@ -143,6 +153,7 @@ nmap <C-F> :Lines<CR>
 nmap <C-O> :Files<CR>
 nmap <C-P> :Buffers<CR>
 nmap <C-S> :Black<CR>
+nmap <C-A> :EnableAutocorrect<CR>
 
 " Add easy nbreakpoint shortcut
 nnoremap <silent> <C-B> :let a='import pdb; pdb.set_trace()'\|put=a<CR>
@@ -151,8 +162,13 @@ nnoremap <silent> -- :let a='# --------------------------------------------
 " Add easy jump to definition
 nmap gd :call CocAction('jumpDefinition', 'drop')<CR>
 
-
 " -----------------------------------------------------------------------------
+"  						             RANGER
+" -----------------------------------------------------------------------------
+let g:ranger_replace_netrw = 1
+let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
+
+"-----------------------------------------------------------------------------
 "  						             GTAGS
 " -----------------------------------------------------------------------------
 " config project root markers.
@@ -244,6 +260,19 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
 endfunction
 
 " ----------------------------------------------------------------------------

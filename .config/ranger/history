@@ -1,50 +1,50 @@
-shell mkdir autoload
-shell mkdir plugin
-rename itunes-web-crawler-fargate-gf
-rename docker-compose.ecs.itunes-web-crawler-fargate-gf.override.yml
-rename docker-compose.ecs.itunes-web-crawler-fargate-gf.yml
-open_with open
-shell touch main.py
-rename slim_dump_android.sh
-rename slim_dump_itunes.sh
-rename slim_dump_playstore.sh
-shell tou
-shell mkdir tests
-shell touch u0000
-shell touch __init__.py
-shell test.py
-shell touch test.py
-shell touch README.md
-find itunes
-shell R
-shell mongoimpor
-s ecs-cli local create --task-def-remote itunes-web-crawler-fargate-gf:1 --output docker-compose.ecs.itunes-web-crawler-fargate-gf.yml
-s 
-shell ecs-cli local create --task-def-remote itunes-web-crawler-fargate-gf:1 --output docker-compose.ecs.itunes-web-crawler-fargate-gf.yml
-shell 
-find 
-find .conf
-shell Q
-open_with h
-open_with Q
-shell touch ecs-params.yml
-rename itunes-web-crawler-fargate.yml
-rename itunes-web-crawler-fargate-gf.yml
+rename missing-20200921-20201001
+open_with
+rename main.py
+shell s3ios
+shell mkdir s3ios
+shell mkdir s3clean
 rename README.md
-rename conf
-find crawler-i
-shell mkdir 20201115
-shell aws s3 cp s3://download-estimates-aggregation.42matters.com/ios/results/20201114/20201115_031504_00042_9bbk9_bucket-00000.gz .
-rename 20201115
-find itunes-d
-find jl
-shell gzcat 20201115_041110_00030_5nkvc_bucket-00000.gz | head -5000 >> sub
-shell gzcat 20201115_041110_00030_5nkvc_bucket-00000.gz | head -100000 >> sub
-filter gzip
-shell gzip sub
-shell touch download_query.ok
-shell bzip2 sub 
-shell bzip2 -d sub.bz2 
-open_with 
-rename Bismarck.epub
+rename download-estimates-indexer-ios-backfill.yml
+shell mkdir config
+shell touch main.py
+rename download_object.py
+rename download_object.py_
+shell touch Q
+shell touch extract_sdks.py
 open_with nvim
+shell touch env.py
+open_with 
+shell touch tar.py
+rename download_dates.py
+rename download_estimates.py
+rename populate_estimates.py
+shell 
+rename aggregate_estimates.py
+rename populate_sdks.py
+shell touch 
+rename join_estimates_sdks.py
+open_with%spaceT
+open_with%space
+shell t
+rename upload_sdk.py
+rename aggregate_sdks_estimates.py
+rename aggregate_sdk_estimates.py
+rename dump_sdk_estimates.py
+rename upload_sdk_estimates.py
+rename join_sdk_estimates.py
+shell mkdir download-estimates-clean
+shell mkdir download-estimates-indexer
+shell mkdir download-estimates-sdks
+shell mkdir download-estimates-sdks-android
+rename download-estimates-sdks-android.yml
+shell download_estimates
+shell touch download_estimates
+rename crawl.pyQ
+rename download-estimates-sdks-ios
+rename download-estimates-sdks-ios.yml
+shell touch populate.ok
+shell touch populate
+shell touch populate_db
+shell touch populate_db.ok
+shell touch update_db.ok

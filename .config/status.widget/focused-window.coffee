@@ -71,7 +71,7 @@ construct_style: (bg, c1) ->
 style: """
   left: 10px
   top: 0px
-  font: 20px "CornerStone"
+  font: 20px "Terminus (TTF)"
   background-color: rgba(0,0,0,0)
   z-index: 0
 

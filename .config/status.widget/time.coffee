@@ -28,12 +28,12 @@ style: """
 
   .time
       margin-top: 0px
-      padding-top: 2px
+      padding-top: 0px
       padding-bottom: 3px
       margin-left: 0px
       margin-right: 0px
       height: 20px
-      font: 20px "CornerStone"
+      font: 20px "Terminus (TTF)"
       z-index: -1
       text-align: center
 """

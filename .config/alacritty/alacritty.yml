@@ -1,3 +1,6 @@
+# env:
+#   TERM: alacritty
+
 window:
   padding:
     x: 40
@@ -6,7 +9,7 @@ window:
   decorations: none
 
 font:
-  size: 20
+  size: 18
   normal:
     family: TerminessTTF Nerd Font
     style: Medium
@@ -19,18 +22,6 @@ font:
   bold_italic:
     family: TerminessTTF Nerd Font
     style: Bold Italic
-  # normal:
-  #   family: Fantasque Sans Mono
-  #   style: Regular
-  # bold:
-  #   family: Fantasque Sans Mono
-  #   style: Bold
-  # italic:
-  #   family: Fantasque Sans Mono
-  #   style: Italic
-  # bold_italic:
-  #   family: Fantasque Sans Mono
-  #   style: Bold Italic
 
   offset:
     x: 0
@@ -38,11 +29,6 @@ font:
 
   glyph_offset:
     x: 0
-
-bell:
-  animation: EaseOutExpo
-  duration: 0
-  color: '0xffffff'
 
 cursor:
   style: Block
@@ -70,7 +56,7 @@ colors:
     cursor:     '0xeceff4'
   normal:
     black:      '0x101217'
-    red:        '0xb48ead'
+    red:        '0x8fbcbb'
     green:      '0x6991B5'
     yellow:     '0x5e81ac'
     blue:       '0x7A97BA'
@@ -79,11 +65,11 @@ colors:
     white:      '0xeceff4'
   bright:
     black:      '0x4c566a'
-    red:        '0xb48ead'
-    green:      '0x6991B5'
-    yellow:     '0x5e81ac'
+    red:        '0x8fbcbb'
+    green:      '0x95B0CA'
+    yellow:     '0x8DA6C4'
     blue:       '0x7A97BA'
-    magenta:    '0x97ADC9'
-    cyan:       '0xB3C3D7'
+    magenta:    '0xA0B4CD'
+    cyan:       '0xC6D2E1'
     white:      '0x1F232B'
 # END ACE

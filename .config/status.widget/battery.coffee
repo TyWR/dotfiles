@@ -51,7 +51,7 @@ update: (output, el) ->
 
 style: """
   .battery
-    font: 20px "CornerStone"
+    font: 20px "Terminus (TTF)"
     background-color: rgba(0,0,0,0)
   
   right: 10px
