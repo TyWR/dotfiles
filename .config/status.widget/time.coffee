@@ -4,7 +4,7 @@ commands =
 
 command: "echo " + "$(#{ commands.time }):::" + "$(#{ commands.colors })"
 
-refreshFrequency: 1000 # ms
+refreshFrequency: 50000 # ms
 
 render: (output) ->
   """

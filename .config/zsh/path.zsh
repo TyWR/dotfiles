@@ -1,1 +1,1 @@
-PATH="$PATH"
+PATH="$PATH:/Users/tywr/.custom-path"

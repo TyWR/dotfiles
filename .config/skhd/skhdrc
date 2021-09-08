@@ -1,4 +1,5 @@
-# cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# cmd - return : /Applications/kitty.app/Contents/MacOS/kitty -d --single-instance ~
+# cmd - return: kitty -d --single-instance ~
 cmd - return : open -na /Applications/Alacritty.app
 
 shift + cmd - l: yabai -m window --focus east

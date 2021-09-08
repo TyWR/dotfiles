@@ -1,3 +1,4 @@
+scriptencoding utf-8
 let s:is_vim = !has('nvim')
 let s:channel_map = {}
 let s:is_win = has('win32') || has('win64')
@@ -14,7 +15,7 @@ function! coc#terminal#start(cmd, cwd, env) abort
   setl nonumber
   setl bufhidden=hide
   if exists('#User#CocTerminalOpen')
-    exe 'doautocmd User CocTerminalOpen'
+    exe 'doautocmd <nomodeline> User CocTerminalOpen'
   endif
   let bufnr = bufnr('%')
   let env = {}
@@ -23,7 +24,7 @@ function! coc#terminal#start(cmd, cwd, env) abort
     " use env option when possible
     if s:is_vim
       let env = copy(a:env)
-    else
+    elseif exists('*setenv')
       for key in keys(a:env)
         let original[key] = getenv(key)
         call setenv(key, a:env[key])
@@ -44,7 +45,7 @@ function! coc#terminal#start(cmd, cwd, env) abort
           \ 'on_exit': {job, status -> s:OnExit(status)},
           \ 'env': env,
           \ })
-    if !empty(original)
+    if !empty(original) && exists('*setenv')
       for key in keys(original)
         call setenv(key, original[key])
       endfor
@@ -81,7 +82,11 @@ function! coc#terminal#send(bufnr, text, add_new_line) abort
   if has('nvim')
     let lines = split(a:text, '\v\r?\n')
     if a:add_new_line && !empty(lines[len(lines) - 1])
-      call add(lines, '')
+      if s:is_win
+        call add(lines, "\r\n")
+      else
+        call add(lines, '')
+      endif
     endif
     call chansend(chan, lines)
     let winnr = bufwinnr(a:bufnr)

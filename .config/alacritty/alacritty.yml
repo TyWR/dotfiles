@@ -1,5 +1,6 @@
-# env:
-#   TERM: alacritty
+env:
+  # TERM: xterm-256color
+  TERM: alacritty
 
 window:
   padding:
@@ -22,6 +23,18 @@ font:
   bold_italic:
     family: TerminessTTF Nerd Font
     style: Bold Italic
+  # normal:
+  #   family: Anka/Coder
+  #   style: Regular
+  # bold:
+  #   family: Anka/Coder
+  #   style: Bold
+  # italic:
+  #   family: Anka/Coder
+  #   style: Italic
+  # bold_italic:
+  #   family: Anka/Coder
+  #   style: Bold Italic
 
   offset:
     x: 0
@@ -56,7 +69,7 @@ colors:
     cursor:     '0xeceff4'
   normal:
     black:      '0x101217'
-    red:        '0x8fbcbb'
+    red:        '0x88c0d0'
     green:      '0x6991B5'
     yellow:     '0x5e81ac'
     blue:       '0x7A97BA'
@@ -65,11 +78,11 @@ colors:
     white:      '0xeceff4'
   bright:
     black:      '0x4c566a'
-    red:        '0x8fbcbb'
-    green:      '0x95B0CA'
-    yellow:     '0x8DA6C4'
+    red:        '0x88c0d0'
+    green:      '0x6991B5'
+    yellow:     '0x5e81ac'
     blue:       '0x7A97BA'
-    magenta:    '0xA0B4CD'
-    cyan:       '0xC6D2E1'
+    magenta:    '0x97ADC9'
+    cyan:       '0xB3C3D7'
     white:      '0x1F232B'
 # END ACE

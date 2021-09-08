@@ -1,50 +1,50 @@
-rename missing-20200921-20201001
-open_with
-rename main.py
-shell s3ios
-shell mkdir s3ios
-shell mkdir s3clean
-rename README.md
-rename download-estimates-indexer-ios-backfill.yml
-shell mkdir config
-shell touch main.py
-rename download_object.py
-rename download_object.py_
-shell touch Q
-shell touch extract_sdks.py
-open_with nvim
-shell touch env.py
-open_with 
-shell touch tar.py
-rename download_dates.py
-rename download_estimates.py
-rename populate_estimates.py
+shell touch komoot.md
+shell touch sandbox
+shell mkdir sandbox
+shell mkdir staging
+shell mkdir prod
+rename prd
+rename staging
+rename prod
+rename monstache-syncer-android-prod
+rename monstache-syncer-itunes-prod
+rename monstache-syncer-sdks-prod
+rename monstache-syncer-android-prod.yml
+rename monstache-syncer-itunes-prod.yml
+rename monstache-syncer-sdks-prod.yml
 shell 
-rename aggregate_estimates.py
-rename populate_sdks.py
-shell touch 
-rename join_estimates_sdks.py
-open_with%spaceT
-open_with%space
-shell t
-rename upload_sdk.py
-rename aggregate_sdks_estimates.py
-rename aggregate_sdk_estimates.py
-rename dump_sdk_estimates.py
-rename upload_sdk_estimates.py
-rename join_sdk_estimates.py
-shell mkdir download-estimates-clean
-shell mkdir download-estimates-indexer
-shell mkdir download-estimates-sdks
-shell mkdir download-estimates-sdks-android
-rename download-estimates-sdks-android.yml
-shell download_estimates
-shell touch download_estimates
-rename crawl.pyQ
-rename download-estimates-sdks-ios
-rename download-estimates-sdks-ios.yml
-shell touch populate.ok
-shell touch populate
-shell touch populate_db
-shell touch populate_db.ok
-shell touch update_db.ok
+rename runh.sh
+rename ranks-42apps-updater-gplay
+rename ranks-42apps-updater-itunes
+shell mkdir ranks
+rename historical-ranks
+shell touch README.md
+rename post_template.py
+find m
+open open
+open 
+
+open_with 
+rename feedback_peter.pdf
+shell touch settings.env
+open_with nvim
+o:
+open_with oprn
+shell cp /Users/tywr/Downloads/wallhaven-vm9jl8.jpg wp.jpg
+rename patagonia
+rename plot_one_google.py
+rename plot_one_android.py
+rename mau_ios.py
+rename plot_one_ios.py
+open_with open
+shell mkdir DEPRECATED
+find app
+rename run-restart.sh
+rename run-restart.py
+rename run-kill.sh
+rename run-timeout.sh
+shell mkdir mau
+shell mkdir 
+shell touch app.py
+shell touch app.template.env
+shell touch settings.py

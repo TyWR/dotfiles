@@ -1,4 +1,5 @@
 syntax on
+set relativenumber
 set number
 set mouse=a
 set splitright
@@ -9,6 +10,9 @@ set showmatch
 set noshowmode
 set fillchars+=vert:\█
 set shell=zsh
+set background=dark
+set nocompatible
+colorscheme default
 
 " Tab settings
 set expandtab
@@ -24,17 +28,19 @@ set hlsearch
 
 filetype plugin indent on
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-let g:rainbow#blacklist = [9, 15]
+let g:rainbow#blacklist = [0, 7, 8, 9, 15]
 au BufEnter * :RainbowParentheses<CR>
 
 let g:python3_host_prog='/usr/local/bin/python3'
+let g:black_linelength=80
 
 " ----------------------------------------------------------------------------
 "  						         VIM PLUG	
 " ----------------------------------------------------------------------------
 call plug#begin()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'psf/black'
 Plug 'dylanaraps/wal.vim'
-Plug 'neoclide/coc.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'godlygeek/tabular'
@@ -51,15 +57,12 @@ Plug 'tpope/vim-surround'
 Plug 'thaerkh/vim-workspace'
 Plug 'mattn/vim-findroot'
 Plug 'tywr/minimalist-status-line'
-Plug 'psf/black'
 Plug 'kkoomen/vim-doge', { 'tag': 'v2.8.0' }
 Plug 'psliwka/vim-smoothie'
-" Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-rooter'
 Plug 'dahu/vim-fanfingtastic'
 Plug 'RRethy/vim-illuminate' 
 Plug 'ap/vim-buftabline'
-Plug 'sedm0784/vim-you-autocorrect'
 call plug#end()
 
 " ---------------------------------------------------------------------------
@@ -71,6 +74,7 @@ let &t_ZH="\e[4m"
 let &t_ZR="\e[33m"
 
 colorscheme wal
+
 augroup python
     autocmd!
     autocmd FileType python
@@ -106,7 +110,7 @@ hi GitGutterChangeLineNr ctermfg=black ctermbg=grey cterm=bold
 hi GitGutterDeleteLineNr ctermfg=black ctermbg=grey cterm=standout
 hi GitGutterChangeDeleteLineNr ctermfg=black ctermbg=8 cterm=standout
 
-hi Pmenu cterm=bold ctermbg=15 ctermfg=7
+hi NormalFloat cterm=bold ctermbg=15 ctermfg=7
 
 hi VertSplit ctermbg=none ctermfg=15
 
@@ -114,6 +118,16 @@ hi TabLineSel cterm=bold ctermbg=2 ctermfg=15
 hi TabLine cterm=bold ctermbg=15 ctermfg=8
 hi TabLineFill cterm=bold ctermbg=15 ctermfg=2
 hi PmenuSel cterm=bold ctermbg=15 ctermfg=8
+
+hi CocFloating cterm=bold ctermbg=15 ctermfg=7
+hi CocErrorFloat cterm=bold ctermbg=15 ctermfg=1
+hi CocWarningFloat cterm=bold ctermbg=15 ctermfg=1
+hi CocInfoFloat cterm=bold ctermbg=15 ctermfg=7
+hi CocHintFloat cterm=bold ctermbg=15 ctermfg=7
+hi CocHighlightText cterm=bold ctermbg=2 ctermfg=2
+
+hi BufTabLineActive cterm=bold ctermbg=15 ctermfg=7
+
 
 autocmd FileType markdown highlight htmlH1 cterm=bold ctermfg=1
 autocmd FileType markdown highlight htmlH2 cterm=bold ctermfg=2
@@ -147,8 +161,9 @@ nnoremap Q <Nop>
 nmap mm :w<CR>
 nmap qq :wq<CR>
 nmap QQ :bd<CR>
-nmap <Tab> :bn<CR>
+nmap U :redo<CR>
 nmap <S-Tab> :bp<CR>
+nmap <Tab> :bn<CR>
 nmap <C-F> :Lines<CR>
 nmap <C-O> :Files<CR>
 nmap <C-P> :Buffers<CR>
@@ -159,6 +174,7 @@ nmap <C-A> :EnableAutocorrect<CR>
 nnoremap <silent> <C-B> :let a='import pdb; pdb.set_trace()'\|put=a<CR>
 nnoremap <silent> -- :let a='# --------------------------------------------
     \---------------------------------'\|put=a<CR>
+
 " Add easy jump to definition
 nmap gd :call CocAction('jumpDefinition', 'drop')<CR>
 
@@ -281,48 +297,3 @@ endfunction
 let g:doge_doc_standard_python = 'numpy'
 let g:doge_mapping = '<C-d>'
 let g:doge_parsers = ['bash', 'python']
-
-
-" ----------------------------------------------------------------------------
-"          					     Startify
-" ----------------------------------------------------------------------------
-let g:startify_lists = [
-          \ { 'type': 'sessions',  'header': ['   Sessions']       },
-          \ { 'type': 'files',     'header': ['   MRU ~/Projects']            },
-          \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-          \ { 'type': 'commands',  'header': ['   Commands']       },
-          \ ]
-          " \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-let g:startify_session_before_save = [
-        \ 'echo "Cleaning up before saving.."',
-        \ 'silent! NERDTreeTabsClose'
-        \ ]
-let g:startify_files_number = 3
-let g:webdevicons_enable_startify = 1
-" let g:startify_session_autoload = 1
-let g:startify_change_to_dir = 1
-" let g:workspace_session_directory = $HOME . '/.cache/sessions/'
-
-let g:startify_custom_footer = 'startify#pad(startify#fortune#cowsay())'
-let g:startify_custom_footer = ['']
-let g:startify_custom_header = 'startify#center(startify#fortune#cowsay())'
-let g:startify_custom_header = [
-            \ '         ▄              ▄    ',
-            \ '       ▌▒█           ▄▀▒▌    ',
-            \ '        ▌▒▒█        ▄▀▒▒▒▐   ',
-            \ '       ▐▄█▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐   ',
-            \ '     ▄▄▀▒▒▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐   ',
-            \ '   ▄▀▒▒▒░░░▒▒▒░░░▒▒▒▀██▀▒▌   ',
-            \ '  ▐▒▒▒▄▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀▄▒▌  ',
-            \ '  ▌░░▌█▀▒▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐  ',
-            \ ' ▐░░░▒▒▒▒▒▒▒▒▌██▀▒▒░░░▒▒▒▀▄▌ ',
-            \ ' ▌░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▌ ',
-            \ ' ▒▒▒▄██▄▒▒▒▒▒▒▒▒░░░░░░░░▒▒▒▐ ',
-            \ ' ▒▒▐▄█▄█▌▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▒▒▌',
-            \ ' ▒▒▐▀▐▀▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▐ ',
-            \ ' ▌▒▒▀▄▄▄▄▄▄▀▒▒▒▒▒▒▒░▒░▒░▒▒▒▌ ',
-            \ ' ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒▒▄▒▒▐  ',
-            \ '  ▀▄▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒▄▒▒▒▒▌  ',
-            \ '    ▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀   ',
-            \ '      ▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀     ',
-            \ ]

@@ -5,7 +5,7 @@ commands =
 
 command: "echo " + "$(#{ commands.battery }):::" + "$(#{ commands.colors }):::" + "$(#{ commands.charging })"
 
-refreshFrequency: 3000 # ms
+refreshFrequency: 10000 # ms
 
 render: (output) ->
   """

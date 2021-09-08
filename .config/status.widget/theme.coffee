@@ -1,6 +1,6 @@
 command: 'echo "$(~/.config/status.widget/scripts/switcher.sh 2>/dev/null)"'
 
-refreshFrequency: 1000
+refreshFrequency: 30000
 
 render: ( ) ->
   """

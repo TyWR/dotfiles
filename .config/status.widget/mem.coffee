@@ -1,6 +1,6 @@
 command: "ESC=`printf \"\e\"`; ps -A -o %mem | awk '{s+=$1} END {print \"\" s}'"
 
-refreshFrequency: 5000 # ms
+refreshFrequency: 30000 # ms
 
 render: (output) ->
   """

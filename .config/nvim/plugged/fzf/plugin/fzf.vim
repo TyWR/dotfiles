@@ -115,13 +115,22 @@ function! s:fzf_tempname()
   return s:fzf_call('tempname')
 endfunction
 
-let s:default_layout = { 'down': '~40%' }
 let s:layout_keys = ['window', 'tmux', 'up', 'down', 'left', 'right']
 let s:fzf_go = s:base_dir.'/bin/fzf'
 let s:fzf_tmux = s:base_dir.'/bin/fzf-tmux'
 
 let s:cpo_save = &cpo
 set cpo&vim
+
+function! s:popup_support()
+  return has('nvim') ? has('nvim-0.4') : has('popupwin') && has('patch-8.2.191')
+endfunction
+
+function! s:default_layout()
+  return s:popup_support()
+        \ ? { 'window' : { 'width': 0.9, 'height': 0.6 } }
+        \ : { 'down': '~40%' }
+endfunction
 
 function! fzf#install()
   if s:is_win && !has('win32unix')
@@ -145,22 +154,88 @@ function! fzf#install()
   endif
 endfunction
 
-function! s:fzf_exec()
+let s:versions = {}
+function s:get_version(bin)
+  if has_key(s:versions, a:bin)
+    return s:versions[a:bin]
+  end
+  let command = a:bin . ' --version'
+  let output = systemlist(command)
+  if v:shell_error || empty(output)
+    return ''
+  endif
+  let ver = matchstr(output[-1], '[0-9.]\+')
+  let s:versions[a:bin] = ver
+  return ver
+endfunction
+
+function! s:compare_versions(a, b)
+  let a = split(a:a, '\.')
+  let b = split(a:b, '\.')
+  for idx in range(0, max([len(a), len(b)]) - 1)
+    let v1 = str2nr(get(a, idx, 0))
+    let v2 = str2nr(get(b, idx, 0))
+    if     v1 < v2 | return -1
+    elseif v1 > v2 | return 1
+    endif
+  endfor
+  return 0
+endfunction
+
+function! s:compare_binary_versions(a, b)
+  return s:compare_versions(s:get_version(a:a), s:get_version(a:b))
+endfunction
+
+let s:checked = {}
+function! fzf#exec(...)
   if !exists('s:exec')
+    let binaries = []
+    if executable('fzf')
+      call add(binaries, 'fzf')
+    endif
     if executable(s:fzf_go)
-      let s:exec = s:fzf_go
-    elseif executable('fzf')
-      let s:exec = 'fzf'
-    elseif input('fzf executable not found. Download binary? (y/n) ') =~? '^y'
+      call add(binaries, s:fzf_go)
+    endif
+
+    if empty(binaries)
+      if input('fzf executable not found. Download binary? (y/n) ') =~? '^y'
+        redraw
+        call fzf#install()
+        return fzf#exec()
+      else
+        redraw
+        throw 'fzf executable not found'
+      endif
+    elseif len(binaries) > 1
+      call sort(binaries, 's:compare_binary_versions')
+    endif
+
+    let s:exec = binaries[-1]
+  endif
+
+  if a:0 && !has_key(s:checked, a:1)
+    let fzf_version = s:get_version(s:exec)
+    if empty(fzf_version)
+      let message = printf('Failed to run "%s --version"', s:exec)
+      unlet s:exec
+      throw message
+    end
+
+    if s:compare_versions(fzf_version, a:1) >= 0
+      let s:checked[a:1] = 1
+      return s:exec
+    elseif a:0 < 2 && input(printf('You need fzf %s or above. Found: %s. Download binary? (y/n) ', a:1, fzf_version)) =~? '^y'
+      let s:versions = {}
+      unlet s:exec
       redraw
       call fzf#install()
-      return s:fzf_exec()
+      return fzf#exec(a:1, 1)
     else
-      redraw
-      throw 'fzf executable not found'
+      throw printf('You need to upgrade fzf (required: %s or above)', a:1)
     endif
   endif
-  return fzf#shellescape(s:exec)
+
+  return s:exec
 endfunction
 
 function! s:tmux_enabled()
@@ -236,9 +311,14 @@ function! s:common_sink(action, lines) abort
   endif
   try
     let empty = empty(s:fzf_expand('%')) && line('$') == 1 && empty(getline(1)) && !&modified
-    let autochdir = &autochdir
-    set noautochdir
+    " Preserve the current working directory in case it's changed during
+    " the execution (e.g. `set autochdir` or `autocmd BufEnter * lcd ...`)
+    let cwd = exists('w:fzf_pushd') ? w:fzf_pushd.dir : expand('%:p:h')
     for item in a:lines
+      if item[0] != '~' && item !~ (s:is_win ? '^[A-Z]:\' : '^/')
+        let sep = s:is_win ? '\' : '/'
+        let item = join([cwd, item], cwd[len(cwd)-1] == sep ? '' : sep)
+      endif
       if empty
         execute 'e' s:escape(item)
         let empty = 0
@@ -252,7 +332,6 @@ function! s:common_sink(action, lines) abort
     endfor
   catch /^Vim:Interrupt$/
   finally
-    let &autochdir = autochdir
     silent! autocmd! fzf_swap
   endtry
 endfunction
@@ -322,7 +401,7 @@ function! fzf#wrap(...)
     if !exists('g:fzf_layout') && exists('g:fzf_height')
       let opts.down = g:fzf_height
     else
-      let opts = extend(opts, s:validate_layout(get(g:, 'fzf_layout', s:default_layout)))
+      let opts = extend(opts, s:validate_layout(get(g:, 'fzf_layout', s:default_layout())))
     endif
   endif
 
@@ -340,13 +419,13 @@ function! fzf#wrap(...)
   endif
 
   " Action: g:fzf_action
-  if !s:has_any(opts, ['sink', 'sink*'])
+  if !s:has_any(opts, ['sink', 'sinklist', 'sink*'])
     let opts._action = get(g:, 'fzf_action', s:default_action)
     let opts.options .= ' --expect='.join(keys(opts._action), ',')
-    function! opts.sink(lines) abort
+    function! opts.sinklist(lines) abort
       return s:common_sink(self._action, a:lines)
     endfunction
-    let opts['sink*'] = remove(opts, 'sink')
+    let opts['sink*'] = opts.sinklist " For backward compatibility
   endif
 
   return opts
@@ -373,32 +452,32 @@ try
   let temps  = { 'result': s:fzf_tempname() }
   let optstr = s:evaluate_opts(get(dict, 'options', ''))
   try
-    let fzf_exec = s:fzf_exec()
+    let fzf_exec = fzf#shellescape(fzf#exec())
   catch
     throw v:exception
   endtry
 
-  if !has_key(dict, 'dir')
+  if !s:present(dict, 'dir')
     let dict.dir = s:fzf_getcwd()
   endif
-  if has('win32unix') && has_key(dict, 'dir')
+  if has('win32unix') && s:present(dict, 'dir')
     let dict.dir = fnamemodify(dict.dir, ':p')
   endif
 
   if has_key(dict, 'source')
-    let source = dict.source
+    let source = remove(dict, 'source')
     let type = type(source)
     if type == 1
-      let prefix = '( '.source.' )|'
+      let source_command = source
     elseif type == 3
       let temps.input = s:fzf_tempname()
-      call writefile(map(source, '<SID>enc_to_cp(v:val)'), temps.input)
-      let prefix = (s:is_win ? 'type ' : 'cat ').fzf#shellescape(temps.input).'|'
+      call writefile(source, temps.input)
+      let source_command = (s:is_win ? 'type ' : 'cat ').fzf#shellescape(temps.input)
     else
       throw 'Invalid source type'
     endif
   else
-    let prefix = ''
+    let source_command = ''
   endif
 
   let prefer_tmux = get(g:, 'fzf_prefer_tmux', 0) || has_key(dict, 'tmux')
@@ -408,19 +487,24 @@ try
   let has_vim8_term = has('terminal') && has('patch-8.0.995')
   let has_nvim_term = has('nvim-0.2.1') || has('nvim') && !s:is_win
   let use_term = has_nvim_term ||
-    \ has_vim8_term && !has('win32unix') && (has('gui_running') || s:is_win || !use_height && s:present(dict, 'down', 'up', 'left', 'right', 'window'))
+    \ has_vim8_term && !has('win32unix') && (has('gui_running') || s:is_win || s:present(dict, 'down', 'up', 'left', 'right', 'window'))
   let use_tmux = (has_key(dict, 'tmux') || (!use_height && !use_term || prefer_tmux) && !has('win32unix') && s:splittable(dict)) && s:tmux_enabled()
   if prefer_tmux && use_tmux
     let use_height = 0
     let use_term = 0
   endif
-  if use_height
+  if use_term
+    let optstr .= ' --no-height'
+  elseif use_height
     let height = s:calc_size(&lines, dict.down, dict)
     let optstr .= ' --height='.height
-  elseif use_term
-    let optstr .= ' --no-height'
   endif
-  let command = prefix.(use_tmux ? s:fzf_tmux(dict) : fzf_exec).' '.optstr.' > '.temps.result
+  let optstr .= s:border_opt(get(dict, 'window', 0))
+  let prev_default_command = $FZF_DEFAULT_COMMAND
+  if len(source_command)
+    let $FZF_DEFAULT_COMMAND = source_command
+  endif
+  let command = (use_tmux ? s:fzf_tmux(dict) : fzf_exec).' '.optstr.' > '.temps.result
 
   if use_term
     return s:execute_term(dict, command, temps)
@@ -431,6 +515,13 @@ try
   call s:callback(dict, lines)
   return lines
 finally
+  if len(source_command)
+    if len(prev_default_command)
+      let $FZF_DEFAULT_COMMAND = prev_default_command
+    else
+      execute 'unlet $FZF_DEFAULT_COMMAND'
+    endif
+  endif
   let [&shell, &shellslash, &shellcmdflag, &shellxquote] = [shell, shellslash, shellcmdflag, shellxquote]
 endtry
 endfunction
@@ -460,8 +551,8 @@ function! s:fzf_tmux(dict)
       endif
     endfor
   endif
-  return printf('LINES=%d COLUMNS=%d %s %s %s --',
-    \ &lines, &columns, fzf#shellescape(s:fzf_tmux), size, (has_key(a:dict, 'source') ? '' : '-'))
+  return printf('LINES=%d COLUMNS=%d %s %s - --',
+    \ &lines, &columns, fzf#shellescape(s:fzf_tmux), size)
 endfunction
 
 function! s:splittable(dict)
@@ -514,7 +605,7 @@ function! s:dopopd()
   if s:fzf_getcwd() ==# w:fzf_pushd.dir && (!&autochdir || w:fzf_pushd.bufname ==# bufname(''))
     execute w:fzf_pushd.command s:escape(w:fzf_pushd.origin)
   endif
-  unlet w:fzf_pushd
+  unlet! w:fzf_pushd
 endfunction
 
 function! s:xterm_launcher()
@@ -591,14 +682,14 @@ function! s:execute(dict, command, use_height, temps) abort
     let a:temps.shellscript = shellscript
   endif
   if a:use_height
-    let stdin = has_key(a:dict, 'source') ? '' : '< /dev/tty'
-    call system(printf('tput cup %d > /dev/tty; tput cnorm > /dev/tty; %s %s 2> /dev/tty', &lines, command, stdin))
+    call system(printf('tput cup %d > /dev/tty; tput cnorm > /dev/tty; %s < /dev/tty 2> /dev/tty', &lines, command))
   else
     execute 'silent !'.command
   endif
   let exit_status = v:shell_error
   redraw!
-  return s:exit_handler(exit_status, command) ? s:collect(a:temps) : []
+  let lines = s:collect(a:temps)
+  return s:exit_handler(exit_status, command) ? lines : []
 endfunction
 
 function! s:execute_tmux(dict, command, temps) abort
@@ -612,7 +703,8 @@ function! s:execute_tmux(dict, command, temps) abort
   call system(command)
   let exit_status = v:shell_error
   redraw!
-  return s:exit_handler(exit_status, command) ? s:collect(a:temps) : []
+  let lines = s:collect(a:temps)
+  return s:exit_handler(exit_status, command) ? lines : []
 endfunction
 
 function! s:calc_size(max, val, dict)
@@ -644,6 +736,32 @@ function! s:getpos()
   return {'tab': tabpagenr(), 'win': winnr(), 'winid': win_getid(), 'cnt': winnr('$'), 'tcnt': tabpagenr('$')}
 endfunction
 
+function! s:border_opt(window)
+  if type(a:window) != type({})
+    return ''
+  endif
+
+  " Border style
+  let style = tolower(get(a:window, 'border', 'rounded'))
+  if !has_key(a:window, 'border') && !get(a:window, 'rounded', 1)
+    let style = 'sharp'
+  endif
+  if style == 'none' || style == 'no'
+    return ''
+  endif
+
+  " For --border styles, we need fzf 0.24.0 or above
+  call fzf#exec('0.24.0')
+  let opt = ' --border=' . style
+  if has_key(a:window, 'highlight')
+    let color = s:get_color('fg', a:window.highlight)
+    if len(color)
+      let opt .= ' --color=border:' . color
+    endif
+  endif
+  return opt
+endfunction
+
 function! s:split(dict)
   let directions = {
   \ 'up':    ['topleft', 'resize', &lines],
@@ -655,7 +773,7 @@ function! s:split(dict)
   try
     if s:present(a:dict, 'window')
       if type(a:dict.window) == type({})
-        if !(has('nvim') ? has('nvim-0.4') : has('popupwin') && has('patch-8.2.191'))
+        if !s:popup_support()
           throw 'Nvim 0.4+ or Vim 8.2.191+ with popupwin feature is required for pop-up window'
         end
         call s:popup(a:dict.window)
@@ -689,6 +807,13 @@ function! s:split(dict)
   endtry
 endfunction
 
+nnoremap <silent> <Plug>(fzf-insert) i
+nnoremap <silent> <Plug>(fzf-normal) <Nop>
+if exists(':tnoremap')
+  tnoremap <silent> <Plug>(fzf-insert) <C-\><C-n>i
+  tnoremap <silent> <Plug>(fzf-normal) <C-\><C-n>
+endif
+
 function! s:execute_term(dict, command, temps) abort
   let winrest = winrestcmd()
   let pbuf = bufnr('')
@@ -701,7 +826,7 @@ function! s:execute_term(dict, command, temps) abort
   function! fzf.switch_back(inplace)
     if a:inplace && bufnr('') == self.buf
       if bufexists(self.pbuf)
-        execute 'keepalt b' self.pbuf
+        execute 'keepalt keepjumps b' self.pbuf
       endif
       " No other listed buffer
       if bufnr('') == self.buf
@@ -733,14 +858,18 @@ function! s:execute_term(dict, command, temps) abort
       execute self.winrest
     endif
 
+    let lines = s:collect(self.temps)
     if !s:exit_handler(a:code, self.command, 1)
       return
     endif
 
     call s:pushd(self.dict)
-    let lines = s:collect(self.temps)
     call s:callback(self.dict, lines)
     call self.switch_back(s:getpos() == self.ppos)
+
+    if &buftype == 'terminal'
+      call feedkeys(&filetype == 'fzf' ? "\<Plug>(fzf-insert)" : "\<Plug>(fzf-normal)")
+    endif
   endfunction
 
   try
@@ -757,6 +886,9 @@ function! s:execute_term(dict, command, temps) abort
       call termopen(command, fzf)
     else
       let term_opts = {'exit_cb': function(fzf.on_exit)}
+      if v:version >= 802
+        let term_opts.term_kill = 'term'
+      endif
       if is_popup
         let term_opts.hidden = 1
       else
@@ -769,6 +901,10 @@ function! s:execute_term(dict, command, temps) abort
       if !has('patch-8.0.1261') && !s:is_win
         call term_wait(fzf.buf, 20)
       endif
+    endif
+    tnoremap <buffer> <c-z> <nop>
+    if exists('&termwinkey') && (empty(&termwinkey) || &termwinkey =~? '<c-w>')
+      tnoremap <buffer> <c-w> <c-w>.
     endif
   finally
     call s:dopopd()
@@ -807,6 +943,8 @@ function! s:callback(dict, lines) abort
     endif
     if has_key(a:dict, 'sink*')
       call a:dict['sink*'](a:lines)
+    elseif has_key(a:dict, 'sinklist')
+      call a:dict['sinklist'](a:lines)
     endif
   catch
     if stridx(v:exception, ':E325:') < 0
@@ -825,47 +963,40 @@ if has('nvim')
   function s:create_popup(hl, opts) abort
     let buf = nvim_create_buf(v:false, v:true)
     let opts = extend({'relative': 'editor', 'style': 'minimal'}, a:opts)
-    let border = has_key(opts, 'border') ? remove(opts, 'border') : []
     let win = nvim_open_win(buf, v:true, opts)
     call setwinvar(win, '&winhighlight', 'NormalFloat:'..a:hl)
     call setwinvar(win, '&colorcolumn', '')
-    if !empty(border)
-      call nvim_buf_set_lines(buf, 0, -1, v:true, border)
-    endif
     return buf
   endfunction
 else
   function! s:create_popup(hl, opts) abort
-    let is_frame = has_key(a:opts, 'border')
     let s:popup_create = {buf -> popup_create(buf, #{
       \ line: a:opts.row,
       \ col: a:opts.col,
       \ minwidth: a:opts.width,
+      \ maxwidth: a:opts.width,
       \ minheight: a:opts.height,
-      \ zindex: 50 - is_frame,
+      \ maxheight: a:opts.height,
+      \ zindex: 1000,
     \ })}
-    if is_frame
-      let id = s:popup_create('')
-      call setwinvar(id, '&wincolor', a:hl)
-      call setbufline(winbufnr(id), 1, a:opts.border)
-      execute 'autocmd BufWipeout * ++once call popup_close('..id..')'
-      return winbufnr(id)
-    else
-      autocmd TerminalOpen * ++once call s:popup_create(str2nr(expand('<abuf>')))
-    endif
+    autocmd TerminalOpen * ++once call s:popup_create(str2nr(expand('<abuf>')))
   endfunction
 endif
 
 function! s:popup(opts) abort
-  " Support ambiwidth == 'double'
-  let ambidouble = &ambiwidth == 'double' ? 2 : 1
+  let xoffset = get(a:opts, 'xoffset', 0.5)
+  let yoffset = get(a:opts, 'yoffset', 0.5)
+  let relative = get(a:opts, 'relative', 0)
+
+  " Use current window size for positioning relatively positioned popups
+  let columns = relative ? winwidth(0) : &columns
+  let lines = relative ? winheight(0) : (&lines - has('nvim'))
 
   " Size and position
-  let width = min([max([0, float2nr(&columns * a:opts.width)]), &columns])
-  let width += width % ambidouble
-  let height = min([max([0, float2nr(&lines * a:opts.height)]), &lines - has('nvim')])
-  let row = float2nr(get(a:opts, 'yoffset', 0.5) * (&lines - height))
-  let col = float2nr(get(a:opts, 'xoffset', 0.5) * (&columns - width))
+  let width = min([max([8, a:opts.width > 1 ? a:opts.width : float2nr(columns * a:opts.width)]), columns])
+  let height = min([max([4, a:opts.height > 1 ? a:opts.height : float2nr(lines * a:opts.height)]), lines])
+  let row = float2nr(yoffset * (lines - height)) + (relative ? win_screenpos(0)[0] - 1 : 0)
+  let col = float2nr(xoffset * (columns - width)) + (relative ? win_screenpos(0)[1] - 1 : 0)
 
   " Managing the differences
   let row = min([max([0, row]), &lines - has('nvim') - height])
@@ -873,45 +1004,9 @@ function! s:popup(opts) abort
   let row += !has('nvim')
   let col += !has('nvim')
 
-  " Border style
-  let style = tolower(get(a:opts, 'border', 'rounded'))
-  if !has_key(a:opts, 'border') && !get(a:opts, 'rounded', 1)
-    let style = 'sharp'
-  endif
-
-  if style =~ 'vertical\|left\|right'
-    let mid = style == 'vertical' ? '│' .. repeat(' ', width - 2 * ambidouble) .. '│' :
-            \ style == 'left'     ? '│' .. repeat(' ', width - 1 * ambidouble)
-            \                     :        repeat(' ', width - 1 * ambidouble) .. '│'
-    let border = repeat([mid], height)
-    let shift = { 'row': 0, 'col': style == 'right' ? 0 : 2, 'width': style == 'vertical' ? -4 : -2, 'height': 0 }
-  elseif style =~ 'horizontal\|top\|bottom'
-    let hor = repeat('─', width / ambidouble)
-    let mid = repeat(' ', width)
-    let border = style == 'horizontal' ? [hor] + repeat([mid], height - 2) + [hor] :
-               \ style == 'top'        ? [hor] + repeat([mid], height - 1)
-               \                       :         repeat([mid], height - 1) + [hor]
-    let shift = { 'row': style == 'bottom' ? 0 : 1, 'col': 0, 'width': 0, 'height': style == 'horizontal' ? -2 : -1 }
-  else
-    let edges = style == 'sharp' ? ['┌', '┐', '└', '┘'] : ['╭', '╮', '╰', '╯']
-    let bar = repeat('─', width / ambidouble - 2)
-    let top = edges[0] .. bar .. edges[1]
-    let mid = '│' .. repeat(' ', width - 2 * ambidouble) .. '│'
-    let bot = edges[2] .. bar .. edges[3]
-    let border = [top] + repeat([mid], height - 2) + [bot]
-    let shift = { 'row': 1, 'col': 2, 'width': -4, 'height': -2 }
-  endif
-
-  let highlight = get(a:opts, 'highlight', 'Comment')
-  let frame = s:create_popup(highlight, {
-    \ 'row': row, 'col': col, 'width': width, 'height': height, 'border': border
-  \ })
   call s:create_popup('Normal', {
-    \ 'row': row + shift.row, 'col': col + shift.col, 'width': width + shift.width, 'height': height + shift.height
+    \ 'row': row, 'col': col, 'width': width, 'height': height
   \ })
-  if has('nvim')
-    execute 'autocmd BufWipeout <buffer> bwipeout '..frame
-  endif
 endfunction
 
 let s:default_action = {

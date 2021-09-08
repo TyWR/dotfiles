@@ -43,7 +43,6 @@ function fontsize() {
 function sync-config {
     dotfiles=~/Sandbox/dotfiles
     echo "Dotfiles repo location ${dotfiles}"
-    rmtrash ~/Sandbox/dotfiles/.config
     mkdir ~/Sandbox/dotfiles/.config
     names=(alacritty coc htop neofetch nvim ranger skhd status.widget themes wal yabai zathura zsh)
     for name in $names; do
@@ -63,4 +62,12 @@ function topdf {
             -V geometry:margin=2cm \
             -V mainfont="Futura" \
             --pdf-engine=xelatex
-    }
+}
+
+function gh() {
+    type_=$1
+    echo "Switching to gh-${type_}"
+    ssh-add -D
+    ssh-add ~/.ssh/gh-${type_}
+}
+
