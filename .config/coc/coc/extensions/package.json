@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "coc-python": ">=1.2.13",
+    "coc-snippets": ">=2.4.6"
+  }
+}

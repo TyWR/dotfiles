@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/Users/tanguy/.config/zsh'
+let g:netrw_dirhist_2='/Users/tanguy/.cache/tags'
+let g:netrw_dirhist_1='/Users/tanguy/Projects/mongo-dumps/primary/bson2json'
+let g:netrw_dirhist_0='/Users/tanguy/.config/zsh/themes'
+let g:netrw_dirhist_9='/Users/tanguy/.config/zsh'
+let g:netrw_dirhist_8='/Users/tanguy/.config/themes/citypop'
+let g:netrw_dirhist_7='/Users/tanguy'
+let g:netrw_dirhist_6='/Users/tanguy/.config'
+let g:netrw_dirhist_5='/Users/tanguy/.config/themes'
+let g:netrw_dirhist_4='/Users/tanguy/.config/zsh'

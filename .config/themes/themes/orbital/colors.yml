@@ -1,0 +1,26 @@
+background_opacity: 0.85
+colors:
+  primary:
+    background: '0x000000'
+    foreground: '0xe4e4e4'
+  cursor:
+    text:       '0x000000'
+    cursor:     '0xe4e4e4'
+  normal:
+    black:      '0x000000'
+    red:        '0xd7af87'
+    green:      '0x0087d7'
+    yellow:     '0x309BEB'
+    blue:       '0x5fafff'
+    magenta:    '0x7ABAFA'
+    cyan:       '0x94C4F4'
+    white:      '0xe4e4e4'
+  bright:
+    black:      '0x5f5f5f'
+    red:        '0xd7af87'
+    green:      '0x0087d7'
+    yellow:     '0x309BEB'
+    blue:       '0x5fafff'
+    magenta:    '0x7ABAFA'
+    cyan:       '0x94C4F4'
+    white:      '0x191919'

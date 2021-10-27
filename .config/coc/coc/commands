@@ -1,0 +1,5 @@
+python.setLinter
+python.setInterpreter
+('jump-definition')
+workspace.renameCurrentFile
+editor.action.organizeImport

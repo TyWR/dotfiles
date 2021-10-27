@@ -1,0 +1,50 @@
+find app
+rename run-restart.sh
+rename run-restart.py
+rename run-kill.sh
+rename run-timeout.sh
+shell mkdir mau
+shell mkdir 
+shell touch app.py
+shell touch app.template.env
+shell touch settings.py
+rename gh-pro
+rename gh-pro.pub
+delete
+find crawler
+shell touch iter.py
+shell touch schedule.py
+rename settings.env
+rename download-estimates-ios-pred
+rename download-estimates-ios-pred-service
+rename download-estimates-ios-pred-serviceice.yml
+rename download-estimates-ios-pred-service.yml
+shell touch nikos_weg
+::::::::::::::::
+shell mkdir assimil
+rename 2021-10-20.md
+find mongo
+open_with Q
+rename EBS.wav
+rename hartke.wav
+rename tc.wav
+rename ashdown.wav
+rename trace_elliot.wav
+rename 2021-10-21.md
+rename 2021-10-22.md
+open_with 
+shell mkdir tasks
+shell touch config.py
+shell 
+rename download_lookup.py
+rename download_ranks.py
+rename download_monthly_downloads.py
+rename aggregate_data.py
+rename download_estimates
+rename download_estimates.py
+rename compute_mau.py
+rename download_mau_history.py
+open_with nvim
+rename app.template.env
+rename populate_estimates.py
+rename populate_ranks.py

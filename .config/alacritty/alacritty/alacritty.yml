@@ -1,0 +1,86 @@
+env:
+  # TERM: xterm-256color
+  TERM: alacritty
+
+window:
+  padding:
+    x: 40
+    y: 40
+  dynamic_padding: true
+  decorations: none
+
+font:
+  size: 19
+  normal:
+    family: TerminessTTF Nerd Font
+    style: Medium
+  bold:
+    family: TerminessTTF Nerd Font
+    style: Bold
+  italic:
+    family: TerminessTTF Nerd Font
+    style: Italic
+  bold_italic:
+    family: TerminessTTF Nerd Font
+    style: Bold Italic
+  # normal:
+  #   family: Anka/Coder
+  #   style: Regular
+  # bold:
+  #   family: Anka/Coder
+  #   style: Bold
+  # italic:
+  #   family: Anka/Coder
+  #   style: Italic
+  # bold_italic:
+  #   family: Anka/Coder
+  #   style: Bold Italic
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+alt_send_esc: false
+
+mouse:
+  hide_when_typing: false
+
+key_bindings:
+  - { key: Equals,   mods: Control,   action: IncreaseFontSize}
+  - { key: Key0,    mods: Control,    action: DecreaseFontSize}
+
+# BEGIN ACE
+background_opacity: 0.95
+colors:
+  primary:
+    background: '0x101217'
+    foreground: '0xeceff4'
+  cursor:
+    text:       '0x0C0D10'
+    cursor:     '0xeceff4'
+  normal:
+    black:      '0x101217'
+    red:        '0x88c0d0'
+    green:      '0x6991B5'
+    yellow:     '0x5e81ac'
+    blue:       '0x7A97BA'
+    magenta:    '0x97ADC9'
+    cyan:       '0xB3C3D7'
+    white:      '0xeceff4'
+  bright:
+    black:      '0x4c566a'
+    red:        '0x88c0d0'
+    green:      '0x6991B5'
+    yellow:     '0x5e81ac'
+    blue:       '0x7A97BA'
+    magenta:    '0x97ADC9'
+    cyan:       '0xB3C3D7'
+    white:      '0x1F232B'
+# END ACE

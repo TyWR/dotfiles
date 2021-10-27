@@ -1,0 +1,45 @@
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+source ~/.cache/wal/colors.sh # pywal scheme - update if needed
+
+# yabai template colours
+
+CBACK=$(echo $background | sed 's/#//')
+CFORE=$(echo $color2 | sed 's/#//')
+CACTV=$(echo $color1 | sed 's/#//')
+CNORM=$(echo $color2 | sed 's/#//')
+CINSE=$(echo $color1 | sed 's/#//')
+
+yabai -m config window_shadow false
+
+
+yabai -m config window_topmost on
+yabai -m window --toggle border
+yabai -m config window_border_width          8
+yabai -m config focus_follows_mouse 		 on
+yabai -m config window_border                on
+yabai -m config active_window_border_color   0xff$CACTV
+yabai -m config normal_window_border_color   $CNORM
+yabai -m config insert_window_border_color   0xff$CINSE
+yabai -m config window_shadow                float
+
+# general space settings
+yabai -m config layout                       bsp
+yabai -m config top_padding                  34
+yabai -m config bottom_padding               10
+yabai -m config left_padding                 10
+yabai -m config right_padding                10
+yabai -m config window_gap                   10
+
+yabai -m rule --add app="^Finder" manage=off
+yabai -m rule --add app="^Preview" manage=off
+yabai -m rule --add app="^FaceTime" manage=off
+yabai -m rule --add app="^System Preferences" manage=off
+yabai -m rule --add app="^OpenVPN Connect" manage=off
+yabai -m rule --add app="^ProtonVPN" manage=off
+yabai -m rule --add app="^Docker Desktop" manage=off
+yaabai -m rule --add app="^Docker" manage=off
+yabai -m rule --add app=Terminal manage=on
+
+echo "yabai configuration loaded."
