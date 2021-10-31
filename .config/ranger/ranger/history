@@ -1,28 +1,3 @@
-find app
-rename run-restart.sh
-rename run-restart.py
-rename run-kill.sh
-rename run-timeout.sh
-shell mkdir mau
-shell mkdir 
-shell touch app.py
-shell touch app.template.env
-shell touch settings.py
-rename gh-pro
-rename gh-pro.pub
-delete
-find crawler
-shell touch iter.py
-shell touch schedule.py
-rename settings.env
-rename download-estimates-ios-pred
-rename download-estimates-ios-pred-service
-rename download-estimates-ios-pred-serviceice.yml
-rename download-estimates-ios-pred-service.yml
-shell touch nikos_weg
-::::::::::::::::
-shell mkdir assimil
-rename 2021-10-20.md
 find mongo
 open_with Q
 rename EBS.wav
@@ -35,16 +10,41 @@ rename 2021-10-22.md
 open_with 
 shell mkdir tasks
 shell touch config.py
-shell 
 rename download_lookup.py
 rename download_ranks.py
 rename download_monthly_downloads.py
-rename aggregate_data.py
 rename download_estimates
 rename download_estimates.py
 rename compute_mau.py
 rename download_mau_history.py
-open_with nvim
 rename app.template.env
 rename populate_estimates.py
 rename populate_ranks.py
+rename populate_lookup.py
+rename aggregate_ranks.py
+rename aggregate_data.py
+rename aggregate_ts.py
+rename test-lookup.csv
+shell mkdir test
+shell touch s
+shell touch settings.py
+rename download_lookup.token
+shell touch test_ranks
+shell mkdir test_ranks
+open_with nvim
+shell Q
+rename prototype-api.md
+shell touch README.md
+shell mkdir 
+shell mkdir ranks
+shell mkdir 202Q
+shell mkdir 20201031
+shell mkdir monthly_downloads
+shell mkdir compute_mau
+shell 
+shell touch core.py
+shell touch __main__.py
+rename config.py
+
+rename mau-project
+rename mau

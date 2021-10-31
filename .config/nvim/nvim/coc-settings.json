@@ -1,7 +1,15 @@
 {
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.linting.enabled": true,
     "python.pythonPath": "/usr/local/bin/python3",
     "diagnostic.checkCurrentLine": true,
+    "python.jediEnabled": false,
+    "pyright.enable": true,
+    "python.analysis.autoImportCompletions": false,
+    "python.linting.enabled": true,
+    "pyright.completion.snippetSupport": false,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "pyright.disableDiagnostics": false,
+    "pyright.disableCompletion": false,
+    "pyright.completion.snippetSupport": false,
+    "python.analysis.typeCheckingMode": "off",
 }

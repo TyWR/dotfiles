@@ -12,6 +12,8 @@ set shell=zsh
 set background=dark
 set nocompatible
 colorscheme default
+packadd cfilter
+
 
 " Tab settings
 set expandtab
@@ -20,7 +22,6 @@ set shiftwidth=4
 set softtabstop=4
 set autoindent
 set smartindent
-
 " Search settings
 set incsearch
 set hlsearch
@@ -34,6 +35,9 @@ let g:black_linelength=80
 "  						         VIM PLUG	
 " ----------------------------------------------------------------------------
 call plug#begin()
+Plug 'mhinz/vim-startify'
+Plug 'svermeulen/vim-subversive'
+Plug 'mhinz/vim-grepper' 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'psf/black'
 Plug 'dylanaraps/wal.vim'
@@ -61,6 +65,7 @@ Plug 'phaazon/hop.nvim'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 call plug#end()
 
 lua require 'hop'.setup()
@@ -74,13 +79,6 @@ let &t_ZH="\e[4m"
 let &t_ZR="\e[33m"
 
 colorscheme wal
-
-augroup python
-    autocmd!
-    autocmd FileType python
-                \   syn keyword PythonSelf self
-                \ | highlight def link PythonSelf Special
-augroup end
 
 augroup CursorLine
     au!
@@ -133,6 +131,19 @@ hi HopNextKey1 cterm=bold ctermfg=4
 hi HopNextKey2 cterm=bold ctermfg=7
 
 hi TSFunction cterm=bold ctermbg=None ctermfg=2
+hi TSMethod cterm=bold ctermbg=None ctermfg=2
+hi TSParameter cterm=bold ctermbg=None ctermfg=5
+hi TSField cterm=bold ctermbg=None ctermfg=14
+
+
+hi rainbowcol1 ctermfg=2
+hi rainbowcol2 ctermfg=3
+hi rainbowcol3 ctermfg=4
+hi rainbowcol4 ctermfg=5
+hi rainbowcol5 ctermfg=6
+hi rainbowcol6 ctermfg=1
+hi rainbowcol7 ctermfg=7
+
 
 autocmd FileType markdown highlight htmlH1 cterm=bold ctermfg=1
 autocmd FileType markdown highlight htmlH2 cterm=bold ctermfg=2
@@ -151,63 +162,54 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <C-g> :Grepper<CR>
 
 vmap Y "+y
 
-nmap <Down> :call  smoothie#downwards()<CR>
-nmap <Up> :call  smoothie#upwards()<CR>
+nmap <silent> <Down> :call  smoothie#downwards()<CR>
+nmap <silent> <Up> :call  smoothie#upwards()<CR>
 
-nmap ++ :vsp<CR>
-nmap °° :sp<CR>
+nmap <silent> ++ :vsp<CR>
+nmap <silent> °° :sp<CR>
 nnoremap M q
 nnoremap à @a
 nnoremap q <Nop>
 nnoremap Q <Nop>
-nmap mm :w<CR>
-nmap qq :wq<CR>
+nmap <silent> mm :w<CR>
+nmap <silent> qq :wq<CR>
 nmap QQ :bd<CR>
 nmap U :redo<CR>
-nmap <S-Tab> :bp<CR>
-nmap <Tab> :bn<CR>
-nmap <C-F> :Lines<CR>
-nmap <C-O> :Files<CR>
-nmap <C-P> :Buffers<CR>
+nmap <silent> <S-Tab> :bp<CR>
+nmap <silent> <Tab> :bn<CR>
+nmap <silent> <C-F> :Lines<CR>
+nmap <silent> <C-O> :Files<CR>
 nmap <C-S> :Black<CR>
-nmap <C-A> :EnableAutocorrect<CR>
+nmap <silent> s :HopChar2<CR>
+nmap <silent> S :HopWord<CR>
 
-lua vim.api.nvim_set_keymap('n', 'S', "<cmd>lua require'hop'.hint_words()<cr>", {})
-lua vim.api.nvim_set_keymap('n', 's', "<cmd>lua require'hop'.hint_char2()<cr>", {})
+nmap gs <plug>(SubversiveSubstitute)
+" nmap ss <plug>(SubversiveSubstituteLine)
+" nmap S <plug>(SubversiveSubstituteToEndOfLine)
+
+
 
 " Add easy nbreakpoint shortcut
 nnoremap <silent> <C-B> :let a='import pdb; pdb.set_trace()'\|put=a<CR>
 nnoremap <silent> -- :let a='# --------------------------------------------
     \---------------------------------'\|put=a<CR>
 
-" Add easy jump to definition
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-" nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-
 " -----------------------------------------------------------------------------
 "  						             Treesitter
 " -----------------------------------------------------------------------------
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "maintained",
   highlight = {
-    enable = true ,
+    enable = true,
     additional_vim_regex_highlighting = false,
   },
   indent = {
     enable = false,
-  }
-}
-
-require("nvim-treesitter.configs").setup {
-  highlight = {
   },
   rainbow = {
     enable = true,
@@ -216,6 +218,62 @@ require("nvim-treesitter.configs").setup {
   }
 }
 EOF
+
+
+" ---------------------------------------------------------------------------
+"  						        Treesitter
+"----------------------------------------------------------------------------
+lua <<EOF
+require "nvim-treesitter"
+require'nvim-treesitter.configs'.setup {
+  textobjects = {
+    move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        ["mj"] = "@function.outer",
+        ["qj"] = "@conditional.outer",
+        ["'j"] = "@loop.outer",
+      },
+      goto_next_end = {
+        ["Mj"] = "@function.outer",
+      },
+      goto_previous_start = {
+        ["mk"] = "@function.outer",
+        ["qk"] = "@conditional.outer",
+      },
+      goto_previous_end = {
+        ["Mk"] = "@function.outer",
+      },
+    },
+    select = {
+      enable = true,
+
+      -- Automatically jump forward to textobj, similar to targets.vim
+      lookahead = true,
+
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ic"] = "@class.inner",
+      },
+    },
+  },
+}
+EOF
+" -------------------------------------------------------------
+"  Grepper
+"  ------------------------------------------------------------
+let g:grepper_quickfix=0             " use location list
+let g:grepper_open=1
+let g:grepper_switch=1              " Go into the location list after a search
+let g:grepper_side=1                " Open a new window and show matches with surrounding contextu
+let g:grepper_dir="repo"
+let g:grepper_side=1
+let g:grepper_tools=['ag']
+let g:grepper_highlight=1
+nmap gn  <plug>(GrepperOperator)
+xmap gn  <plug>(GrepperOperator)
 
 " -----------------------------------------------------------------------------
 "  						             RANGER
@@ -306,6 +364,19 @@ map <C-r> :Ranger<CR>
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env', ".vim", "app.env"]
+
+function! s:GoToDefinition()
+  if CocAction('jumpDefinition')
+    return v:true
+  endif
+
+  let ret = execute("silent! normal \<C-]>")
+  if ret =~ "Error" || ret =~ "错误"
+    call searchdecl(expand('<cword>'))
+  endif
+endfunction
+
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -319,6 +390,7 @@ endfunction
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+nmap <silent> gd :call <SID>GoToDefinition()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -347,3 +419,113 @@ function! Syn()
   endfor
 endfunction
 command! -nargs=0 Syn call Syn()
+
+" --------------------------------------------------------------
+" startify
+" --------------------------------------------------------------
+let g:startify_lists = [
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'files',     'header': ['   MRU']            },
+          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ ]
+          " \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+let g:startify_session_before_save = [
+        \ 'echo "Cleaning up before saving.."',
+        \ 'silent! NERDTreeTabsClose'
+        \ ]
+let g:startify_files_number = 2
+let g:webdevicons_enable_startify = 1
+" let g:startify_session_autoload = 1
+let g:startify_change_to_dir = 0
+" let g:workspace_session_directory = $HOME . '/.cache/sessions/'
+let g:startify_session_autoload = 1
+let g:startify_custom_header = 'startify#center(startify#fortune#cowsay())'
+
+let g:startify_custom_header = [
+        \ '                         ▄              ▄                  ',
+        \ '                        ▌▒█           ▄▀▒▌                 ',
+        \ '                        ▌▒▒▀        ▄▀▒▒▒▐                 ',
+        \ '                       ▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐                 ',
+        \ '                     ▄▄▀▒▒▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐                 ',
+        \ '                   ▄▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀██▀▒▌                 ',
+        \ '                  ▐▒▒▒▄▄▄▒▒▒▒▒▒▒▒▒▒▒▒▒▀▄▒▒▌                ',
+        \ '                  ▌▒▒▐▄█▀▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐                ',
+        \ '                 ▐▒▒▒▒▒▒▒▒▒▒▒▌██▀▒▒▒▒▒▒▒▒▀▄▌               ',
+        \ '                 ▌▒▀▄██▄▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒▌               ',
+        \ '                 ▌▀▐▄█▄█▌▄▒▀▒▒▒▒▒▒░░░░░░▒▒▒▐               ',
+        \ '                ▐▒▀▐▀▐▀▒▒▄▄▒▄▒▒▒▒▒░░░░░░▒▒▒▒▌              ',
+        \ '                ▐▒▒▒▀▀▄▄▒▒▒▄▒▒▒▒▒▒░░░░░░▒▒▒▐               ',
+        \ '                 ▌▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒▒▒░░░░▒▒▒▒▌               ',
+        \ '                 ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐                ',
+        \ '                  ▀▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▒▒▒▒▌                ',
+        \ '                    ▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀                 ',
+        \ '                   ▐▀▒▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀                   ',
+        \ '                  ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀▀                      ',
+        \ ]
+
+" -------------- make nerdtree work at startup ------------------------------ "
+" autocmd VimEnter *
+"                 \   if !argc()
+"                 \ |   Startify
+"                 \ |   NERDTree
+"                 \ |   wincmd w
+"                 \ | endif
+
+" --------------------------------------------------------------
+" quickrun
+" --------------------------------------------------------------
+" outputte /message/log = the output don't capture logging
+            " \ 'runner':'terminal',
+            " \ 'runner/terminal/into':1,
+            " \ 'outputter/buffer/close_on_empty' : 1,
+            " \ 'outputter/loclist/into':1
+
+            " \ 'runner': 'vimproc',
+            " \ 'runner':'terminal',
+            " \ 'runner/terminal/into':1,
+let b:quickrun_config = {
+            \ 'outputter':'error',
+            \ 'outputter/error/success':'buffer',
+            \ 'outputter/error/error':'loclist',
+            \  }
+
+"             \ 'outputter/loclist/errorformat':'&errorformat',
+            " \ 'outputter/buffer/close_on_empty' : 1,
+
+            " \ "hook/close_unite_quickfix/enable_hook_loaded" : 1,
+            " \ "hook/unite_quickfix/enable_failure" : 1,
+            " \ "hook/close_quickfix/enable_exit" : 1,
+            " \ "hook/close_buffer/enable_failure" : 1,
+            " \ "hook/close_buffer/enable_empty_data" : 1,
+            " \ "outputter/buffer/split" : ":botright 8sp",
+            " \ "outputter" : "multi:buffer:quickfix",
+            " \	"outputter/buffer/append":0,
+            " \	"outputter":"buffered",
+            " \	"outputter/buffered/target":"buffer",
+            " \	"outputter/buffer/split":"Uniqtab",
+            " \	"runner/vimproc/updatetime":0,
+            " \ 'outputter/buffer/close_on_empty' : 1,
+            " \ 'outputter/message/log':0,
+            " \ 'runner/terminal/into':1,
+            " \ 'outputter/loclist/into':1
+            " \ 'outputter': 'quickfix'
+            " \ 'outputter/quickfix/into':1
+" 'tex': {
+"         \    'command': 'platex',
+"         \    'exec': ['%c -output-directory %s:h %s', 'dvipdfmx -o %s:r.pdf %s:r.dvi', 'open %s:r.pdf']
+"         \   },
+" let g:quickrun_config['sql'] = {
+" 		\ 'command': 'psql',
+" 		\ 'exec': ['%c %o < %s'],
+" 		\ 'cmdopt': '%{MakepgsqlCommandOptions()}',
+" 		\ }
+
+" let g:quickrun_config['R'] = {'command': 'R', 'exec': ['%c -s --no-save -f %s', ':%s/.\b//g']}
+" stop quickrun with <Ctrl-c>
+nnoremap <expr><silent> <C-h> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-h>"
+
+" --------------------------------------------------------------
+" unstack
+" --------------------------------------------------------------
+nnoremap <C-u> :UnstackFromClipboard<CR>
+nnoremap <space>j :copen<CR><C-w>JG<CR>
