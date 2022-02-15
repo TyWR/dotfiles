@@ -23,5 +23,10 @@ alias drun="docker-compose build > /dev/null && docker-compose run"
 alias dbuild="docker-compose build"
 alias 42mongo="sh ~/.mongo-connect"
 alias ghconfig="v ~/.ssh/config"
+alias de="v ~/Documents/deutsch"
+alias awsconfig="v ~/.aws/config"
+alias tn="tmux new-window"
+alias tw="tmux new-window"
+alias tk="tmux kill-window"
 
 ctags=/usr/local/bin/ctags

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "coc-lists": ">=1.4.2",
     "coc-pyright": ">=1.1.181",
     "coc-snippets": ">=2.4.6",
     "coc-tsserver": ">=1.4.9"

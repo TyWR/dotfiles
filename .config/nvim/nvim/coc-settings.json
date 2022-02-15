@@ -8,7 +8,7 @@
     "pyright.completion.snippetSupport": false,
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
-    "pyright.disableDiagnostics": false,
+    "pyright.disableDiagnostics": true,
     "pyright.disableCompletion": false,
     "pyright.completion.snippetSupport": false,
     "python.analysis.typeCheckingMode": "off",

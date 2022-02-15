@@ -1,50 +1,50 @@
-find mongo
-open_with Q
-rename EBS.wav
-rename hartke.wav
-rename tc.wav
-rename ashdown.wav
-rename trace_elliot.wav
-rename 2021-10-21.md
-rename 2021-10-22.md
-open_with 
+shell d
+shell touch python_sandbox
+shell touch
+shell touch src
+shell mkdir src
+shell touch cleaning_pipeline
+shell mkdir cleaning_pipeline
+shell touch __init__.py
+shell touch main.py
+shell touch download_itunes.py
+rename download_playstore.py
+shell touch download_
+rename process_itunes.py
+rename process_playstore.py
+shell touch tasks
 shell mkdir tasks
-shell touch config.py
-rename download_lookup.py
-rename download_ranks.py
-rename download_monthly_downloads.py
-rename download_estimates
-rename download_estimates.py
-rename compute_mau.py
-rename download_mau_history.py
-rename app.template.env
-rename populate_estimates.py
-rename populate_ranks.py
-rename populate_lookup.py
-rename aggregate_ranks.py
-rename aggregate_data.py
-rename aggregate_ts.py
-rename test-lookup.csv
-shell mkdir test
-shell touch s
-shell touch settings.py
-rename download_lookup.token
-shell touch test_ranks
-shell mkdir test_ranks
-open_with nvim
-shell Q
-rename prototype-api.md
-shell touch README.md
-shell mkdir 
-shell mkdir ranks
-shell mkdir 202Q
-shell mkdir 20201031
-shell mkdir monthly_downloads
-shell mkdir compute_mau
+shell touch download_bson.py
+shell touch process_all.py
+rename process_amazon.py
+shell touch upload_all.py
+rename upload_all.py
+rename upload_dumps.py
+open_with lll
+open_with 
+find ct
+rename app.env
+rename ctv_1to1.env
+shell touch ctv-iab-samples
 shell 
-shell touch core.py
-shell touch __main__.py
-rename config.py
+shell mkdir ctv-1on1-samples
+rename lgtv-100.bz2
+rename convert_schema_itunes.py
+rename convert_schema_tvos.py
+open_with nvim
+:
+rename test_convert_schema_itunes.py
+rename convert_schema_samsung.py
+rename convert_schema_vizio.py
+rename test_convert_schema_lgtv.py
+rename test_convert_schema_samsung.py
+rename test_convert_schema_vizio.py
+shell touch makefile
+open nvim
 
-rename mau-project
-rename mau
+rename foxyproxy-settings.json
+rename googletv_apps.py
+find h
+shell mkdir samples
+rename data
+find tenl

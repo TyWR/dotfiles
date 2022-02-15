@@ -11,6 +11,7 @@ set noshowmode
 set shell=zsh
 set background=dark
 set nocompatible
+set colorcolumn=80
 colorscheme default
 packadd cfilter
 
@@ -31,9 +32,9 @@ filetype plugin indent on
 let g:python3_host_prog='/usr/local/bin/python3'
 let g:black_linelength=80
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "  						         VIM PLUG	
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 call plug#begin()
 Plug 'mhinz/vim-startify'
 Plug 'svermeulen/vim-subversive'
@@ -61,18 +62,16 @@ Plug 'airblade/vim-rooter'
 Plug 'dahu/vim-fanfingtastic'
 Plug 'RRethy/vim-illuminate' 
 Plug 'ap/vim-buftabline'
-Plug 'phaazon/hop.nvim'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'ggandor/lightspeed.nvim'
 call plug#end()
 
-lua require 'hop'.setup()
-
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "  						        COLOR SCHEME
-"----------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 set t_u7=
 set t_RV=
 let &t_ZH="\e[4m"
@@ -111,6 +110,7 @@ hi GitGutterChangeDeleteLineNr ctermfg=black ctermbg=8 cterm=standout
 hi NormalFloat cterm=bold ctermbg=15 ctermfg=7
 
 hi VertSplit ctermbg=15 ctermfg=15
+hi ColorColumn ctermfg=none ctermbg=15
 
 hi TabLineSel cterm=bold ctermbg=2 ctermfg=15
 hi TabLine cterm=bold ctermbg=15 ctermfg=8
@@ -151,9 +151,9 @@ autocmd FileType markdown highlight htmlH3 cterm=bold ctermfg=3
 autocmd FileType markdown highlight htmlH4 cterm=bold ctermfg=4
 autocmd FileType markdown highlight htmlH5 cterm=bold ctermfg=5
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "  						          SHORTCUTS
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "  Remove sexy scrolls mappings
 " let g:smoothie_no_default_mappings=True
 
@@ -184,12 +184,8 @@ nmap <silent> <Tab> :bn<CR>
 nmap <silent> <C-F> :Lines<CR>
 nmap <silent> <C-O> :Files<CR>
 nmap <C-S> :Black<CR>
-nmap <silent> s :HopChar2<CR>
-nmap <silent> S :HopWord<CR>
 
 nmap gs <plug>(SubversiveSubstitute)
-" nmap ss <plug>(SubversiveSubstituteLine)
-" nmap S <plug>(SubversiveSubstituteToEndOfLine)
 
 
 
@@ -220,9 +216,9 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "  						        Treesitter
-"----------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 lua <<EOF
 require "nvim-treesitter"
 require'nvim-treesitter.configs'.setup {
@@ -261,9 +257,9 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
-" -------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "  Grepper
-"  ------------------------------------------------------------
+"  ----------------------------------------------------------------------------
 let g:grepper_quickfix=0             " use location list
 let g:grepper_open=1
 let g:grepper_switch=1              " Go into the location list after a search
@@ -281,7 +277,7 @@ xmap gn  <plug>(GrepperOperator)
 let g:ranger_replace_netrw = 1
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 
-"-----------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 "  						             GTAGS
 " -----------------------------------------------------------------------------
 " config project root markers.
@@ -293,16 +289,16 @@ let g:gutentags_cache_dir = expand('~/.cache/tags')
 let g:gutentags_ctags_exclude = ["*.min.js", "*.min.css", "build", "vendor",
                                  \ ".git", "node_modules", "*.vim/bundle/*"]
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "  						             CURSOR
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Set cursor variable
 set guicursor+=v-i:ver30-blinkon200-blinkoff150
 set guicursor+=n:block-blinkon200-blinkoff150
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "  						          VIM WORKSPACE
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent execute '!curl -fLo ~/.vim/autoload/plug.vim
     \ --create-dirs https://raw.githubusercontent.com/
@@ -311,17 +307,17 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "  						          GIT-GUTTER 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 let g:gitgutter_signs = 1
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '~'
 let g:gitgutter_sign_removed = '-'
 
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "  						         FZF
-" ---------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 let $FZF_DEFAULT_OPTS='
     \ --color=dark --color=fg:7,bg:-1,hl:-1,bg+:-1,hl+:1
     \ --color=info:5,prompt:5,pointer:12,marker:1,spinner:1,header:-1
@@ -353,14 +349,14 @@ endfunction
 
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "          					     RANGER
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 map <C-r> :Ranger<CR>
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "          					       COC
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -402,17 +398,29 @@ function! s:show_documentation()
   endif
 endfunction
 
-" ----------------------------------------------------------------------------
+" grep word under cursor
+command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
+
+function! s:GrepArgs(...)
+  let list = ['-S', '-smartcase', '-i', '-ignorecase', '-w', '-word',
+        \ '-e', '-regex', '-u', '-skip-vcs-ignores', '-t', '-extension']
+  return join(list, "\n")
+endfunction
+
+" Keymapping for grep word under cursor with interactive mode
+nnoremap <silent> gw :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
+
+" -----------------------------------------------------------------------------
 "          					       DOGE
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 let g:doge_doc_standard_python = 'numpy'
 let g:doge_mapping = '<C-d>'
 let g:doge_parsers = ['bash', 'python']
 
 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "                                 Utility 
-" ----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 function! Syn()
   for id in synstack(line("."), col("."))
     echo synIDattr(id, "name")
@@ -420,9 +428,9 @@ function! Syn()
 endfunction
 command! -nargs=0 Syn call Syn()
 
-" --------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " startify
-" --------------------------------------------------------------
+" -----------------------------------------------------------------------------
 let g:startify_lists = [
           \ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ { 'type': 'files',     'header': ['   MRU']            },
@@ -433,7 +441,7 @@ let g:startify_session_before_save = [
         \ 'echo "Cleaning up before saving.."',
         \ 'silent! NERDTreeTabsClose'
         \ ]
-let g:startify_files_number = 2
+let g:startify_files_number = 3
 let g:webdevicons_enable_startify = 1
 " let g:startify_session_autoload = 1
 let g:startify_change_to_dir = 0
@@ -442,90 +450,5 @@ let g:startify_session_autoload = 1
 let g:startify_custom_header = 'startify#center(startify#fortune#cowsay())'
 
 let g:startify_custom_header = [
-        \ '                         ▄              ▄                  ',
-        \ '                        ▌▒█           ▄▀▒▌                 ',
-        \ '                        ▌▒▒▀        ▄▀▒▒▒▐                 ',
-        \ '                       ▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐                 ',
-        \ '                     ▄▄▀▒▒▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐                 ',
-        \ '                   ▄▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀██▀▒▌                 ',
-        \ '                  ▐▒▒▒▄▄▄▒▒▒▒▒▒▒▒▒▒▒▒▒▀▄▒▒▌                ',
-        \ '                  ▌▒▒▐▄█▀▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐                ',
-        \ '                 ▐▒▒▒▒▒▒▒▒▒▒▒▌██▀▒▒▒▒▒▒▒▒▀▄▌               ',
-        \ '                 ▌▒▀▄██▄▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒▌               ',
-        \ '                 ▌▀▐▄█▄█▌▄▒▀▒▒▒▒▒▒░░░░░░▒▒▒▐               ',
-        \ '                ▐▒▀▐▀▐▀▒▒▄▄▒▄▒▒▒▒▒░░░░░░▒▒▒▒▌              ',
-        \ '                ▐▒▒▒▀▀▄▄▒▒▒▄▒▒▒▒▒▒░░░░░░▒▒▒▐               ',
-        \ '                 ▌▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒▒▒░░░░▒▒▒▒▌               ',
-        \ '                 ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐                ',
-        \ '                  ▀▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▒▒▒▒▌                ',
-        \ '                    ▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀                 ',
-        \ '                   ▐▀▒▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀                   ',
-        \ '                  ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀▀                      ',
+        \ '',
         \ ]
-
-" -------------- make nerdtree work at startup ------------------------------ "
-" autocmd VimEnter *
-"                 \   if !argc()
-"                 \ |   Startify
-"                 \ |   NERDTree
-"                 \ |   wincmd w
-"                 \ | endif
-
-" --------------------------------------------------------------
-" quickrun
-" --------------------------------------------------------------
-" outputte /message/log = the output don't capture logging
-            " \ 'runner':'terminal',
-            " \ 'runner/terminal/into':1,
-            " \ 'outputter/buffer/close_on_empty' : 1,
-            " \ 'outputter/loclist/into':1
-
-            " \ 'runner': 'vimproc',
-            " \ 'runner':'terminal',
-            " \ 'runner/terminal/into':1,
-let b:quickrun_config = {
-            \ 'outputter':'error',
-            \ 'outputter/error/success':'buffer',
-            \ 'outputter/error/error':'loclist',
-            \  }
-
-"             \ 'outputter/loclist/errorformat':'&errorformat',
-            " \ 'outputter/buffer/close_on_empty' : 1,
-
-            " \ "hook/close_unite_quickfix/enable_hook_loaded" : 1,
-            " \ "hook/unite_quickfix/enable_failure" : 1,
-            " \ "hook/close_quickfix/enable_exit" : 1,
-            " \ "hook/close_buffer/enable_failure" : 1,
-            " \ "hook/close_buffer/enable_empty_data" : 1,
-            " \ "outputter/buffer/split" : ":botright 8sp",
-            " \ "outputter" : "multi:buffer:quickfix",
-            " \	"outputter/buffer/append":0,
-            " \	"outputter":"buffered",
-            " \	"outputter/buffered/target":"buffer",
-            " \	"outputter/buffer/split":"Uniqtab",
-            " \	"runner/vimproc/updatetime":0,
-            " \ 'outputter/buffer/close_on_empty' : 1,
-            " \ 'outputter/message/log':0,
-            " \ 'runner/terminal/into':1,
-            " \ 'outputter/loclist/into':1
-            " \ 'outputter': 'quickfix'
-            " \ 'outputter/quickfix/into':1
-" 'tex': {
-"         \    'command': 'platex',
-"         \    'exec': ['%c -output-directory %s:h %s', 'dvipdfmx -o %s:r.pdf %s:r.dvi', 'open %s:r.pdf']
-"         \   },
-" let g:quickrun_config['sql'] = {
-" 		\ 'command': 'psql',
-" 		\ 'exec': ['%c %o < %s'],
-" 		\ 'cmdopt': '%{MakepgsqlCommandOptions()}',
-" 		\ }
-
-" let g:quickrun_config['R'] = {'command': 'R', 'exec': ['%c -s --no-save -f %s', ':%s/.\b//g']}
-" stop quickrun with <Ctrl-c>
-nnoremap <expr><silent> <C-h> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-h>"
-
-" --------------------------------------------------------------
-" unstack
-" --------------------------------------------------------------
-nnoremap <C-u> :UnstackFromClipboard<CR>
-nnoremap <space>j :copen<CR><C-w>JG<CR>

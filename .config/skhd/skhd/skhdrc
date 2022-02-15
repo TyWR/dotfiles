@@ -1,6 +1,11 @@
 # cmd - return : /Applications/kitty.app/Contents/MacOS/kitty -d --single-instance ~
 # cmd - return: kitty -d --single-instance ~
 cmd - return : open -na /Applications/Alacritty.app
+cmd - tab: skhd -k "ctrl - a" && skhd -k "n"
+cmd + shift - tab: skhd -k "ctrl - a" && skhd -k "p"
+cmd - x: skhd -k "ctrl - a" && skhd -k "0x12" && skhd -k "y"
+cmd - t: skhd -k "ctrl - a" && skhd -k "c"
+
 
 shift + cmd - l: yabai -m window --focus east
 shift + cmd - h: yabai -m window --focus west

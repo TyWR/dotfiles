@@ -10,7 +10,7 @@ window:
   decorations: none
 
 font:
-  size: 19
+  size: 20
   normal:
     family: TerminessTTF Nerd Font
     style: Medium
