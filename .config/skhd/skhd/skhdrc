@@ -5,6 +5,7 @@ cmd - tab: skhd -k "ctrl - a" && skhd -k "n"
 cmd + shift - tab: skhd -k "ctrl - a" && skhd -k "p"
 cmd - x: skhd -k "ctrl - a" && skhd -k "0x12" && skhd -k "y"
 cmd - t: skhd -k "ctrl - a" && skhd -k "c"
+cmd - d: skhd -k "ctrl - a" && skhd -k "d"
 
 
 shift + cmd - l: yabai -m window --focus east
