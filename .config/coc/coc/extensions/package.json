@@ -3,6 +3,11 @@
     "coc-lists": ">=1.4.2",
     "coc-pyright": ">=1.1.181",
     "coc-snippets": ">=2.4.6",
-    "coc-tsserver": ">=1.4.9"
-  }
+    "coc-tsserver": ">=1.4.9",
+    "coc-json": ">=1.7.0",
+    "coc-python": ">=1.2.13",
+    "coc-vimlsp": ">=0.12.8"
+  },
+  "disabled": [],
+  "locked": []
 }

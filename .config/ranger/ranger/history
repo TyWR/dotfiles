@@ -1,50 +1,50 @@
-shell mkdir sandbox
-shell touch docker-compose.yml
-shell mkdir dummy-ecs-task
-shell touch settings
-shell mkdir src
-rename test_ecs_operator.py
-shell s
-rename email_util.py
-rename ecs_util.py
-rename ecs_conf.json
-rename ctv_1to1_bypass.py
-shell mkdir clean_raw
-shell touch raw_to_json.py
-ll
-rename insert_firetv.py
-shell QQ
-shell touch run_20220524.log
-rename android_ios_test_data_100.csv
-shell touch main.py
-shell touch utils.py
-shell mkdir app
-shell touch __main__.py
-shell touch __init__.py
-shell touch .dockerignore
-rename app
-rename api
-rename app.py
-shell touch black.sample
-shell touch pre-commit
-shell touch es.py
-shell touch logic.py
-shell mkdir dockerfiles
-rename local.Dockerfile
-shell touch launch_emr.py
-shell mkdir tests
-shell mkdir data
-rename whatsapp-review-sample.gz
-shell touch test.py
+shell touch util.py
+rename iter.py
+shell touch luigi_utils.py
+shell touch hash.py
+shell touch 
+shell touch s3_utils.py
+rename download.py
+rename hashk.py
+shell touch ingest.py
+rename ingest.py
+rename shape.py
+ kk
+rename vokabeln
+rename satze
+shell mkdir 20210930
+shell mkdir 20211031
+shell mkdir 20211130
+shell mkdir 20211231
+shell mkdir 20220131
+shell mkdir 20220228
+shell mkdir 20220331
+shell mkdir 20220430
+shell mkdir 20220531
+shell mkdir 20220630
+shell mkdir 20220731
+shell mkdir 20220831
+shell mkdir known
+rename test-config.py
 rename __main__.py
-shell 
-shell mkdir hits
-shell touch hits.json
-shell mkdir deprecated
-rename _deprecated
-shell touch python-test
-rename pre-commit
-shell mkdir hooks
-shell touch README.md
+shell mkdir ios
+rename test_workflow_aggregation_ios.py
+shell touch 2022-11-04.md
+find clean
+find ran
+open_with 
+rename mb.jpg
+open_with opn
+open_with open
+shell mkdir download-estimates-es-filters
+rename download-estimates-es-filters-android
+rename download-estimates-es-filters-android.yml
+rename download-estimates-es-filters-ios
+rename download-estimates-es-filters-ios.yml
+find 
+rename download-estimates-es-filters-ios.ymlm
+shell mkdir dow
+rename download-estimates-monthly-airflow
 open_with nvim
-rename pre-push
+shell mkdi
+shell 

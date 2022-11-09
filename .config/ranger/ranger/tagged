@@ -25,3 +25,5 @@
 /Users/tywr/Projects/mau/src/mau/mau_android.py
 /Users/tywr/Projects/ctv-iab/app.template.env
 /Users/tywr/Projects/mongo-dumps/primary/utils
+/Users/tywr/Projects/reviews-processing/airflow
+/Users/tywr/Projects/mongo-dumps-pyspark/data/iterate_bson_parallel.py_

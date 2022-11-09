@@ -15,7 +15,6 @@ set colorcolumn=80
 colorscheme default
 packadd cfilter
 
-
 " Tab settings
 set expandtab
 set tabstop=4
@@ -23,14 +22,19 @@ set shiftwidth=4
 set softtabstop=4
 set autoindent
 set smartindent
+
+
 " Search settings
 set incsearch
 set hlsearch
 
 filetype plugin indent on
 
-let g:python3_host_prog='/usr/local/bin/python3'
-let g:black_linelength=80
+let g:python3_host_prog= $HOME . '/.local/venv/nvim/bin/python'
+let g:black#settings = {
+    \ 'fast': 1,
+    \ 'line_length': 80
+\}
 
 " -----------------------------------------------------------------------------
 "  						         VIM PLUG	
@@ -40,7 +44,7 @@ Plug 'mhinz/vim-startify'
 Plug 'svermeulen/vim-subversive'
 Plug 'mhinz/vim-grepper' 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'psf/black'
+Plug 'neoclide/coc-highlight'
 Plug 'dylanaraps/wal.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
@@ -72,7 +76,7 @@ call plug#end()
 " -----------------------------------------------------------------------------
 "  						        COLOR SCHEME
 "------------------------------------------------------------------------------
-set t_u7=
+set t_u8=
 set t_RV=
 let &t_ZH="\e[4m"
 let &t_ZR="\e[33m"
@@ -115,7 +119,10 @@ hi ColorColumn ctermfg=none ctermbg=15
 hi TabLineSel cterm=bold ctermbg=2 ctermfg=15
 hi TabLine cterm=bold ctermbg=15 ctermfg=8
 hi TabLineFill cterm=bold ctermbg=15 ctermfg=2
-hi PmenuSel cterm=bold ctermbg=15 ctermfg=8
+
+hi CocMenuSel cterm=bold ctermbg=2 ctermfg=15
+hi CocFloatThumb cterm=bold ctermbg=2 ctermfg=15
+hi CocFloatSBar cterm=bold ctermbg=2 ctermfg=15
 
 hi CocFloating cterm=bold ctermbg=15 ctermfg=7
 hi CocErrorFloat cterm=bold ctermbg=15 ctermfg=1
@@ -123,6 +130,8 @@ hi CocWarningFloat cterm=bold ctermbg=15 ctermfg=1
 hi CocInfoFloat cterm=bold ctermbg=15 ctermfg=7
 hi CocHintFloat cterm=bold ctermbg=15 ctermfg=7
 hi CocHighlightText cterm=bold ctermbg=2 ctermfg=2
+
+hi PmenuSel cterm=bold ctermbg=2 ctermfg=2
 
 hi BufTabLineActive cterm=bold ctermbg=15 ctermfg=7
 
@@ -183,9 +192,12 @@ nmap <silent> <S-Tab> :bp<CR>
 nmap <silent> <Tab> :bn<CR>
 nmap <silent> <C-F> :Lines<CR>
 nmap <silent> <C-O> :Files<CR>
-nmap <C-S> :Black<CR>
+nnoremap <silent> <c-s> <cmd>:silent !black -q --fast -l 80 %<cr>
+inoremap <silent> <c-s> <cmd>:silent !black -q --fast -l 80 %<cr>
 
 nmap gs <plug>(SubversiveSubstitute)
+inoremap <silent><expr> <Right> coc#pum#visible() ? coc#pum#confirm() : "\<Right>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 
 
@@ -198,8 +210,9 @@ nnoremap <silent> -- :let a='# --------------------------------------------
 "  						             Treesitter
 " -----------------------------------------------------------------------------
 lua <<EOF
+require "nvim-treesitter"
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+  -- ensure_installed = "maintained",
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
@@ -211,17 +224,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     extended_mode = true,
     max_file_lines = nil,
-  }
-}
-EOF
-
-
-" -----------------------------------------------------------------------------
-"  						        Treesitter
-"------------------------------------------------------------------------------
-lua <<EOF
-require "nvim-treesitter"
-require'nvim-treesitter.configs'.setup {
+  },
   textobjects = {
     move = {
       enable = true,
@@ -257,6 +260,7 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
 " -----------------------------------------------------------------------------
 "  Grepper
 "  ----------------------------------------------------------------------------
@@ -371,17 +375,6 @@ function! s:GoToDefinition()
   if ret =~ "Error" || ret =~ "错误"
     call searchdecl(expand('<cword>'))
   endif
-endfunction
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use K to show documentation in preview window.
