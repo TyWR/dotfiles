@@ -27,3 +27,4 @@
 /Users/tywr/Projects/mongo-dumps/primary/utils
 /Users/tywr/Projects/reviews-processing/airflow
 /Users/tywr/Projects/mongo-dumps-pyspark/data/iterate_bson_parallel.py_
+/Users/tywr/Projects/ctv-es-sync/app/tasks/index_file.py

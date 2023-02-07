@@ -1,50 +1,50 @@
-shell touch util.py
-rename iter.py
-shell touch luigi_utils.py
-shell touch hash.py
-shell touch 
-shell touch s3_utils.py
-rename download.py
-rename hashk.py
-shell touch ingest.py
-rename ingest.py
-rename shape.py
- kk
-rename vokabeln
-rename satze
-shell mkdir 20210930
-shell mkdir 20211031
-shell mkdir 20211130
-shell mkdir 20211231
-shell mkdir 20220131
-shell mkdir 20220228
-shell mkdir 20220331
-shell mkdir 20220430
-shell mkdir 20220531
-shell mkdir 20220630
-shell mkdir 20220731
-shell mkdir 20220831
-shell mkdir known
-rename test-config.py
-rename __main__.py
-shell mkdir ios
-rename test_workflow_aggregation_ios.py
-shell touch 2022-11-04.md
-find clean
-find ran
-open_with 
-rename mb.jpg
-open_with opn
-open_with open
-shell mkdir download-estimates-es-filters
-rename download-estimates-es-filters-android
-rename download-estimates-es-filters-android.yml
-rename download-estimates-es-filters-ios
-rename download-estimates-es-filters-ios.yml
-find 
-rename download-estimates-es-filters-ios.ymlm
-shell mkdir dow
-rename download-estimates-monthly-airflow
+shell mkdir tasks
+shell touch index_file.py
+rename switch_index.py
+rename tda
+rename .env_
+rename settings.env
+shell mkdir tests
+rename roku-sample
+shell mkdir roku
+shell mkdir 
+rename permissions-dump.json
+shell touch
+shell mkdir
+shell permiss
+find pe
+find Sa
+shell mkdir data
+rename download_estimates_android_daily_test.py
+rename download_estimates_android_dev.py
+rename download_estimation_dev.py
+rename 20230117-mau.md
+rename Csv2SQLite.py
+rename csv_2_sqlite.py
+rename config.py
 open_with nvim
-shell mkdi
+rename postgres_unload.py
+rename upload.py
+rename upload_sqlite.py
+rename .env
+rename template.env
+rename 42services
+open_with 
+rename roku-sample.bz2
+rename README.md
+shell touch template.env
+rename src
+shell touch 
+shell touch crawler.py
+find top
+shell mkdir top-charts
+rename amazon-top-charts-crawler
+rename amazon-top-charts-crawler.yml
+rename firetv-top-charts-crawler
+rename firetv-top-charts-crawler.yml
+
+find crawl
 shell 
+find stats
+shell mkdir test
+shell touch test_crawler.py

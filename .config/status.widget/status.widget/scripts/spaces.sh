@@ -22,13 +22,13 @@ get_focused() {
     set -o pipefail
 
     # make sure yabai is running, and get the current space
-    if ! SPACE=$($yabai -m query --spaces | $jq -r 'map(select(.focused == 1))[0] | .index')
+    if ! SPACE=$($yabai -m query --spaces | $jq -r 'map(select(."has-focus"))[0] | .index')
     then
         return 1
     fi
 
     # monocle mode is unsupported in yabai
-    echo $($yabai -m query --spaces | $jq -r 'map(select(.focused == 1))[0] | .index')
+    echo $($yabai -m query --spaces | $jq -r 'map(select(."has-focus"))[0] | .index')
 }
 
 get_focused

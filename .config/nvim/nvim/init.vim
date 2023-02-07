@@ -40,9 +40,7 @@ let g:black#settings = {
 "  						         VIM PLUG	
 " -----------------------------------------------------------------------------
 call plug#begin()
-Plug 'mhinz/vim-startify'
 Plug 'svermeulen/vim-subversive'
-Plug 'mhinz/vim-grepper' 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-highlight'
 Plug 'dylanaraps/wal.vim'
@@ -54,10 +52,7 @@ Plug 'MathSquared/vim-python-sql'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim' 
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
-Plug 'thaerkh/vim-workspace'
 Plug 'mattn/vim-findroot'
 Plug 'tywr/minimalist-status-line'
 Plug 'kkoomen/vim-doge', { 'tag': 'v2.8.0' }
@@ -71,6 +66,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'ggandor/lightspeed.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 call plug#end()
 
 " -----------------------------------------------------------------------------
@@ -190,14 +187,25 @@ nmap QQ :bd<CR>
 nmap U :redo<CR>
 nmap <silent> <S-Tab> :bp<CR>
 nmap <silent> <Tab> :bn<CR>
-nmap <silent> <C-F> :Lines<CR>
-nmap <silent> <C-O> :Files<CR>
+nmap <silent> <C-F> :Telescope live_grep<CR>
+nnoremap <C-O> :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
 nnoremap <silent> <c-s> <cmd>:silent !black -q --fast -l 80 %<cr>
 inoremap <silent> <c-s> <cmd>:silent !black -q --fast -l 80 %<cr>
 
 nmap gs <plug>(SubversiveSubstitute)
-inoremap <silent><expr> <Right> coc#pum#visible() ? coc#pum#confirm() : "\<Right>"
+
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+nnoremap <silent> gw :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+map <C-r> :Ranger<CR>
+
 
 
 
@@ -320,45 +328,6 @@ let g:gitgutter_sign_modified = '~'
 let g:gitgutter_sign_removed = '-'
 
 " -----------------------------------------------------------------------------
-"  						         FZF
-" -----------------------------------------------------------------------------
-let $FZF_DEFAULT_OPTS='
-    \ --color=dark --color=fg:7,bg:-1,hl:-1,bg+:-1,hl+:1
-    \ --color=info:5,prompt:5,pointer:12,marker:1,spinner:1,header:-1
-    \ --layout=reverse  --margin=1,4'
-
-function! CreateCenteredFloatingWindow()
-    let width = min([&columns - 4, max([80, &columns - 20])])
-    let height = min([&lines - 4, max([20, &lines - 10])])
-    let top = ((&lines - height) / 2) - 1
-    let left = (&columns - width) / 2
-    let opts = {'relative': 'editor', 'row': top, 'col': left,
-			 \ 'width': width, 'height': height, 'style': 'minimal'}
-
-    let top = "╭" . repeat("─", width - 2) . "╮"
-    let mid = "│" . repeat(" ", width - 2) . "│"
-    let bot = "╰" . repeat("─", width - 2) . "╯"
-    let lines = [top] + repeat([mid], height - 2) + [bot]
-    let s:buf = nvim_create_buf(v:false, v:true)
-    call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
-    call nvim_open_win(s:buf, v:true, opts)
-    set winhl=Normal:Floating
-    let opts.row += 1
-    let opts.height -= 2
-    let opts.col += 2
-    let opts.width -= 4
-    call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-    au BufWipeout <buffer> exe 'bw '.s:buf
-endfunction
-
-let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
-
-" -----------------------------------------------------------------------------
-"          					     RANGER
-" -----------------------------------------------------------------------------
-map <C-r> :Ranger<CR>
-
-" -----------------------------------------------------------------------------
 "          					       COC
 " -----------------------------------------------------------------------------
 " Use tab for trigger completion with characters ahead and navigate.
@@ -366,42 +335,19 @@ map <C-r> :Ranger<CR>
 " other plugin before putting this into your config.
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env', ".vim", "app.env"]
 
-function! s:GoToDefinition()
-  if CocAction('jumpDefinition')
-    return v:true
-  endif
-
-  let ret = execute("silent! normal \<C-]>")
-  if ret =~ "Error" || ret =~ "错误"
-    call searchdecl(expand('<cword>'))
-  endif
-endfunction
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-nmap <silent> gd :call <SID>GoToDefinition()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
   else
-    execute '!' . &keywordprg . " " . expand('<cword>')
+    call feedkeys('K', 'in')
   endif
 endfunction
 
-" grep word under cursor
-command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
-
-function! s:GrepArgs(...)
-  let list = ['-S', '-smartcase', '-i', '-ignorecase', '-w', '-word',
-        \ '-e', '-regex', '-u', '-skip-vcs-ignores', '-t', '-extension']
-  return join(list, "\n")
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Keymapping for grep word under cursor with interactive mode
-nnoremap <silent> gw :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
 
 " -----------------------------------------------------------------------------
 "          					       DOGE
@@ -420,28 +366,3 @@ function! Syn()
   endfor
 endfunction
 command! -nargs=0 Syn call Syn()
-
-" -----------------------------------------------------------------------------
-" startify
-" -----------------------------------------------------------------------------
-let g:startify_lists = [
-          \ { 'type': 'sessions',  'header': ['   Sessions']       },
-          \ { 'type': 'files',     'header': ['   MRU']            },
-          \ { 'type': 'commands',  'header': ['   Commands']       },
-          \ ]
-          " \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-let g:startify_session_before_save = [
-        \ 'echo "Cleaning up before saving.."',
-        \ 'silent! NERDTreeTabsClose'
-        \ ]
-let g:startify_files_number = 3
-let g:webdevicons_enable_startify = 1
-" let g:startify_session_autoload = 1
-let g:startify_change_to_dir = 0
-" let g:workspace_session_directory = $HOME . '/.cache/sessions/'
-let g:startify_session_autoload = 1
-let g:startify_custom_header = 'startify#center(startify#fortune#cowsay())'
-
-let g:startify_custom_header = [
-        \ '',
-        \ ]

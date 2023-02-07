@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/usr/local/bin/python3",
+    "python.pythonPath": "/usr/local/bin/python3.11",
     "diagnostic.checkCurrentLine": true,
     "python.jediEnabled": false,
     "pyright.enable": true,
@@ -10,6 +10,7 @@
     "python.linting.flake8Enabled": true,
     "pyright.disableDiagnostics": true,
     "pyright.disableCompletion": false,
-    "pyright.completion.snippetSupport": false,
     "python.analysis.typeCheckingMode": "off",
+    "suggest.enablePreselect": false,
+    "suggest.noselect": true
 }
